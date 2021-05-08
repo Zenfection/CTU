@@ -63,7 +63,7 @@ FROM dbo.kientrucsu as KTS, dbo.congtrinh as CongT, dbo.thietke as TK
 WHERE TK.STTCT = CongT.STTCT
 AND TK.MSKTS = KTS.MSKTS
 AND KTS.NOITN = 'tphcm'
-AND CongT.KINHPHI > 400
+AND CongT.KINHPHI > 400000
 
 
 --Câu 8
