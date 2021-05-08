@@ -90,8 +90,18 @@ WHERE ChuT.MSCT = CongT.MSCT
 GROUP BY CongT.TINHTHANH
 
 --Câu 9: 
---! Result : 
+--! Result : 0 record
+DECLARE @soCongTrinh INT
 
+SELECT @soCongTrinh = COUNT(*)
+FROM dbo.congtrinh
+
+SELECT DISTINCT  CN.HOTENCN,COUNT(CongT.TENCT) as soCT_TG
+FROM dbo.congnhan as CN, dbo.congtrinh as CongT, dbo.thamgia as TG
+WHERE TG.MSCN = CN.MSCN
+AND TG.STTCT = CongT.STTCT
+GROUP BY CN.HOTENCN
+HAVING COUNT(CongT.TENCT) = @soCongTrinh
 
 --Câu 10
 --! Result : 10 records

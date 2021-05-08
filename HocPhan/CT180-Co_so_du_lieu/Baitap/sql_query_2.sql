@@ -103,10 +103,7 @@ AND KTS.HOTENKTS = 'le thanh tung';
 
 --Câu 8
 --! Result : 13 records
-SELECT DISTINCT ChuT.TENTHAU
-FROM dbo.congtrinh as CongT 
-INNER JOIN dbo.chuthau as ChuT 
-ON ChuT.MSCT = CongT.MSCT
+--Chưa biết làm
 
 --Câu 9
 --! Result : 
