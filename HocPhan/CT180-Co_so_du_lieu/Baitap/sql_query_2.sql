@@ -99,15 +99,18 @@ WHERE TK.MSKTS = KTS.MSKTS
 AND TK.STTCT = CongT.STTCT
 AND TG.MSCN = CN.MSCN
 AND TG.STTCT = CongT.STTCT
-AND KTS.HOTENKTS = 'le thanh tung'
+AND KTS.HOTENKTS = 'le thanh tung';
 
 --Câu 8
---! Result : 
-
+--! Result : 13 records
+SELECT DISTINCT ChuT.TENTHAU
+FROM dbo.congtrinh as CongT 
+INNER JOIN dbo.chuthau as ChuT 
+ON ChuT.MSCT = CongT.MSCT
 
 --Câu 9
 --! Result : 
-
+--Chứa biết làm 
 
 --Câu 10
 --! Dùng CONVERT chuyển sang INT vì CongT.KINHPHI là nvarchar
