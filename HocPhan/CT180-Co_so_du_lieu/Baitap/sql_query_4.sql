@@ -70,7 +70,7 @@ HAVING COUNT(CongT.TINHTHANH) > 2
 GO
 
 --Câu 6:
---! Result :  
+--! Result : 1 record
 CREATE VIEW temp AS
 SELECT CongT.TINHTHANH, COUNT(CN.HOTENCN) as SoCN_TinhThanh
 FROM dbo.congtrinh as CongT, dbo.congnhan as CN, dbo.thamgia as TG
@@ -90,7 +90,7 @@ DROP VIEW temp
 
 
 --Câu 7:
---! Result :  
+--! Result : 1 record
 DECLARE @Min_ThuLao_lekimdung INT
 
 SELECT @Min_ThuLao_lekimdung = MIN(TK.THULAO)
@@ -109,27 +109,20 @@ AND TK.THULAO = @Min_ThuLao_lekimdung
 
 --Câu 8:
 --! Result :  
-SELECT DISTINCT CongT.TENCT,KTS.HOTENKTS, CN.HOTENCN
-FROM dbo.kientrucsu as KTS, dbo.congnhan as CN, dbo.congtrinh as CongT, dbo.thamgia as TG, dbo.thietke as TK
-WHERE TG.MSCN = CN.MSCN
-AND TG.STTCT = CongT.STTCT
-AND TK.MSKTS = KTS.MSKTS
-AND TK.STTCT = CongT.STTCT
+--Chưa làm được
 
 
 --Câu 9:
 --! Result :  
+--Chưa làm được
 
 
---Câu :
---! Result :  
-
-
-
---Câu :
---! Result :  
-
-
-
---Câu :
---! Result :  
+--Câu 10:
+--! Result :  26 records
+SELECT DISTINCT KTS.HOTENKTS, CongT.TENCT
+FROM dbo.kientrucsu as KTS, dbo.congtrinh as CongT, dbo.congnhan as CN, dbo.thamgia as TG, dbo.thietke as TK
+WHERE TK.STTCT = CongT.STTCT
+AND TK.MSKTS = KTS.MSKTS
+AND TG.MSCN = CN.MSCN
+AND TG.STTCT = CongT.STTCT
+AND TK.THULAO < (CongT.KINHPHI / 100) * 5
