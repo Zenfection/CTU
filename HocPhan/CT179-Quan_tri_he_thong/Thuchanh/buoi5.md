@@ -75,7 +75,7 @@ Giải
 
 Giải
 
-> ![icons8questionspng](https://raw.githubusercontent.com/Zenfection/Image/master/2021/04/08-22-03-47-icons8-questions.png) **Câu 2.6**. Cấu hình `SELINUX` cho phép S`Samba`
+> ![icons8questionspng](https://raw.githubusercontent.com/Zenfection/Image/master/2021/04/08-22-03-47-icons8-questions.png) **Câu 2.6**. Cấu hình `SELINUX` cho phép `Samba`
 > 
 > ```bash
 > $ setsebool -P samba_export_all_rw on
