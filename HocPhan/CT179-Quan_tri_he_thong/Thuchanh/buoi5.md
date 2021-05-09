@@ -41,7 +41,7 @@ Giải
 > 
 > ```bash
 > $ mkdir /data
-> $ chgrp lecturers
+> $ chgrp lecturers /data
 > $ chmod -R 775 /data
 > ```
 
@@ -51,7 +51,7 @@ Giải
 > 
 > ```bash
 > $ cp /etc/samba/smb.conf /etc/samba/smb.conf.orig
-> nano /etc/samba/smb.conf
+> $ nano /etc/samba/smb.conf
 > ```
 > 
 > ```textile
