@@ -20,7 +20,7 @@ Link file ISO [CentOS 8](https://www.centos.org/download/)
 
 <br>
 
-Đã làm trong bài thực hành [Buổi 4]([CTU/buoi4.md at main · Zenfection/CTU · GitHub](https://github.com/Zenfection/CTU/blob/main/HocPhan/CT179-Quan_tri_he_thong/Thuchanh/buoi4.md))
+Đã làm trong bài thực hành [Buổi 4](https://github.com/Zenfection/CTU/blob/main/HocPhan/CT179-Quan_tri_he_thong/Thuchanh/buoi4.md)
 
 </details>
 
