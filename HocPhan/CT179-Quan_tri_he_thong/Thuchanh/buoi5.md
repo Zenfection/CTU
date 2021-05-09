@@ -88,7 +88,7 @@ Thực hiện các yêu cầu sau và Chụp màn hình minh hoạ![icons8screen
 > 
 > ```bash
 > $ cp /etc/samba/smb.conf /etc/samba/smb.conf.orig
-> nano /etc/samba/smb.conf
+> $ nano /etc/samba/smb.conf
 > ```
 > 
 > ```textile
