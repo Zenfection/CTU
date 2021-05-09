@@ -38,9 +38,16 @@ Thực hiện các yêu cầu sau và Chụp màn hình minh hoạ![icons8screen
 > $ yum install samba
 > ```
 
-Giải
+<details>
+<summary><b><img src="https://raw.githubusercontent.com/Zenfection/Image/master/2021/03/08-16-44-05-icons8-consultation.png" width ="40"> Giải</b></summary>
+
+<br>
 
 ![Screenshot from 2021-05-09 11-04-12.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/09-18-18-16-Screenshot%20from%202021-05-09%2011-04-12.png)
+
+</details>
+
+> 💡 Bạn có thể gõ `samba --version` để kiểm tra đã cài đặt thành công chưa.
 
 > ![icons8questionspng](https://raw.githubusercontent.com/Zenfection/Image/master/2021/04/08-22-03-47-icons8-questions.png) **Câu 2.2**. Tạo người dùng và nhóm người dùng chia sẻ dữ liệu:
 > 
@@ -51,9 +58,14 @@ Giải
 > $ usermod -aG lecturers tuanthai
 > ```
 
-Giải
+<details>
+<summary><b><img src="https://raw.githubusercontent.com/Zenfection/Image/master/2021/03/08-16-44-05-icons8-consultation.png" width ="40"> Giải</b></summary>
+
+<br>
 
 ![Screenshot from 2021-05-09 11-06-34.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/09-18-04-43-Screenshot%20from%202021-05-09%2011-06-34.png)
+
+</details>
 
 > ![icons8questionspng](https://raw.githubusercontent.com/Zenfection/Image/master/2021/04/08-22-03-47-icons8-questions.png) **Câu 2.3**. Tạo thư mục cần chia sẻ và phân quyền : 
 > 
@@ -63,9 +75,14 @@ Giải
 > $ chmod -R 775 /data
 > ```
 
-Giải
+<details>
+<summary><b><img src="https://raw.githubusercontent.com/Zenfection/Image/master/2021/03/08-16-44-05-icons8-consultation.png" width ="40"> Giải</b></summary>
+
+<br>
 
 ![Screenshot from 2021-05-09 11-12-45.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/09-18-06-02-Screenshot%20from%202021-05-09%2011-12-45.png)
+
+</details>
 
 > ![icons8questionspng](https://raw.githubusercontent.com/Zenfection/Image/master/2021/04/08-22-03-47-icons8-questions.png) **Câu 2.4**. Cấu hình dịch vụ `SAMBA`
 > 
@@ -85,9 +102,30 @@ Giải
 >     valid users = @lecturers
 > ```
 
-Giải
+<details>
+<summary><b><img src="https://raw.githubusercontent.com/Zenfection/Image/master/2021/03/08-16-44-05-icons8-consultation.png" width ="40"> Giải</b></summary>
+
+<br>
 
 ![Screenshot from 2021-05-09 11-16-49.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/09-18-06-49-Screenshot%20from%202021-05-09%2011-16-49.png)
+
+> 💡 Giải thích chi tiết : 
+> 
+> - `comment` : chú thích 
+> 
+> - `path` : đường dẫn đến thư mục cần kết nối `Samba`
+> 
+> - `browsafe` : kiểm soát việc chia sẻ file có được nhìn thấy trong chế độ thực
+> 
+> - `writable` : Cho phép ghi file (*đảo ngược với `read only`*)
+> 
+> - `read only`  : Chỉ cho phép đọc (*đảo ngược với `read only`*) 
+> 
+> - `valid users` : người dùng có hiệu lực
+
+==> Tham khảo cách `config` [tại đây](https://www.samba.org/samba/docs/current/man-html/smb.conf.5.html)
+
+</details>
 
 > ![icons8questionspng](https://raw.githubusercontent.com/Zenfection/Image/master/2021/04/08-22-03-47-icons8-questions.png) **Câu 2.5**. Thêm người dùng cho dịch vụ `SAMBA` bằng lệnh : 
 > 
@@ -95,9 +133,14 @@ Giải
 > $ smbpasswd -a tuanthai
 > ```
 
-Giải
+<details>
+<summary><b><img src="https://raw.githubusercontent.com/Zenfection/Image/master/2021/03/08-16-44-05-icons8-consultation.png" width ="40"> Giải</b></summary>
+
+<br>
 
 ![Screenshot from 2021-05-09 11-17-34.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/09-18-07-42-Screenshot%20from%202021-05-09%2011-17-34.png)
+
+</details>
 
 > ![icons8questionspng](https://raw.githubusercontent.com/Zenfection/Image/master/2021/04/08-22-03-47-icons8-questions.png) **Câu 2.6**. Cấu hình `SELINUX` cho phép `Samba`
 > 
@@ -106,7 +149,18 @@ Giải
 > $ setsebool -P samba_enable_home_dirs on
 > ```
 
-Giải
+<details>
+<summary><b><img src="https://raw.githubusercontent.com/Zenfection/Image/master/2021/03/08-16-44-05-icons8-consultation.png" width ="40"> Giải</b></summary>
+
+<br>
+
+- `samba_export_all_rw` : cho phép xuất bất kỳ `files` hay `diretories` nào, cho phép quyền **đọc** và **ghi**
+
+- `samba_enable_home_dirs on` : cho phép chia sẻ thư mục chính của người dùng
+
+==> Tham khảo [tại đây](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/6/html/managing_confined_services/sect-managing_confined_services-samba-booleans)
+
+</details>
 
 > ![icons8questionspng](https://raw.githubusercontent.com/Zenfection/Image/master/2021/04/08-22-03-47-icons8-questions.png) **Câu 2.7**. Tắt tường lửa
 > 
@@ -114,9 +168,14 @@ Giải
 > $ service iptables stop
 > ```
 
-Giải
+<details>
+<summary><b><img src="https://raw.githubusercontent.com/Zenfection/Image/master/2021/03/08-16-44-05-icons8-consultation.png" width ="40"> Giải</b></summary>
+
+<br>
 
 ![Screenshot from 2021-05-09 11-19-36.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/09-18-10-12-Screenshot%20from%202021-05-09%2011-19-36.png)
+
+</details>
 
 > ![icons8questionspng](https://raw.githubusercontent.com/Zenfection/Image/master/2021/04/08-22-03-47-icons8-questions.png) **Câu 2.8**. Khởi động lại dịch vụ `Samba` : 
 > 
@@ -124,9 +183,14 @@ Giải
 > $ service smb start
 > ```
 
-Giải
+<details>
+<summary><b><img src="https://raw.githubusercontent.com/Zenfection/Image/master/2021/03/08-16-44-05-icons8-consultation.png" width ="40"> Giải</b></summary>
+
+<br>
 
 ![Screenshot from 2021-05-09 11-20-05.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/09-18-10-55-Screenshot%20from%202021-05-09%2011-20-05.png)
+
+</details>
 
 > ![icons8questionspng](https://raw.githubusercontent.com/Zenfection/Image/master/2021/04/08-22-03-47-icons8-questions.png) **Câu 2.9**. Trên máy `Windows`, bật tính năng hỗ trợ `SMB1` : 
 > 
@@ -134,21 +198,43 @@ Giải
 > 
 > ![Screen Shot 2021-05-07 at 13.07.25.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/07-13-07-32-Screen%20Shot%202021-05-07%20at%2013.07.25.png)
 
-Giải
+<details>
+<summary><b><img src="https://raw.githubusercontent.com/Zenfection/Image/master/2021/03/08-16-44-05-icons8-consultation.png" width ="40"> Giải</b></summary>
+
+<br>
 
 Cài `CentOS` trên ổ cứng, không sử dụng máy ảo, nên không làm bước này
 
+</details>
+
 > ![icons8questionspng](https://raw.githubusercontent.com/Zenfection/Image/master/2021/04/08-22-03-47-icons8-questions.png) **Câu 2.10**. Trên `File Exployer`, chọn tính năng `Add a network location` để kết nối tới `Samba server` sử dụng địa chỉ `\\<IP máy CentOS>\data`
 
-Giải
+<details>
+<summary><b><img src="https://raw.githubusercontent.com/Zenfection/Image/master/2021/03/08-16-44-05-icons8-consultation.png" width ="40"> Giải</b></summary>
 
-![Screenshot from 2021-05-09 12-03-12.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/09-18-12-52-Screenshot%20from%202021-05-09%2012-03-12.png)
+<br>
 
-![Screenshot from 2021-05-09 12-24-39.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/09-18-14-31-Screenshot%20from%202021-05-09%2012-24-39.png)
+Thực hiện các bước sau để kết nối giao thức `Samba` trên `CentOS` : 
 
-![Screenshot from 2021-05-09 12-19-10.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/09-18-16-48-Screenshot%20from%202021-05-09%2012-19-10.png)
+- **B1**: Vào `Nautilus` (*hay còn gọi là Finder*) ⇨ Chọn `Other Locations` ⇨ Điền `IP` của máy chạy `Samba` ⇨ Chọn `Connect`
+  
+  ![Screenshot from 2021-05-09 12-03-12.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/09-18-12-52-Screenshot%20from%202021-05-09%2012-03-12.png)
 
-![Screenshot from 2021-05-09 12-19-36.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/09-18-17-11-Screenshot%20from%202021-05-09%2012-19-36.png)
+- **B2**: Chọn `Registerd User` và điền *tài khoản* và *mật khẩu* đăng ký `Samba` ở trên ⇨ Chọn `Connect`
+  
+  ![Screenshot from 2021-05-09 12-24-39.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/09-18-14-31-Screenshot%20from%202021-05-09%2012-24-39.png)
+
+- **B3**: Bạn có thể tạo `file` (*ví dụ tạo `file1` như sau*)
+  
+  ![Screenshot from 2021-05-09 12-19-10.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/09-18-16-48-Screenshot%20from%202021-05-09%2012-19-10.png)
+  
+  > 💡 Vào máy kết nối `Samba` kiểm tra như sau : 
+  > 
+  > ![Screenshot from 2021-05-09 12-19-36.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/09-18-17-11-Screenshot%20from%202021-05-09%2012-19-36.png)
+  > 
+  > ==> Như đã thấy `file1` đã xuất hiện
+
+</details>
 
 ---
 
