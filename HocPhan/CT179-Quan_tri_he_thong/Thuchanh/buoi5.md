@@ -45,9 +45,9 @@ Thực hiện các yêu cầu sau và Chụp màn hình minh hoạ![icons8screen
 
 ![Screenshot from 2021-05-09 11-04-12.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/09-18-18-16-Screenshot%20from%202021-05-09%2011-04-12.png)
 
-</details>
-
 > 💡 Bạn có thể gõ `samba --version` để kiểm tra đã cài đặt thành công chưa.
+
+</details>
 
 > ![icons8questionspng](https://raw.githubusercontent.com/Zenfection/Image/master/2021/04/08-22-03-47-icons8-questions.png) **Câu 2.2**. Tạo người dùng và nhóm người dùng chia sẻ dữ liệu:
 > 
@@ -68,6 +68,7 @@ Thực hiện các yêu cầu sau và Chụp màn hình minh hoạ![icons8screen
 </details>
 
 > ![icons8questionspng](https://raw.githubusercontent.com/Zenfection/Image/master/2021/04/08-22-03-47-icons8-questions.png) **Câu 2.3**. Tạo thư mục cần chia sẻ và phân quyền : 
+
 > 
 > ```bash
 > $ mkdir /data
