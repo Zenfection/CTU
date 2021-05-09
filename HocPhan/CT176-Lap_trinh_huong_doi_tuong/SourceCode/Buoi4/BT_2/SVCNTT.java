@@ -36,25 +36,25 @@ public class SVCNTT extends SinhVien{
 		while (done) {
 			try {
 				System.out.print("Nhập tài khoản : ");
-					String account = sc.nextLine();
-				System.out.print("Nhập mật khẩu : ");
-					String password = sc.nextLine();
-				System.out.print("Nhập Email : ");
-					String diachimail = sc.nextLine();
-
-				if(!checkEmail(diachimail)){
-					System.out.println("Email không chuẩn, mời nhập lại");
-					continue;
+	                String account = sc.nextLine();
+	            System.out.print("Nhập mật khẩu : ");
+	                String password = sc.nextLine();
+	            System.out.print("Nhập Email : ");
+	                String diachimail = sc.nextLine();
+	                
+	            if(!checkEmail(diachimail)){
+	                System.out.println("Email không chuẩn, mời nhập lại");
+	                continue;
 				}
 
-				this.taikhoan = account;
-				this.matkhau = password;
-				this.email = diachimail;
-				super.nhapSinhVien();
-				done = false;
-			} catch (Exception e) {
-				System.out.println("Nhập sai định dạng, mời nhập lại");
-			}
-		}
+	            this.taikhoan = account;
+	            this.matkhau = password;
+	            this.email = diachimail;
+	            super.nhapSinhVien();
+	            done = false;
+	        } catch (Exception e) {
+	            System.out.println("Nhập sai định dạng, mời nhập lại");
+	        }
+	    }
 	}
 }
