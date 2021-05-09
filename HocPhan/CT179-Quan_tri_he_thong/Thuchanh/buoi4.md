@@ -11,6 +11,8 @@
 
 Link file ISO [CentOS 8](https://www.centos.org/download/)
 
+</details>
+
 ![Screenshot from 2021-05-03 17-24-28.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/03-22-26-45-Screenshot%20from%202021-05-03%2017-24-28.png)
 
 ![Screenshot from 2021-05-03 17-24-37.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/03-22-27-08-Screenshot%20from%202021-05-03%2017-24-37.png)

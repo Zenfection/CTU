@@ -4,11 +4,25 @@
 
 > ![icons8questionspng](https://raw.githubusercontent.com/Zenfection/Image/master/2021/04/08-22-03-47-icons8-questions.png) **Câu 1.1** Thực hiện cài đặt `CentOS 6` (*hoặc `CentOS 7`, `8`*) vào máy tính cá nhân (*hoặc máy ảo*)
 
-Giải
+<details>
+<summary><b><img src="https://raw.githubusercontent.com/Zenfection/Image/master/2021/03/08-16-44-05-icons8-consultation.png" width ="40"> Giải</b></summary>
+
+<br>
+
+Link file ISO [CentOS 8](https://www.centos.org/download/)
+
+</details>
 
 > ![icons8questionspng](https://raw.githubusercontent.com/Zenfection/Image/master/2021/04/08-22-03-47-icons8-questions.png) **Câu 1.2** Cài đặt dịch vụ `Web Server` trên máy ảo. Tạo một trang web đơn giản `index.html` lưu vào thư mục `/var/www/html/myweb`
 
-Giải
+<details>
+<summary><b><img src="https://raw.githubusercontent.com/Zenfection/Image/master/2021/03/08-16-44-05-icons8-consultation.png" width ="40"> Giải</b></summary>
+
+<br>
+
+Đã làm trong bài thực hành [Buổi 4]([CTU/buoi4.md at main · Zenfection/CTU · GitHub](https://github.com/Zenfection/CTU/blob/main/HocPhan/CT179-Quan_tri_he_thong/Thuchanh/buoi4.md))
+
+</details>
 
 ---
 
@@ -26,6 +40,8 @@ Thực hiện các yêu cầu sau và Chụp màn hình minh hoạ![icons8screen
 
 Giải
 
+![Screenshot from 2021-05-09 11-04-12.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/09-18-18-16-Screenshot%20from%202021-05-09%2011-04-12.png)
+
 > ![icons8questionspng](https://raw.githubusercontent.com/Zenfection/Image/master/2021/04/08-22-03-47-icons8-questions.png) **Câu 2.2**. Tạo người dùng và nhóm người dùng chia sẻ dữ liệu:
 > 
 > ```bash
@@ -37,6 +53,8 @@ Giải
 
 Giải
 
+![Screenshot from 2021-05-09 11-06-34.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/09-18-04-43-Screenshot%20from%202021-05-09%2011-06-34.png)
+
 > ![icons8questionspng](https://raw.githubusercontent.com/Zenfection/Image/master/2021/04/08-22-03-47-icons8-questions.png) **Câu 2.3**. Tạo thư mục cần chia sẻ và phân quyền : 
 > 
 > ```bash
@@ -47,25 +65,29 @@ Giải
 
 Giải
 
+![Screenshot from 2021-05-09 11-12-45.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/09-18-06-02-Screenshot%20from%202021-05-09%2011-12-45.png)
+
 > ![icons8questionspng](https://raw.githubusercontent.com/Zenfection/Image/master/2021/04/08-22-03-47-icons8-questions.png) **Câu 2.4**. Cấu hình dịch vụ `SAMBA`
 > 
 > ```bash
 > $ cp /etc/samba/smb.conf /etc/samba/smb.conf.orig
-> $ nano /etc/samba/smb.conf
+> nano /etc/samba/smb.conf
 > ```
 > 
 > ```textile
 > ...
 > [data]
 >     comment = Shared folder for lecturers
-> 	path = /data
+>     path = /data
 >     browsable = yes
-> 	writable = yes
-> 	read only = no
-> 	valid users = @lecturers
+>     writable = yes
+>     read only = no
+>     valid users = @lecturers
 > ```
 
 Giải
+
+![Screenshot from 2021-05-09 11-16-49.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/09-18-06-49-Screenshot%20from%202021-05-09%2011-16-49.png)
 
 > ![icons8questionspng](https://raw.githubusercontent.com/Zenfection/Image/master/2021/04/08-22-03-47-icons8-questions.png) **Câu 2.5**. Thêm người dùng cho dịch vụ `SAMBA` bằng lệnh : 
 > 
@@ -74,6 +96,8 @@ Giải
 > ```
 
 Giải
+
+![Screenshot from 2021-05-09 11-17-34.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/09-18-07-42-Screenshot%20from%202021-05-09%2011-17-34.png)
 
 > ![icons8questionspng](https://raw.githubusercontent.com/Zenfection/Image/master/2021/04/08-22-03-47-icons8-questions.png) **Câu 2.6**. Cấu hình `SELINUX` cho phép `Samba`
 > 
@@ -92,6 +116,8 @@ Giải
 
 Giải
 
+![Screenshot from 2021-05-09 11-19-36.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/09-18-10-12-Screenshot%20from%202021-05-09%2011-19-36.png)
+
 > ![icons8questionspng](https://raw.githubusercontent.com/Zenfection/Image/master/2021/04/08-22-03-47-icons8-questions.png) **Câu 2.8**. Khởi động lại dịch vụ `Samba` : 
 > 
 > ```bash
@@ -99,6 +125,8 @@ Giải
 > ```
 
 Giải
+
+![Screenshot from 2021-05-09 11-20-05.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/09-18-10-55-Screenshot%20from%202021-05-09%2011-20-05.png)
 
 > ![icons8questionspng](https://raw.githubusercontent.com/Zenfection/Image/master/2021/04/08-22-03-47-icons8-questions.png) **Câu 2.9**. Trên máy `Windows`, bật tính năng hỗ trợ `SMB1` : 
 > 
@@ -108,9 +136,19 @@ Giải
 
 Giải
 
+Cài `CentOS` trên ổ cứng, không sử dụng máy ảo, nên không làm bước này
+
 > ![icons8questionspng](https://raw.githubusercontent.com/Zenfection/Image/master/2021/04/08-22-03-47-icons8-questions.png) **Câu 2.10**. Trên `File Exployer`, chọn tính năng `Add a network location` để kết nối tới `Samba server` sử dụng địa chỉ `\\<IP máy CentOS>\data`
 
 Giải
+
+![Screenshot from 2021-05-09 12-03-12.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/09-18-12-52-Screenshot%20from%202021-05-09%2012-03-12.png)
+
+![Screenshot from 2021-05-09 12-24-39.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/09-18-14-31-Screenshot%20from%202021-05-09%2012-24-39.png)
+
+![Screenshot from 2021-05-09 12-19-10.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/09-18-16-48-Screenshot%20from%202021-05-09%2012-19-10.png)
+
+![Screenshot from 2021-05-09 12-19-36.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/09-18-17-11-Screenshot%20from%202021-05-09%2012-19-36.png)
 
 ---
 
@@ -159,15 +197,15 @@ Giải
 > > };
 > > 
 > > zone "qtht.com.vn" IN {
-> > 	type master;
-> > 	file "forward.qtht";
-> > 	allow-update { none; };
+> >     type master;
+> >     file "forward.qtht";
+> >     allow-update { none; };
 > > };
 > > 
 > > zone "33.30.172.in-addr.arpa" IN {
-> > 	type master;
-> > 	file "reverse.qtht";
-> > 	allow-update { none; };
+> >     type master;
+> >     file "reverse.qtht";
+> >     allow-update { none; };
 > > };
 > > ...
 > > ```
@@ -185,16 +223,16 @@ Giải
 > > ```textile
 > > $TTL 1D
 > > @   IN  SOA @ qtht.com.vn. (
-> > 0	;Serial
-> > 1D	;Refresh
-> > 1H	;Retry
-> > 1W	;Expire
-> > 3H	;Minimum TTL
+> > 0    ;Serial
+> > 1D    ;Refresh
+> > 1H    ;Retry
+> > 1W    ;Expire
+> > 3H    ;Minimum TTL
 > > )
-> > @	IN	NS	dns.qtht.com.vn.
-> > dns	IN	A	172.30.33.245
-> > www	IN  	A	172.30.33.245
-> > htql	IN	A	8.8.8.8
+> > @    IN    NS    dns.qtht.com.vn.
+> > dns    IN    A    172.30.33.245
+> > www    IN      A    172.30.33.245
+> > htql    IN    A    8.8.8.8
 > > ```
 
 Giải
@@ -210,15 +248,15 @@ Giải
 > > ```textile
 > > $TTL 1D
 > > @   IN  SOA @ qtht.com.vn. (
-> > 0	;Serial
-> > 1D	;Refresh
-> > 1H	;Retry
-> > 1W	;Expire
-> > 3H	;Minimum TTL
+> > 0    ;Serial
+> > 1D    ;Refresh
+> > 1H    ;Retry
+> > 1W    ;Expire
+> > 3H    ;Minimum TTL
 > > )
-> > @	IN	NS	dns.qtht.com.vn.
-> > dns	IN	A	172.30.33.245
-> > 245	IN  	PTR	www.qtht.com.vn.
+> > @    IN    NS    dns.qtht.com.vn.
+> > dns    IN    A    172.30.33.245
+> > 245    IN      PTR    www.qtht.com.vn.
 > > ```
 
 Giải
@@ -311,5 +349,3 @@ Giải
 > ```
 
 Giải
-
-
