@@ -45,7 +45,7 @@ Thực hiện các yêu cầu sau và Chụp màn hình minh hoạ![icons8screen
 
 ![Screenshot from 2021-05-09 11-04-12.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/09-18-18-16-Screenshot%20from%202021-05-09%2011-04-12.png)
 
-> 💡 Bạn có thể gõ `samba --version` để kiểm tra đã cài đặt thành công chưa.
+==> Bạn có thể gõ `samba --version` để kiểm tra đã cài đặt chưa.
 
 </details>
 
@@ -222,7 +222,7 @@ Thực hiện các bước sau để kết nối giao thức `Samba` trên `Cent
 
 - **B2**: Chọn `Registerd User` và điền *tài khoản* và *mật khẩu* đăng ký `Samba` ở trên ⇨ Chọn `Connect`
   
-  ![Screenshot from 2021-05-09 12-24-39.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/09-18-14-31-Screenshot%20from%202021-05-09%2012-24-39.png)
+  <img src="https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/09-18-14-31-Screenshot%20from%202021-05-09%2012-24-39.png" title="" alt="Screenshot from 2021-05-09 12-24-39.png" width="344">
 
 - **B3**: Bạn có thể tạo `file` (*ví dụ tạo `file1` như sau*)
   
@@ -257,6 +257,10 @@ Thực hiện các yêu cầu sau và Chụp màn hình minh hoạ![icons8screen
 
 Giải
 
+![Screenshot from 2021-05-09 12-33-54.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/09-23-04-46-Screenshot%20from%202021-05-09%2012-33-54.png)
+
+==> Bạn có thể gõ `named -v` để kiểm tra `bind-utils` đã cài chưa.
+
 > ![icons8questionspng](https://raw.githubusercontent.com/Zenfection/Image/master/2021/04/08-22-03-47-icons8-questions.png) **Câu 3.2**. Cài hình `DNS server` : 
 > 
 > ```bash
@@ -282,13 +286,13 @@ Giải
 > >     ...
 > > };
 > > 
-> > zone "qtht.com.vn" IN {
+> > zone "<tên miền>" IN {
 > >     type master;
 > >     file "forward.qtht";
 > >     allow-update { none; };
 > > };
 > > 
-> > zone "33.30.172.in-addr.arpa" IN {
+> > zone "<24bit mạng đảo chiều>.in-addr.arpa" IN {
 > >     type master;
 > >     file "reverse.qtht";
 > >     allow-update { none; };
@@ -297,6 +301,10 @@ Giải
 > > ```
 
 Giải
+
+![Screenshot from 2021-05-09 12-36-20.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/09-23-10-02-Screenshot%20from%202021-05-09%2012-36-20.png)
+
+![Screenshot from 2021-05-09 13-17-02.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/09-23-28-17-Screenshot%20from%202021-05-09%2013-17-02.png)
 
 > ![icons8questionspng](https://raw.githubusercontent.com/Zenfection/Image/master/2021/04/08-22-03-47-icons8-questions.png) **Câu 3.3**. Tạo tập tin cấu hình phân giải xuôi:
 > 
@@ -308,20 +316,22 @@ Giải
 > 
 > > ```textile
 > > $TTL 1D
-> > @   IN  SOA @ qtht.com.vn. (
-> > 0    ;Serial
+> > @   IN  SOA @ <tên miền>. (
+> > 0     ;Serial
 > > 1D    ;Refresh
 > > 1H    ;Retry
 > > 1W    ;Expire
 > > 3H    ;Minimum TTL
 > > )
 > > @    IN    NS    dns.qtht.com.vn.
-> > dns    IN    A    172.30.33.245
-> > www    IN      A    172.30.33.245
-> > htql    IN    A    8.8.8.8
+> > dns  IN    A    <IP máy>
+> > www  IN    A    <IP máy>
+> > htql IN    A    8.8.8.8
 > > ```
 
 Giải
+
+![Screenshot from 2021-05-09 08-35-44.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/09-23-26-57-Screenshot%20from%202021-05-09%2008-35-44.png)
 
 > ![icons8questionspng](https://raw.githubusercontent.com/Zenfection/Image/master/2021/04/08-22-03-47-icons8-questions.png) **Câu 3.4**. Tạo tập tin cấu hình phân giải ngược :
 > 
@@ -340,12 +350,14 @@ Giải
 > > 1W    ;Expire
 > > 3H    ;Minimum TTL
 > > )
-> > @    IN    NS    dns.qtht.com.vn.
-> > dns    IN    A    172.30.33.245
-> > 245    IN      PTR    www.qtht.com.vn.
+> > @    IN   NS   dns.qtht.com.vn.
+> > dns  IN   A    <IP máy>
+> > 245  IN   PTR  www.qtht.com.vn.
 > > ```
 
 Giải
+
+![Screenshot from 2021-05-09 08-36-00.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/09-23-38-46-Screenshot%20from%202021-05-09%2008-36-00.png)
 
 > ![icons8questionspng](https://raw.githubusercontent.com/Zenfection/Image/master/2021/04/08-22-03-47-icons8-questions.png) **Câu 3.5**. Tắt tường lửa 
 > 
@@ -355,6 +367,8 @@ Giải
 
 Giải
 
+![Screenshot from 2021-05-09 11-19-36.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/09-18-10-12-Screenshot%20from%202021-05-09%2011-19-36.png)
+
 > ![icons8questionspng](https://raw.githubusercontent.com/Zenfection/Image/master/2021/04/08-22-03-47-icons8-questions.png) **Câu 3.6**. Khởi động dịch vụ `DNS`
 > 
 > ```bash
@@ -362,6 +376,8 @@ Giải
 > ```
 
 Giải
+
+![Screenshot from 2021-05-09 13-09-56.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/09-23-40-08-Screenshot%20from%202021-05-09%2013-09-56.png)
 
 > ![icons8questionspng](https://raw.githubusercontent.com/Zenfection/Image/master/2021/04/08-22-03-47-icons8-questions.png) **Câu 3.7**. Kiểm tra kết quả 
 > 
@@ -371,9 +387,29 @@ Giải
 
 Giải
 
+- Phân giải xuôi 
+  
+  ![Screenshot from 2021-05-09 08-38-46.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/09-23-40-53-Screenshot%20from%202021-05-09%2008-38-46.png)
+
+- Phân giải ngược
+  
+  ![Screenshot from 2021-05-09 08-38-37.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/09-23-41-47-Screenshot%20from%202021-05-09%2008-38-37.png)
+
 > ![icons8questionspng](https://raw.githubusercontent.com/Zenfection/Image/master/2021/04/08-22-03-47-icons8-questions.png) **Câu 3.8**. Trên máy vật lý, cấu hình `DNS Server` là `IP` của máy ảo `CentOS`. Sau đó mở trình duyệt `web` và truy cập vào địa chỉ `http://www.qtht.com.vn/myweb`
 
 Giải
+
+![Screenshot from 2021-05-09 08-33-53.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/09-23-42-52-Screenshot%20from%202021-05-09%2008-33-53.png)
+
+> 💡 Cũng có thể dùng điện thoại để kết nối (*Yêu cầu xài chung `Wifi` và thiết lập `DNS custom`* )
+> 
+> <img title="" src="https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/09-23-47-58-a4d2f03b003ff561ac2e.png" alt="a4d2f03b003ff561ac2e.png" width="293"><img title="" src="https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/09-23-48-19-8f08fed60ed2fb8ca2c3.png" alt="8f08fed60ed2fb8ca2c3.png" width="293">
+> 
+> 
+> 
+> 
+> 
+> 
 
 ---
 
