@@ -255,11 +255,16 @@ Thực hiện các yêu cầu sau và Chụp màn hình minh hoạ![icons8screen
 > $ yum install bind bind-utils
 > ```
 
-Giải
+<details>
+<summary><b><img src="https://raw.githubusercontent.com/Zenfection/Image/master/2021/03/08-16-44-05-icons8-consultation.png" width ="40"> Giải</b></summary>
+
+<br>
 
 ![Screenshot from 2021-05-09 12-33-54.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/09-23-04-46-Screenshot%20from%202021-05-09%2012-33-54.png)
 
 ==> Bạn có thể gõ `named -v` để kiểm tra `bind-utils` đã cài chưa.
+
+</details>
 
 > ![icons8questionspng](https://raw.githubusercontent.com/Zenfection/Image/master/2021/04/08-22-03-47-icons8-questions.png) **Câu 3.2**. Cài hình `DNS server` : 
 > 
@@ -300,11 +305,16 @@ Giải
 > > ...
 > > ```
 
-Giải
+<details>
+<summary><b><img src="https://raw.githubusercontent.com/Zenfection/Image/master/2021/03/08-16-44-05-icons8-consultation.png" width ="40"> Giải</b></summary>
+
+<br>
 
 ![Screenshot from 2021-05-09 12-36-20.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/09-23-10-02-Screenshot%20from%202021-05-09%2012-36-20.png)
 
 ![Screenshot from 2021-05-09 13-17-02.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/09-23-28-17-Screenshot%20from%202021-05-09%2013-17-02.png)
+
+</details>
 
 > ![icons8questionspng](https://raw.githubusercontent.com/Zenfection/Image/master/2021/04/08-22-03-47-icons8-questions.png) **Câu 3.3**. Tạo tập tin cấu hình phân giải xuôi:
 > 
@@ -329,9 +339,14 @@ Giải
 > > htql IN    A    8.8.8.8
 > > ```
 
-Giải
+<details>
+<summary><b><img src="https://raw.githubusercontent.com/Zenfection/Image/master/2021/03/08-16-44-05-icons8-consultation.png" width ="40"> Giải</b></summary>
+
+<br>
 
 ![Screenshot from 2021-05-09 08-35-44.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/09-23-26-57-Screenshot%20from%202021-05-09%2008-35-44.png)
+
+</details>
 
 > ![icons8questionspng](https://raw.githubusercontent.com/Zenfection/Image/master/2021/04/08-22-03-47-icons8-questions.png) **Câu 3.4**. Tạo tập tin cấu hình phân giải ngược :
 > 
@@ -355,9 +370,14 @@ Giải
 > > 245  IN   PTR  www.qtht.com.vn.
 > > ```
 
-Giải
+<details>
+<summary><b><img src="https://raw.githubusercontent.com/Zenfection/Image/master/2021/03/08-16-44-05-icons8-consultation.png" width ="40"> Giải</b></summary>
+
+<br>
 
 ![Screenshot from 2021-05-09 08-36-00.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/09-23-38-46-Screenshot%20from%202021-05-09%2008-36-00.png)
+
+</details>
 
 > ![icons8questionspng](https://raw.githubusercontent.com/Zenfection/Image/master/2021/04/08-22-03-47-icons8-questions.png) **Câu 3.5**. Tắt tường lửa 
 > 
@@ -365,9 +385,14 @@ Giải
 > $ service iptables stop
 > ```
 
-Giải
+<details>
+<summary><b><img src="https://raw.githubusercontent.com/Zenfection/Image/master/2021/03/08-16-44-05-icons8-consultation.png" width ="40"> Giải</b></summary>
+
+<br>
 
 ![Screenshot from 2021-05-09 11-19-36.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/09-18-10-12-Screenshot%20from%202021-05-09%2011-19-36.png)
+
+</details>
 
 > ![icons8questionspng](https://raw.githubusercontent.com/Zenfection/Image/master/2021/04/08-22-03-47-icons8-questions.png) **Câu 3.6**. Khởi động dịch vụ `DNS`
 > 
@@ -375,9 +400,14 @@ Giải
 > $ service named start
 > ```
 
-Giải
+<details>
+<summary><b><img src="https://raw.githubusercontent.com/Zenfection/Image/master/2021/03/08-16-44-05-icons8-consultation.png" width ="40"> Giải</b></summary>
+
+<br>
 
 ![Screenshot from 2021-05-09 13-09-56.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/09-23-40-08-Screenshot%20from%202021-05-09%2013-09-56.png)
+
+</details>
 
 > ![icons8questionspng](https://raw.githubusercontent.com/Zenfection/Image/master/2021/04/08-22-03-47-icons8-questions.png) **Câu 3.7**. Kiểm tra kết quả 
 > 
@@ -385,7 +415,10 @@ Giải
 > $ nslookip www.qtht.com.vn <địa chỉ IP máy>
 > ```
 
-Giải
+<details>
+<summary><b><img src="https://raw.githubusercontent.com/Zenfection/Image/master/2021/03/08-16-44-05-icons8-consultation.png" width ="40"> Giải</b></summary>
+
+<br>
 
 - Phân giải xuôi 
   
@@ -395,9 +428,14 @@ Giải
   
   ![Screenshot from 2021-05-09 08-38-37.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/09-23-41-47-Screenshot%20from%202021-05-09%2008-38-37.png)
 
+</details>
+
 > ![icons8questionspng](https://raw.githubusercontent.com/Zenfection/Image/master/2021/04/08-22-03-47-icons8-questions.png) **Câu 3.8**. Trên máy vật lý, cấu hình `DNS Server` là `IP` của máy ảo `CentOS`. Sau đó mở trình duyệt `web` và truy cập vào địa chỉ `http://www.qtht.com.vn/myweb`
 
-Giải
+<details>
+<summary><b><img src="https://raw.githubusercontent.com/Zenfection/Image/master/2021/03/08-16-44-05-icons8-consultation.png" width ="40"> Giải</b></summary>
+
+<br>
 
 ![Screenshot from 2021-05-09 08-33-53.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/09-23-42-52-Screenshot%20from%202021-05-09%2008-33-53.png)
 
@@ -408,8 +446,8 @@ Giải
 > 
 > 
 > 
-> 
-> 
+
+</details>
 
 ---
 
