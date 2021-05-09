@@ -68,7 +68,6 @@ Thực hiện các yêu cầu sau và Chụp màn hình minh hoạ![icons8screen
 </details>
 
 > ![icons8questionspng](https://raw.githubusercontent.com/Zenfection/Image/master/2021/04/08-22-03-47-icons8-questions.png) **Câu 2.3**. Tạo thư mục cần chia sẻ và phân quyền : 
-
 > 
 > ```bash
 > $ mkdir /data
