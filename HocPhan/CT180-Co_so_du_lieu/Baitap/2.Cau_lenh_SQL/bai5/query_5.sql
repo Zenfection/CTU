@@ -139,21 +139,27 @@ DROP PROC minKINHPHI_for_TINHTHANH
 GO
 
 --Câu 9: 
---! Result : 
-CREATE FUNCTION count_KTS_TK()
-RETURNS TABLE
+--! Result : 1 record
+CREATE FUNCTION dbo.count_KTS_TK()
+RETURNS INT
 AS
-    RETURN 
-    SELECT KTS.MSKTS
+BEGIN
+    DECLARE @count INT
+
+    SELECT @count = COUNT(*)
     FROM dbo.kientrucsu as KTS, dbo.congtrinh as CongT, dbo.thietke as TK
     WHERE TK.STTCT = CongT.STTCT
     AND TK.MSKTS = KTS.MSKTS
+
+    RETURN @count
+END
 GO
 
-SELECT COUNT(*) FROM count_KTS_TK()
+PRINT dbo.count_KTS_TK()
 GO
 
-DROP FUNCTION count_KTS_TK
+DROP FUNCTION dbo.count_KTS_TK
+GO
 
 --Câu 10:
 --! Result : 
@@ -173,3 +179,4 @@ SELECT COUNT(*) FROM dbo.countKTS_for_TINHTHANH('can tho');
 GO 
 
 DROP FUNCTION countKTS_for_TINHTHANH
+
