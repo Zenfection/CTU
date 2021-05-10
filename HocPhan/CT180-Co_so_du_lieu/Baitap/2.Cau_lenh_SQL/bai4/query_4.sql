@@ -56,6 +56,7 @@ WHERE TK.MSKTS = KTS.MSKTS
 AND TK.STTCT = CongT.STTCT
 AND ChuT.MSCT = CongT.MSCT
 AND t.TENTHAU = ChuT.TENTHAU
+GO
 
 DROP VIEW temp
 
@@ -85,6 +86,7 @@ SELECT @Max_SoCN_TinhThanh = MAX(SoCN_TinhThanh) FROM temp
 SELECT TINHTHANH
 FROM temp
 WHERE SoCN_TinhThanh = @Max_SoCN_TinhThanh
+GO
 
 DROP VIEW temp
 
