@@ -48,12 +48,13 @@ AND CongT.TENCT = 'Khach san quoc te'
 AND CongT.TINHTHANH = 'can tho'
 AND (CongT.NGAYBD BETWEEN '1994-12-15' AND  '1994-12-31')
 
---Câu 6: Có lỗi
+--Câu 6: 
+--! Result : 3 records
 SELECT * 
 FROM dbo.congtrinh as CongT, dbo.congnhan as CN, dbo.thamgia as TG
 WHERE TG.MSCN = CN.MSCN
 AND TG.STTCT = CongT.STTCT
---Chưa giải xong
+AND CN.HOTENCN = 'Nguyen Hong Gam'
 
 --Câu 7:
 --! Thay đổi CongT.KINHPHI > 400 nếu nó sai nhé

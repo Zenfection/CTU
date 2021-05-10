@@ -142,20 +142,22 @@ AND (CongT.NGAYBD BETWEEN '1994-12-15' AND  '1994-12-31')
 
 </details>
 
-> **Câu 6**. Cho biết **tên** và **địa chỉ** của `công trình` mà `công nhân` *Nguyễn Hồng Vân* có `tham gia` vào ngày <u>18/12/1994</u>
+> **Câu 6**. Cho biết **tên** và **địa chỉ** của `công trình` mà `công nhân` *Nguyễn Hồng Gấm* có `tham gia` vào ngày <u>18/12/1994</u>
 
 <details>
 <summary><b><img src="https://raw.githubusercontent.com/Zenfection/Image/master/2021/03/08-16-44-05-icons8-consultation.png" width ="40"> Giải</b></summary>
 
 <br>
 
-Có tý lỗi
-
 ```sql
-
+SELECT * 
+FROM dbo.congtrinh as CongT, dbo.congnhan as CN, dbo.thamgia as TG
+WHERE TG.MSCN = CN.MSCN
+AND TG.STTCT = CongT.STTCT
+AND CN.HOTENCN = 'Nguyen Hong Gam'
 ```
 
-⇨
+⇨ `3` records
 
 ---
 
