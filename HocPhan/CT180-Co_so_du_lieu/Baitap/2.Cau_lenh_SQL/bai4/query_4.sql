@@ -107,12 +107,26 @@ WHERE TK.STTCT = CongT.STTCT
 AND TK.MSKTS = KTS.MSKTS
 AND KTS.HOTENKTS = 'Le Kim Dung'
 AND TK.THULAO = @Min_ThuLao_lekimdung
-
+GO
 
 --Câu 8:
---! Result :  
---Chưa làm được
+--! Result :
+CREATE VIEW temp AS  
+SELECT KTS.HOTENKTS, CN.HOTENCN, TG.STTCT
+FROM dbo.kientrucsu as KTS, dbo.congnhan as CN, dbo.congtrinh as CongT, dbo.thietke as TK,dbo.thamgia as TG
+WHERE TK.MSKTS = KTS.MSKTS
+AND TK.STTCT = CongT.STTCT
+AND TG.MSCN = CN.MSCN
+AND TG.STTCT = CongT.STTCT
+GO
 
+SELECT * 
+FROM temp as a
+INNER JOIN temp as b
+ON a.STTCT = b.STTCT
+WHERE a.HOTENKTS > b.HOTENKTS
+
+DROP VIEW temp
 
 --Câu 9:
 --! Result :  

@@ -54,16 +54,24 @@
 <br>
 
 ```sql
+SELECT CN.MSCN,CN.HOTENCN
+FROM dbo.congnhan as CN
 
+EXCEPT
+
+SELECT CN.MSCN, CN.HOTENCN
+FROM dbo.congnhan as CN, dbo.congtrinh as CongT, dbo.thamgia as TG
+WHERE TG.STTCT = CongT.STTCT
+AND TG.MSCN = CN.MSCN
 ```
 
-⇨  
+⇨  `7` records
 
 ---
 
 </details>
 
-> ![icons8questionspng](https://raw.githubusercontent.com/Zenfection/Image/master/2021/03/17-08-59-15-icons8-questions.png) **Câu 3**: Cho  biết **số** `công nhân` `tham gia` vào mỗi `c`
+> ![icons8questionspng](https://raw.githubusercontent.com/Zenfection/Image/master/2021/03/17-08-59-15-icons8-questions.png) **Câu 3**: Cho  biết **số** `công nhân` `tham gia` vào mỗi `công trình`, kể cả `công trình` không có `công nhân` `tham gia`
 
 <details>
 <summary><b><img src="https://raw.githubusercontent.com/Zenfection/Image/master/2021/03/08-16-44-05-icons8-consultation.png" width ="40"> Giải</b></summary>
