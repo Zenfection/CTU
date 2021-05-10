@@ -10,20 +10,30 @@ GROUP BY ChuT.TENTHAU
 GO
 
 --Câu 2: 
---! Result : 9 records
---Không biết làm
-
+--! Result : 7 records
+SELECT KTS.HOTENKTS, SUM(CONVERT(int, TK.THULAO)) 
+FROM dbo.kientrucsu as KTS, dbo.congtrinh as CongT, dbo.thietke as TK
+WHERE TK.MSKTS = KTS.MSKTS
+AND TK.STTCT = CongT.STTCT
+GROUP BY KTS.HOTENKTS
+HAVING SUM(CONVERT(int, TK.THULAO)) > 150
+GO
 
 --Câu 3: 
 --! Result : 
---Chưa làm xong
+CREATE VIEW temp AS 
 SELECT KTS.HOTENKTS, SUM(CONVERT(int, TK.THULAO)) as TongTHULAO
 FROM dbo.kientrucsu as KTS, dbo.congtrinh as CongT, dbo.thietke as TK
-WHERE TK.STTCT = CongT.STTCT
-AND TK.MSKTS = KTS.MSKTS
+WHERE TK.MSKTS = KTS.MSKTS
+AND TK.STTCT = CongT.STTCT
 GROUP BY KTS.HOTENKTS
-HAVING SUM(CONVERT(int, TK.THULAO)) > 25
+HAVING SUM(CONVERT(int, TK.THULAO)) > 150
 GO
+
+SELECT COUNT(*) FROM temp 
+GO
+
+DROP VIEW temp
 
 --Câu 4: 
 --! Result : 10 records

@@ -49,7 +49,7 @@ GROUP BY ChuT.TENTHAU
 
 </details>
 
-> ![icons8questionspng](https://raw.githubusercontent.com/Zenfection/Image/master/2021/03/17-08-59-15-icons8-questions.png) **Câu 2**: Cho biết **họ tên** các `kiến trúc sư` có <u>tổng</u> **thù lao** `thiết kế` các `công trình` <u>lớn hơn</u> *25 triệu*
+> ![icons8questionspng](https://raw.githubusercontent.com/Zenfection/Image/master/2021/03/17-08-59-15-icons8-questions.png) **Câu 2**: Cho biết **họ tên** các `kiến trúc sư` có <u>tổng</u> **thù lao** `thiết kế` các `công trình` <u>lớn hơn</u> *150*
 
 <details>
 <summary><b><img src="https://raw.githubusercontent.com/Zenfection/Image/master/2021/03/08-16-44-05-icons8-consultation.png" width ="40"> Giải</b></summary>
@@ -57,16 +57,21 @@ GROUP BY ChuT.TENTHAU
 <br>
 
 ```sql
-
+SELECT KTS.HOTENKTS, SUM(CONVERT(int, TK.THULAO)) 
+FROM dbo.kientrucsu as KTS, dbo.congtrinh as CongT, dbo.thietke as TK
+WHERE TK.MSKTS = KTS.MSKTS
+AND TK.STTCT = CongT.STTCT
+GROUP BY KTS.HOTENKTS
+HAVING SUM(CONVERT(int, TK.THULAO)) > 150
 ```
 
-⇨  
+⇨  `7` records
 
 ---
 
 </details>
 
-> ![icons8questionspng](https://raw.githubusercontent.com/Zenfection/Image/master/2021/03/17-08-59-15-icons8-questions.png) **Câu 3**: Cho biết **số lượng** các `kiến trúc sư` có <u>tổng</u> **thù lao** `thiết kế` các `công trình` <u>lớn hơn</u> *25 triệu* 
+> ![icons8questionspng](https://raw.githubusercontent.com/Zenfection/Image/master/2021/03/17-08-59-15-icons8-questions.png) **Câu 3**: Cho biết **số lượng** các `kiến trúc sư` có <u>tổng</u> **thù lao** `thiết kế` các `công trình` <u>lớn hơn</u> *150* 
 
 <details>
 <summary><b><img src="https://raw.githubusercontent.com/Zenfection/Image/master/2021/03/08-16-44-05-icons8-consultation.png" width ="40"> Giải</b></summary>
@@ -74,10 +79,22 @@ GROUP BY ChuT.TENTHAU
 <br>
 
 ```sql
+CREATE VIEW temp AS 
+SELECT KTS.HOTENKTS, SUM(CONVERT(int, TK.THULAO)) as TongTHULAO
+FROM dbo.kientrucsu as KTS, dbo.congtrinh as CongT, dbo.thietke as TK
+WHERE TK.MSKTS = KTS.MSKTS
+AND TK.STTCT = CongT.STTCT
+GROUP BY KTS.HOTENKTS
+HAVING SUM(CONVERT(int, TK.THULAO)) > 150
+GO
 
+SELECT COUNT(*) FROM temp 
+GO
+
+DROP VIEW temp
 ```
 
-⇨  
+⇨  `1` records
 
 ---
 
