@@ -27,7 +27,7 @@
 
 | ![icons8googlecode30pxpng](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/08-10-24-29-icons8_google_code_30px.png) Source Code |
 | ------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [query_2.sql](https://github.com/Zenfection/CTU/blob/main/HocPhan/CT180-Co_so_du_lieu/Baitap/2.Cau_lenh_SQL/bai1/query_2.sql)                     |
+| [query_2.sql](https://github.com/Zenfection/CTU/blob/main/HocPhan/CT180-Co_so_du_lieu/Baitap/2.Cau_lenh_SQL/bai2/query_2.sql)                     |
 
 > ![icons8questionspng](https://raw.githubusercontent.com/Zenfection/Image/master/2021/03/17-08-59-15-icons8-questions.png) **Câu 1**: Cho biết **họ tên** các `kiến trúc sư` vừa `thiết kế` các `công trình` do `chủ thầu` *Hoàng Xuân Bình* thi công, vừa `thiết kế` các `công trình` do `chủ thầu` *Lê Văn Sơn* thi công
 
