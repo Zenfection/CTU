@@ -13,7 +13,7 @@ GROUP BY CongT.TINHTHANH,KTS.HOTENKTS,KTS.NOITN
 
 
 --Câu 2:
---! Result :  
+--! Result :  4 records
 DECLARE @max_tuoi_KTS INT
 
 SELECT @max_tuoi_KTS = MAX(YEAR(GETDATE()) - YEAR(KTS.Ngaysinh))
@@ -28,14 +28,14 @@ AND TK.STTCT = CongT.STTCT
 AND YEAR(GETDATE()) - YEAR(KTS.Ngaysinh) = @max_tuoi_KTS
 
 
---Câu 3: Đề sai
---! Result :  
+--Câu 3:
+--! Result : 4 records
 SELECT *
 FROM dbo.kientrucsu as KTS, dbo.congtrinh as CongT, dbo.thietke as TK, dbo.chunhan as ChuN
 WHERE TK.MSKTS = KTS.MSKTS
 AND TK.STTCT = CongT.STTCT
 AND ChuN.MSCH = CongT.MSCH
-AND ChuN.DIACHICHU = ''
+AND ChuN.DIACHICHU = '"15 mau than, can tho"'
 GO
 
 --Câu 4: 

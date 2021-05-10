@@ -229,10 +229,22 @@ AND KTS.HOTENKTS = 'le thanh tung';
 <br>
 
 ```sql
+CREATE VIEW temp as 
+SELECT ChuT.TENTHAU, CongT.TINHTHANH
+FROM dbo.congtrinh as CongT, dbo.chuthau as ChuT
+WHERE CongT.MSCT = ChuT.MSCT
+GO
 
+SELECT DISTINCT a.TENTHAU,b.TENTHAU 
+FROM temp as a
+INNER JOIN temp as b
+ON a.TINHTHANH = b.TINHTHANH
+WHERE a.TENTHAU > b.TENTHAU
+
+DROP VIEW temp
 ```
 
-⇨  
+⇨  `65` records
 
 ---
 
@@ -246,10 +258,25 @@ AND KTS.HOTENKTS = 'le thanh tung';
 <br>
 
 ```sql
+CREATE VIEW temp AS
+SELECT CN.HOTENCN, TG.STTCT
+FROM dbo.congnhan as CN, dbo.thamgia as TG
+WHERE TG.MSCN = CN.MSCN
+GROUP BY CN.HOTENCN,TG.STTCT
+GO
 
+SELECT DISTINCT a.HOTENCN, b.HOTENCN 
+FROM temp as a
+INNER JOIN temp as b
+ON a.STTCT = b.STTCT
+WHERE a.HOTENCN > b.HOTENCN
+GROUP BY a.HOTENCN, b.HOTENCN
+HAVING COUNT(a.STTCT) >= 2
+
+DROP VIEW temp
 ```
 
-⇨  
+⇨  `900` records
 
 ---
 
@@ -283,4 +310,4 @@ AND CongT.KINHPHI > @AVG_KINHPHI
 
 ---
 
-</details> 
+</details>

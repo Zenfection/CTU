@@ -60,16 +60,27 @@ GROUP BY CongT.TINHTHANH,KTS.HOTENKTS,KTS.NOITN
 <br>
 
 ```sql
+DECLARE @max_tuoi_KTS INT
 
+SELECT @max_tuoi_KTS = MAX(YEAR(GETDATE()) - YEAR(KTS.Ngaysinh))
+FROM dbo.congtrinh as CongT, dbo.kientrucsu as KTS, dbo.thietke as TK
+WHERE TK.MSKTS = KTS.MSKTS
+AND TK.STTCT = CongT.STTCT
+
+SELECT CongT.STTCT, CongT.KINHPHI
+FROM dbo.congtrinh as CongT, dbo.kientrucsu as KTS, dbo.thietke as TK
+WHERE TK.MSKTS = KTS.MSKTS
+AND TK.STTCT = CongT.STTCT
+AND YEAR(GETDATE()) - YEAR(KTS.Ngaysinh) = @max_tuoi_KTS
 ```
 
-⇨  
+⇨  `4` records
 
 ---
 
 </details>
 
-> ![icons8questionspng](https://raw.githubusercontent.com/Zenfection/Image/master/2021/03/17-08-59-15-icons8-questions.png) **Câu 3**: Cho biết **mã số** và **họ tên** `kiến trúc sư` `thiết kế` các `công trình` mà `chủ nhân` ở số *101 Hai bà Trưng*
+> ![icons8questionspng](https://raw.githubusercontent.com/Zenfection/Image/master/2021/03/17-08-59-15-icons8-questions.png) **Câu 3**: Cho biết **mã số** và **họ tên** `kiến trúc sư` `thiết kế` các `công trình` mà `chủ nhân` ở số *15 Mậu Thân, Cần Thơ*
 
 <details>
 <summary><b><img src="https://raw.githubusercontent.com/Zenfection/Image/master/2021/03/08-16-44-05-icons8-consultation.png" width ="40"> Giải</b></summary>
@@ -77,10 +88,15 @@ GROUP BY CongT.TINHTHANH,KTS.HOTENKTS,KTS.NOITN
 <br>
 
 ```sql
-
+SELECT *
+FROM dbo.kientrucsu as KTS, dbo.congtrinh as CongT, dbo.thietke as TK, dbo.chunhan as ChuN
+WHERE TK.MSKTS = KTS.MSKTS
+AND TK.STTCT = CongT.STTCT
+AND ChuN.MSCH = CongT.MSCH
+AND ChuN.DIACHICHU = '"15 mau than, can tho"'
 ```
 
-⇨  
+⇨  `4` records
 
 ---
 

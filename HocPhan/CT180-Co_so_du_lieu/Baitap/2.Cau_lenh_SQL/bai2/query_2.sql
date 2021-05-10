@@ -100,15 +100,43 @@ AND TK.STTCT = CongT.STTCT
 AND TG.MSCN = CN.MSCN
 AND TG.STTCT = CongT.STTCT
 AND KTS.HOTENKTS = 'le thanh tung';
+GO
 
 --Câu 8
---! Result : 13 records
---Chưa biết làm
+--! Result : 65 records
+CREATE VIEW temp as 
+SELECT ChuT.TENTHAU, CongT.TINHTHANH
+FROM dbo.congtrinh as CongT, dbo.chuthau as ChuT
+WHERE CongT.MSCT = ChuT.MSCT
+GO
 
+SELECT DISTINCT a.TENTHAU,b.TENTHAU 
+FROM temp as a
+INNER JOIN temp as b
+ON a.TINHTHANH = b.TINHTHANH
+WHERE a.TENTHAU > b.TENTHAU
+GO
+
+DROP VIEW temp
+GO
 --Câu 9
---! Result : 
---Chứa biết làm 
+--! Result : 900 records
+CREATE VIEW temp AS
+SELECT CN.HOTENCN, TG.STTCT
+FROM dbo.congnhan as CN, dbo.thamgia as TG
+WHERE TG.MSCN = CN.MSCN
+GROUP BY CN.HOTENCN,TG.STTCT
+GO
 
+SELECT DISTINCT a.HOTENCN, b.HOTENCN 
+FROM temp as a
+INNER JOIN temp as b
+ON a.STTCT = b.STTCT
+WHERE a.HOTENCN > b.HOTENCN
+GROUP BY a.HOTENCN, b.HOTENCN
+HAVING COUNT(a.STTCT) >= 2
+
+DROP VIEW temp
 --Câu 10
 --! Dùng CONVERT chuyển sang INT vì CongT.KINHPHI là nvarchar
 --! Result : 51
