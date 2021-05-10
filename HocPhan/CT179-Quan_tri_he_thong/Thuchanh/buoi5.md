@@ -442,10 +442,6 @@ Thực hiện các yêu cầu sau và Chụp màn hình minh hoạ![icons8screen
 > 💡 Cũng có thể dùng điện thoại để kết nối (*Yêu cầu xài chung `Wifi` và thiết lập `DNS custom`* )
 > 
 > <img title="" src="https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/09-23-47-58-a4d2f03b003ff561ac2e.png" alt="a4d2f03b003ff561ac2e.png" width="293"><img title="" src="https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/09-23-48-19-8f08fed60ed2fb8ca2c3.png" alt="8f08fed60ed2fb8ca2c3.png" width="293">
-> 
-> 
-> 
-> 
 
 </details>
 
@@ -463,7 +459,14 @@ Thực hiện các yêu cầu sau và Chụp màn hình minh hoạ![icons8screen
 > $ service iptables start
 > ```
 
-Giải
+<details>
+<summary><b><img src="https://raw.githubusercontent.com/Zenfection/Image/master/2021/03/08-16-44-05-icons8-consultation.png" width ="40"> Giải</b></summary>
+
+<br>
+
+![Screenshot from 2021-05-09 09-13-04.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/09-23-55-08-Screenshot%20from%202021-05-09%2009-13-04.png)
+
+</details>
 
 > ![icons8questionspng](https://raw.githubusercontent.com/Zenfection/Image/master/2021/04/08-22-03-47-icons8-questions.png) **Câu 4.2**. Hiển thị các `rules` hiện có trên `iptables`
 > 
@@ -471,34 +474,114 @@ Giải
 > $ iptables -v -L --line-numbers
 > ```
 
-Giải
+<details>
+<summary><b><img src="https://raw.githubusercontent.com/Zenfection/Image/master/2021/03/08-16-44-05-icons8-consultation.png" width ="40"> Giải</b></summary>
+
+<br>
+
+![Screenshot from 2021-05-09 09-18-28.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/09-23-56-01-Screenshot%20from%202021-05-09%2009-18-28.png)
+
+> 💡 Giải thích cụ thể : 
+> 
+> <img src="https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/09-23-57-56-iptables_filter.png" title="" alt="iptables_filter.png" width="525">
+> 
+> | Giải thích | INPUT                                                 | FORWARD                                                              | OUTPUT                                                  |
+> | ---------- | ----------------------------------------------------- | -------------------------------------------------------------------- | ------------------------------------------------------- |
+> | Trừu tượng | Kiểm soát các gói đến từ `route` đến `server` của bạn | Kiểm soát các gói bắt nguồn từ `server` của bạn đến `nhà mạng`       | Kiểm soát các gói được chuyển tiếp bởi `server` của bạn |
+> | Dễ hiểu    | Lọc các gói dành cho `server` củ bạn                  | Lọc các gói đến `server` của bạn mà `card wifi` khác có thể truy cập | Lọc các gói có nguồn gốc từ `server` của bạn            |
+
+</details>
 
 > ![icons8questionspng](https://raw.githubusercontent.com/Zenfection/Image/master/2021/04/08-22-03-47-icons8-questions.png) **Câu 4.3**. Tạo `rules` cho phép các máy khác truy cập tới dịch vụ `Web` trên `server`
 > 
 > ```bash
 > $ iptables -A INPUT -p tcp --dport 80 -j ACCEPT
-> $ iptables -D INPUT 6
-> $ iptables -I INPUT 5 -p tcp --dport 80 -j ACCEPT
 > ```
 
-Giải
+<details>
+<summary><b><img src="https://raw.githubusercontent.com/Zenfection/Image/master/2021/03/08-16-44-05-icons8-consultation.png" width ="40"> Giải</b></summary>
+
+<br>
+
+Tham khảo cách dùng `iptables` căn bản [tại đây](https://hocvps.com/iptables/) 
+
+- **Trước** khi cho máy khác truy cập với dịch vụ `Web Server` : 
+  
+  <img title="" src="https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/10-00-22-49-33363b9e5d9fa8c1f18e.png" alt="33363b9e5d9fa8c1f18e.png" width="229">
+
+- **Sau** khi cho máy khác truy cập tới dịch vụ `Web Server` bằng lệnh trên : 
+  
+  ![Screenshot from 2021-05-09 09-50-53.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/10-00-24-12-Screenshot%20from%202021-05-09%2009-50-53.png)
+  
+  <img title="" src="https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/09-23-47-58-a4d2f03b003ff561ac2e.png" alt="a4d2f03b003ff561ac2e.png" width="227">
+
+</details>
 
 > ![icons8questionspng](https://raw.githubusercontent.com/Zenfection/Image/master/2021/04/08-22-03-47-icons8-questions.png) **Câu 4.4**. Tạo `rules` để cho máy vật lý có thể `ping` tới `server`, các máy khác **KHÔNG** `ping` được
 > 
 > ```bash
-> $ iptables -D INPUT 2
-> $ iptables -I INPUT 2 -p icmp -s 172.30.33.96 -j ACCEPT
+> $ iptables -I INPUT 2 -p icmp -s <IP cho phép> -j ACCEPT
 > ```
 
-Giải
+<details>
+<summary><b><img src="https://raw.githubusercontent.com/Zenfection/Image/master/2021/03/08-16-44-05-icons8-consultation.png" width ="40"> Giải</b></summary>
+
+<br>
+
+Sử dụng <img src="https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/10-00-26-32-1406098-200.png" title="" alt="1406098-200.png" width="35"> [Termux](https://termux.com/) của `Android` để thao tác các lệnh 
+
+> 🤔 `Android` đang sử dụng chung mạng `Wifi` của máy dùng `iptables` và có IP như sau : `192.168.10.101` (*riêng máy này thôi !*)
+
+- Trước khi thiết lập `rules` chặn `ping`  :
+  
+  - ![icons8-android.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/10-00-31-23-icons8-android.png)`Android` sử dụng `ping`
+    
+    ![bd39e9ee27ead2b48bfb.jpeg](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/10-00-29-10-bd39e9ee27ead2b48bfb.jpeg)
+  
+  - ![icons8-centos.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/10-00-31-36-icons8-centos.png) `CentOS` sử dụng `ping` 
+    
+    ![Screenshot from 2021-05-09 09-54-50.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/10-00-30-42-Screenshot%20from%202021-05-09%2009-54-50.png)
+  
+  ==> Cả hai vẫn `ping` được
+
+- **Sau** khi thiết lập `rules` chặn `ping` bằng lệnh trên : 
+  
+  ![Screenshot from 2021-05-09 09-58-15.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/10-00-35-55-Screenshot%20from%202021-05-09%2009-58-15.png)
+  
+  >  🤔 `qtht.com.vn` tương đương `192.168.10.135` vì đã cấu hình `DNS` bên trên
+  
+  - ![icons8androidpng](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/10-00-31-23-icons8-android.png)`Android` sử dụng `ping`
+    
+    ![3924f2fe3cfac9a490eb.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/10-00-34-38-3924f2fe3cfac9a490eb.png)
+  
+  - ![icons8centospng](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/10-00-31-36-icons8-centos.png) `CentOS` sử dụng `ping`
+    
+    ![Screenshot from 2021-05-09 09-54-50.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/10-00-30-42-Screenshot%20from%202021-05-09%2009-54-50.png)
+
+         ==> Sau khi thiết lập `rules` chỉ có máy có `IP:192.168.10.135` là `ping` được đến `server`. 
+
+</details>
 
 > ![icons8questionspng](https://raw.githubusercontent.com/Zenfection/Image/master/2021/04/08-22-03-47-icons8-questions.png) **Câu 4.5**. Tạo `rules` để **KHÔNG** cho người dùng trên máy `CentOS` truy cập tới địa chỉ `facebook.com`
 > 
 > ```bash
-> iptables -A OUTPUT -p tcp -m string --string facebook --algo kmp -j REJECT
+> $ iptables -A OUTPUT -p tcp -m string --string facebook --algo kmp -j REJECT
 > ```
 
-Giải
+<details>
+<summary><b><img src="https://raw.githubusercontent.com/Zenfection/Image/master/2021/03/08-16-44-05-icons8-consultation.png" width ="40"> Giải</b></summary>
+
+<br>
+
+Sử dụng lệnh trên để gửi gói truy cập đến `server` của `Facebook` : 
+
+![Screenshot from 2021-05-09 10-13-39.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/10-10-32-04-Screenshot%20from%202021-05-09%2010-13-39.png)
+
+==> Sau khi đã áp dụng `rules` thì chúng ta không thể truy cập `facebook` được nữa : 
+
+![Screenshot from 2021-05-09 10-16-54.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/10-10-34-18-Screenshot%20from%202021-05-09%2010-16-54.png)
+
+</details>
 
 > ![icons8questionspng](https://raw.githubusercontent.com/Zenfection/Image/master/2021/04/08-22-03-47-icons8-questions.png) **Câu 4.6**. Lưu và phục hồi các `rules` của `iptables`
 > 
@@ -508,4 +591,31 @@ Giải
 > $ iptables-restore < /etc/sysconfig/iptables
 > ```
 
-Giải
+<details>
+<summary><b><img src="https://raw.githubusercontent.com/Zenfection/Image/master/2021/03/08-16-44-05-icons8-consultation.png" width ="40"> Giải</b></summary>
+
+<br>
+
+Trước khi tắt `iptables`, ta nên **sao lưu** (*backup*) lại `rules` bằng lệnh : 
+
+```bash
+$ iptables-save > /etc/sysconfig/iptables
+```
+
+> 🤔 Vì sau khi **tắt** `iptables` và **khởi động** lại, các `rules` thiết lập trước đó sẽ reset như sau : 
+> 
+> ![Screenshot from 2021-05-09 10-20-30.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/10-10-37-00-Screenshot%20from%202021-05-09%2010-20-30.png)
+
+==> Khi đó ta có thể **khôi phục** (*restore*) lại `rules` đã **sao lưu** (*backup*) bằng lệnh sau:
+
+```bash
+$ iptables-restore < /etc/sysconfig/iptables
+```
+
+> 🧚 Kết quả như sau : 
+> 
+> ![Screenshot from 2021-05-09 10-20-59.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/10-10-39-11-Screenshot%20from%202021-05-09%2010-20-59.png)
+> 
+> (*Vì mình đã xoá `rules` chặn `facebook` trước đó nên không còn ở OUTPUT nữa*)
+
+</details>
