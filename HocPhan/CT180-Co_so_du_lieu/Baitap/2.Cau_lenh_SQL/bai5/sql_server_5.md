@@ -27,7 +27,7 @@
 
 | ![icons8googlecode30pxpng](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/08-10-24-29-icons8_google_code_30px.png) Source Code |
 | ------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [query_2.sql](https://github.com/Zenfection/CTU/blob/main/HocPhan/CT180-Co_so_du_lieu/Baitap/2.Cau_lenh_SQL/bai1/query_2.sql)                     |
+| [query_5.sql](https://github.com/Zenfection/CTU/blob/main/HocPhan/CT180-Co_so_du_lieu/Baitap/2.Cau_lenh_SQL/bai1/query_5.sql)                     |
 
 > ![icons8questionspng](https://raw.githubusercontent.com/Zenfection/Image/master/2021/03/17-08-59-15-icons8-questions.png) **Câu 1**: Cho biết **mã số**, **họ tên** `công nhân` và **tên** `công trình` mà `công nhân` đó `tham gia` kể cả `công nhân` không có `tham gia` `công trình` nào.
 
