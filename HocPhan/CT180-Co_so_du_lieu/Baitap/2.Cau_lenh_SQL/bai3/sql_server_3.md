@@ -29,7 +29,27 @@
 | ------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [query_3.sql](https://github.com/Zenfection/CTU/blob/main/HocPhan/CT180-Co_so_du_lieu/Baitap/2.Cau_lenh_SQL/bai3/query_3.sql)                     |
 
-> ![icons8questionspng](https://raw.githubusercontent.com/Zenfection/Image/master/2021/03/17-08-59-15-icons8-questions.png) **Câu 1**: 
+> ![icons8questionspng](https://raw.githubusercontent.com/Zenfection/Image/master/2021/03/17-08-59-15-icons8-questions.png) **Câu 1**: Cho biết tổng `kinh phí` của <u>tất cả</u> các `công trình` theo từng `chủ thầu`
+
+<details>
+<summary><b><img src="https://raw.githubusercontent.com/Zenfection/Image/master/2021/03/08-16-44-05-icons8-consultation.png" width ="40"> Giải</b></summary>
+
+<br>
+
+```sql
+SELECT ChuT.TENTHAU, MAX(KINHPHI)
+FROM dbo.congtrinh as CongT, dbo.chuthau as ChuT
+WHERE ChuT.MSCT = CongT.MSCT
+GROUP BY ChuT.TENTHAU
+```
+
+⇨  `13` records
+
+---
+
+</details>
+
+> ![icons8questionspng](https://raw.githubusercontent.com/Zenfection/Image/master/2021/03/17-08-59-15-icons8-questions.png) **Câu 2**: Cho biết **họ tên** các `kiến trúc sư` có <u>tổng</u> **thù lao** `thiết kế` các `công trình` <u>lớn hơn</u> *25 triệu*
 
 <details>
 <summary><b><img src="https://raw.githubusercontent.com/Zenfection/Image/master/2021/03/08-16-44-05-icons8-consultation.png" width ="40"> Giải</b></summary>
@@ -46,7 +66,7 @@
 
 </details>
 
-> ![icons8questionspng](https://raw.githubusercontent.com/Zenfection/Image/master/2021/03/17-08-59-15-icons8-questions.png) **Câu 2**: 
+> ![icons8questionspng](https://raw.githubusercontent.com/Zenfection/Image/master/2021/03/17-08-59-15-icons8-questions.png) **Câu 3**: Cho biết **số lượng** các `kiến trúc sư` có <u>tổng</u> **thù lao** `thiết kế` các `công trình` <u>lớn hơn</u> *25 triệu* 
 
 <details>
 <summary><b><img src="https://raw.githubusercontent.com/Zenfection/Image/master/2021/03/08-16-44-05-icons8-consultation.png" width ="40"> Giải</b></summary>
@@ -63,7 +83,7 @@
 
 </details>
 
-> ![icons8questionspng](https://raw.githubusercontent.com/Zenfection/Image/master/2021/03/17-08-59-15-icons8-questions.png) **Câu 3**: 
+> ![icons8questionspng](https://raw.githubusercontent.com/Zenfection/Image/master/2021/03/17-08-59-15-icons8-questions.png) **Câu 4**: Cho biết <u>tổng</u> số `công nhân` `tham gia` của mỗi `công trình`
 
 <details>
 <summary><b><img src="https://raw.githubusercontent.com/Zenfection/Image/master/2021/03/08-16-44-05-icons8-consultation.png" width ="40"> Giải</b></summary>
@@ -71,16 +91,20 @@
 <br>
 
 ```sql
-
+SELECT CongT.TENCT, COUNT(CongT.TENCT)
+FROM dbo.congtrinh as CongT, dbo.congnhan as CN, dbo.thamgia as TG
+WHERE TG.MSCN = CN.MSCN
+AND TG.STTCT = CongT.STTCT
+GROUP BY CongT.TENCT
 ```
 
-⇨  
+⇨  `10` records
 
 ---
 
 </details>
 
-> ![icons8questionspng](https://raw.githubusercontent.com/Zenfection/Image/master/2021/03/17-08-59-15-icons8-questions.png) **Câu 4**: 
+> ![icons8questionspng](https://raw.githubusercontent.com/Zenfection/Image/master/2021/03/17-08-59-15-icons8-questions.png) **Câu 5**: Cho biết **tên** và **địa chỉ** `công trình` có <u>tổng</u> số `công nhân` `tham gia` <u>nhiều nhất</u>
 
 <details>
 <summary><b><img src="https://raw.githubusercontent.com/Zenfection/Image/master/2021/03/08-16-44-05-icons8-consultation.png" width ="40"> Giải</b></summary>
@@ -88,16 +112,35 @@
 <br>
 
 ```sql
+CREATE VIEW temp AS 
+SELECT CongT.TENCT, COUNT(CN.HOTENCN) as SoCN
+FROM dbo.congtrinh as CongT, dbo.congnhan as CN, dbo.thamgia as TG
+WHERE TG.STTCT = CongT.STTCT
+AND TG.MSCN = CN.MSCN
+GROUP BY CongT.TENCT
+GO
 
+DECLARE @Max_CN INT
+SELECT @Max_CN = MAX(SoCN) FROM temp
+
+SELECT CongT.TENCT, CongT.DIACHICT,COUNT(CN.HOTENCN) as SoCN
+FROM dbo.congtrinh as CongT, dbo.congnhan as CN, dbo.thamgia as TG
+WHERE TG.STTCT = CongT.STTCT
+AND TG.MSCN = CN.MSCN
+GROUP BY CongT.TENCT, CongT.DIACHICT
+HAVING COUNT(CN.HOTENCN) = @Max_CN
+GO
+
+DROP VIEW temp
 ```
 
-⇨  
+⇨  `1` record
 
 ---
 
 </details>
 
-> ![icons8questionspng](https://raw.githubusercontent.com/Zenfection/Image/master/2021/03/17-08-59-15-icons8-questions.png) **Câu 5**: 
+> ![icons8questionspng](https://raw.githubusercontent.com/Zenfection/Image/master/2021/03/17-08-59-15-icons8-questions.png) **Câu 6**: Cho biết các **tỉnh thành** và **kinh phi** <u>trung bình</u> của các `công trình` của từng **tỉnh thành**
 
 <details>
 <summary><b><img src="https://raw.githubusercontent.com/Zenfection/Image/master/2021/03/08-16-44-05-icons8-consultation.png" width ="40"> Giải</b></summary>
@@ -105,16 +148,18 @@
 <br>
 
 ```sql
-
+SELECT CongT.TINHTHANH, AVG(CONVERT(int, CongT.KINHPHI))
+FROM dbo.congtrinh as CongT
+GROUP BY CongT.TINHTHANH
 ```
 
-⇨  
+⇨  `7` records
 
 ---
 
 </details>
 
-> ![icons8questionspng](https://raw.githubusercontent.com/Zenfection/Image/master/2021/03/17-08-59-15-icons8-questions.png) **Câu 6**: 
+> ![icons8questionspng](https://raw.githubusercontent.com/Zenfection/Image/master/2021/03/17-08-59-15-icons8-questions.png) **Câu 7**: Cho biết **họ tên** các `công nhân` có <u>tổng số</u> **ngày tham gia** vào các `công trình` <u>lớn hơn tổng số</u> **ngày tham gia** của `công nhân` *Hồng Xuân Trường* 
 
 <details>
 <summary><b><img src="https://raw.githubusercontent.com/Zenfection/Image/master/2021/03/08-16-44-05-icons8-consultation.png" width ="40"> Giải</b></summary>
@@ -122,16 +167,30 @@
 <br>
 
 ```sql
+DECLARE @Sum_TG_hongxuantruong INT
 
+SELECT @Sum_TG_hongxuantruong = SUM(CONVERT(int,TG.SONGAY))
+FROM dbo.congtrinh as CongT, dbo.congnhan as CN, dbo.thamgia as TG
+WHERE TG.MSCN = CN.MSCN
+AND CN.HOTENCN = 'Hong Xuan Truong'
+AND TG.STTCT = CongT.STTCT 
+GROUP BY CN.HOTENCN
+
+SELECT CN.HOTENCN, SUM(CONVERT(int,TG.SONGAY))
+FROM dbo.congtrinh as CongT, dbo.congnhan as CN, dbo.thamgia as TG
+WHERE TG.MSCN = CN.MSCN
+AND TG.STTCT = CongT.STTCT 
+GROUP BY CN.HOTENCN
+HAVING SUM(CONVERT(int,TG.SONGAY)) > @Sum_TG_hongxuantruong
 ```
 
-⇨  
+⇨ `5` records  
 
 ---
 
 </details>
 
-> ![icons8questionspng](https://raw.githubusercontent.com/Zenfection/Image/master/2021/03/17-08-59-15-icons8-questions.png) **Câu 7**: 
+> ![icons8questionspng](https://raw.githubusercontent.com/Zenfection/Image/master/2021/03/17-08-59-15-icons8-questions.png) **Câu 8**: Cho biết <u>tổng số</u> `công trình` mà mỗi `chủ thầu` đã thi công tại mỗi **tỉnh thành**
 
 <details>
 <summary><b><img src="https://raw.githubusercontent.com/Zenfection/Image/master/2021/03/08-16-44-05-icons8-consultation.png" width ="40"> Giải</b></summary>
@@ -139,16 +198,19 @@
 <br>
 
 ```sql
-
+SELECT CongT.TINHTHANH, COUNT(CongT.TENCT)
+FROM dbo.congtrinh as CongT, dbo.chuthau as ChuT
+WHERE ChuT.MSCT = CongT.MSCT
+GROUP BY CongT.TINHTHANH
 ```
 
-⇨  
+⇨  `7` records
 
 ---
 
 </details>
 
-> ![icons8questionspng](https://raw.githubusercontent.com/Zenfection/Image/master/2021/03/17-08-59-15-icons8-questions.png) **Câu 8**: 
+> ![icons8questionspng](https://raw.githubusercontent.com/Zenfection/Image/master/2021/03/17-08-59-15-icons8-questions.png) **Câu 9**: Cho biết **họ tên** `công nhân` có `tham gia` ở tất cả `công trình`
 
 <details>
 <summary><b><img src="https://raw.githubusercontent.com/Zenfection/Image/master/2021/03/08-16-44-05-icons8-consultation.png" width ="40"> Giải</b></summary>
@@ -156,16 +218,26 @@
 <br>
 
 ```sql
+DECLARE @soCongTrinh INT
 
+SELECT @soCongTrinh = COUNT(*)
+FROM dbo.congtrinh
+
+SELECT DISTINCT  CN.HOTENCN,COUNT(CongT.TENCT) as soCT_TG
+FROM dbo.congnhan as CN, dbo.congtrinh as CongT, dbo.thamgia as TG
+WHERE TG.MSCN = CN.MSCN
+AND TG.STTCT = CongT.STTCT
+GROUP BY CN.HOTENCN
+HAVING COUNT(CongT.TENCT) = @soCongTrinh
 ```
 
-⇨  
+⇨  `0` records
 
 ---
 
 </details>
 
-> ![icons8questionspng](https://raw.githubusercontent.com/Zenfection/Image/master/2021/03/17-08-59-15-icons8-questions.png) **Câu 9**: 
+> ![icons8questionspng](https://raw.githubusercontent.com/Zenfection/Image/master/2021/03/17-08-59-15-icons8-questions.png) **Câu 10**: Cho biết **tên** và **ngày bắt đầu** của các `công trình` mà `công nhân` *Nguyễn Thi Sử* và *Lê Mạnh Quốc* cùng `tham gia`
 
 <details>
 <summary><b><img src="https://raw.githubusercontent.com/Zenfection/Image/master/2021/03/08-16-44-05-icons8-consultation.png" width ="40"> Giải</b></summary>
@@ -173,27 +245,22 @@
 <br>
 
 ```sql
+SELECT CongT.TENCT, CongT.NGAYBD
+FROM dbo.congtrinh as CongT, dbo.congnhan as CN, dbo.thamgia as TG
+WHERE TG.STTCT = CongT.STTCT
+AND TG.MSCN = CN.MSCN
+AND CN.HOTENCN = 'Nguyen Thi Su'
 
+INTERSECT
+
+SELECT CongT.TENCT, CongT.NGAYBD
+FROM dbo.congtrinh as CongT, dbo.congnhan as CN, dbo.thamgia as TG
+WHERE TG.STTCT = CongT.STTCT
+AND TG.MSCN = CN.MSCN
+AND CN.HOTENCN = 'Le Manh Quoc'
 ```
 
-⇨  
-
----
-
-</details>
-
-> ![icons8questionspng](https://raw.githubusercontent.com/Zenfection/Image/master/2021/03/17-08-59-15-icons8-questions.png) **Câu 10**: 
-
-<details>
-<summary><b><img src="https://raw.githubusercontent.com/Zenfection/Image/master/2021/03/08-16-44-05-icons8-consultation.png" width ="40"> Giải</b></summary>
-
-<br>
-
-```sql
-
-```
-
-⇨  
+⇨  `10` records
 
 ---
 
