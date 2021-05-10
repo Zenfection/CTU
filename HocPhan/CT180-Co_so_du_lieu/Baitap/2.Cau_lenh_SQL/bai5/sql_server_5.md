@@ -79,10 +79,34 @@ AND TG.MSCN = CN.MSCN
 <br>
 
 ```sql
+CREATE VIEW temp AS
+SELECT TENCT
+FROM dbo.congtrinh 
 
+EXCEPT
+
+SELECT CongT.TENCT
+FROM dbo.congnhan as CN, dbo.congtrinh as CongT, dbo.thamgia as TG
+WHERE TG.STTCT = CongT.STTCT
+AND TG.MSCN = CN.MSCN
+GO
+
+SELECT CongT.TENCT, COUNT(*)
+FROM dbo.congnhan as CN, dbo.congtrinh as CongT, dbo.thamgia as TG
+WHERE TG.STTCT = CongT.STTCT
+AND TG.MSCN = CN.MSCN
+GROUP BY CongT.TENCT
+
+UNION
+
+SELECT TENCT, 0
+FROM temp
+GO
+
+DROP VIEW temp
 ```
 
-⇨  
+⇨  50 `records`
 
 ---
 
@@ -96,10 +120,35 @@ AND TG.MSCN = CN.MSCN
 <br>
 
 ```sql
+CREATE VIEW temp AS
+SELECT DISTINCT CN.HOTENCN
+FROM dbo.congnhan as CN
 
+EXCEPT
+
+SELECT DISTINCT CN.HOTENCN
+FROM dbo.congnhan as CN, dbo.congtrinh as CongT, dbo.thamgia as TG
+WHERE TG.STTCT = CongT.STTCT
+AND TG.MSCN = CN.MSCN
+GO
+
+
+SELECT CN.HOTENCN, COUNT(*) as So_CT_TG
+FROM dbo.congnhan as CN, dbo.congtrinh as CongT, dbo.thamgia as TG
+WHERE TG.STTCT = CongT.STTCT
+AND TG.MSCN = CN.MSCN
+GROUP BY CN.HOTENCN
+
+UNION
+
+SELECT HOTENCN, 0
+FROM temp
+GO
+
+DROP VIEW temp
 ```
 
-⇨  
+⇨  `52` records
 
 ---
 
@@ -113,10 +162,18 @@ AND TG.MSCN = CN.MSCN
 <br>
 
 ```sql
+SELECT KTS.HOTENKTS, KTS.NOITN
+FROM dbo.kientrucsu as KTS
 
+EXCEPT
+
+SELECT KTS.HOTENKTS, KTS.NOITN
+FROM dbo.kientrucsu as KTS, dbo.thietke as TK, dbo.congtrinh as CongT
+WHERE TK.MSKTS = KTS.MSKTS
+AND TK.STTCT = CongT.STTCT
 ```
 
-⇨  
+⇨  `10` records
 
 ---
 
@@ -130,10 +187,18 @@ AND TG.MSCN = CN.MSCN
 <br>
 
 ```sql
+SELECT CongT.TENCT
+FROM dbo.congtrinh as CongT
 
+EXCEPT
+
+SELECT CongT.TENCT
+FROM dbo.kientrucsu as KTS, dbo.thietke as TK, dbo.congtrinh as CongT
+WHERE TK.MSKTS = KTS.MSKTS
+AND TK.STTCT = CongT.STTCT
 ```
 
-⇨  
+⇨  `40` records
 
 ---
 
@@ -147,10 +212,23 @@ AND TG.MSCN = CN.MSCN
 <br>
 
 ```sql
+CREATE PROCEDURE sumKINHPHI_for_TINHTHANH
+AS
+BEGIN
+    SELECT CongT.TINHTHANH, SUM(CONVERT(int, CongT.KINHPHI))
+    FROM dbo.congtrinh as CongT
+    GROUP BY CongT.TINHTHANH
+END
+GO
 
+EXEC  sumKINHPHI_for_TINHTHANH
+GO
+
+--DROP PROCEDURE sumKINHPHI_for_TINHTHANH
+--Thực hiện lệnh drop nếu muốn xoá
 ```
 
-⇨  
+⇨  `7` records
 
 ---
 
@@ -164,10 +242,24 @@ AND TG.MSCN = CN.MSCN
 <br>
 
 ```sql
+CREATE PROC minKINHPHI_for_TINHTHANH
+@tinhthanh NVARCHAR(50)
+AS
+BEGIN
+    SELECT CongT.TINHTHANH, MIN(CONVERT(int, CongT.KINHPHI)) as minKINHPHI
+    FROM dbo.congtrinh as CongT
+    WHERE CongT.TINHTHANH = @tinhthanh
+    GROUP BY CongT.TINHTHANH
+END
+GO
 
+EXEC minKINHPHI_for_TINHTHANH @tinhthanh = '<tên tỉnh thành>'
+GO
+
+--DROP PROC minKINHPHI_for_TINHTHANH
 ```
 
-⇨  
+⇨  `1` record
 
 ---
 
@@ -181,10 +273,23 @@ AND TG.MSCN = CN.MSCN
 <br>
 
 ```sql
+CREATE FUNCTION count_KTS_TK()
+RETURNS TABLE
+AS
+    RETURN 
+    SELECT KTS.MSKTS
+    FROM dbo.kientrucsu as KTS, dbo.congtrinh as CongT, dbo.thietke as TK
+    WHERE TK.STTCT = CongT.STTCT
+    AND TK.MSKTS = KTS.MSKTS
+GO
 
+SELECT COUNT(*) FROM count_KTS_TK()
+GO
+
+DROP FUNCTION count_KTS_TK
 ```
 
-⇨  
+⇨  `1` records
 
 ---
 
@@ -198,10 +303,25 @@ AND TG.MSCN = CN.MSCN
 <br>
 
 ```sql
+CREATE FUNCTION countKTS_for_TINHTHANH(@tinhthanh NVARCHAR(50))
+RETURNS TABLE
+AS
+    RETURN
+    SELECT KTS.HOTENKTS, CongT.TINHTHANH
+    FROM dbo.kientrucsu as KTS, dbo.congtrinh as CongT, dbo.thietke as TK
+    WHERE TK.STTCT = CongT.STTCT
+    AND TK.MSKTS = KTS.MSKTS
+    GROUP BY KTS.HOTENKTS, CongT.TINHTHANH
+    HAVING CongT.TINHTHANH = @tinhthanh
+GO
 
+SELECT COUNT(*) FROM dbo.countKTS_for_TINHTHANH('<tên tỉnh thành>');
+GO 
+
+--DROP FUNCTION countKTS_for_TINHTHANH
 ```
 
-⇨  
+⇨  Tuỳ đầu vào ==> records
 
 ---
 
