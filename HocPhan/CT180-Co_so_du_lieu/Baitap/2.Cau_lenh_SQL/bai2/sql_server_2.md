@@ -29,7 +29,199 @@
 | ------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [query_2.sql](https://github.com/Zenfection/CTU/blob/main/HocPhan/CT180-Co_so_du_lieu/Baitap/2.Cau_lenh_SQL/bai1/query_2.sql)                     |
 
-> ![icons8questionspng](https://raw.githubusercontent.com/Zenfection/Image/master/2021/03/17-08-59-15-icons8-questions.png) **Câu 1**: 
+> ![icons8questionspng](https://raw.githubusercontent.com/Zenfection/Image/master/2021/03/17-08-59-15-icons8-questions.png) **Câu 1**: Cho biết **họ tên** các `kiến trúc sư` vừa `thiết kế` các `công trình` do `chủ thầu` *Hoàng Xuân Bình* thi công, vừa `thiết kế` các `công trình` do `chủ thầu` *Lê Văn Sơn* thi công
+
+<details>
+<summary><b><img src="https://raw.githubusercontent.com/Zenfection/Image/master/2021/03/08-16-44-05-icons8-consultation.png" width ="40"> Giải</b></summary>
+
+<br>
+
+```sql
+SELECT KTS.HOTENKTS
+FROM dbo.congtrinh as CongT, dbo.chuthau as ChuT,dbo.kientrucsu as KTS, dbo.thietke as TK
+WHERE TK.MSKTS = KTS.MSKTS
+AND TK.STTCT = CongT.STTCT
+AND ChuT.MSCT = CongT.MSCT
+AND ChuT.TENTHAU = 'hoang cong binh'
+
+INTERSECT
+
+SELECT KTS.HOTENKTS
+FROM dbo.congtrinh as CongT, dbo.chuthau as ChuT,dbo.kientrucsu as KTS, dbo.thietke as TK
+WHERE TK.MSKTS = KTS.MSKTS
+AND TK.STTCT = CongT.STTCT
+AND ChuT.MSCT = CongT.MSCT
+AND ChuT.TENTHAU = 'le van son'
+```
+
+⇨  `3` records
+
+---
+
+</details>
+
+> ![icons8questionspng](https://raw.githubusercontent.com/Zenfection/Image/master/2021/03/17-08-59-15-icons8-questions.png) **Câu 2**: Cho biết **tên** `công trình` có **kinh phí** *cao nhất*
+
+<details>
+<summary><b><img src="https://raw.githubusercontent.com/Zenfection/Image/master/2021/03/08-16-44-05-icons8-consultation.png" width ="40"> Giải</b></summary>
+
+<br>
+
+```sql
+DECLARE @MaxKINHPHI INT
+
+SELECT  @MaxKINHPHI = MAX(KINHPHI) FROM dbo.congtrinh
+SELECT TENCT
+FROM dbo.congtrinh
+WHERE KINHPHI = @MaxKINHPHI
+```
+
+⇨  `1` record
+
+---
+
+</details>
+
+> ![icons8questionspng](https://raw.githubusercontent.com/Zenfection/Image/master/2021/03/17-08-59-15-icons8-questions.png) **Câu 3**: Cho biết **họ tên** các `công nhân` có `tham gia` các `công trình` ở *Cần thơ*, nhưng <u>không có</u> `tham gia` `công trình` ở *Vĩnh Long*
+
+<details>
+<summary><b><img src="https://raw.githubusercontent.com/Zenfection/Image/master/2021/03/08-16-44-05-icons8-consultation.png" width ="40"> Giải</b></summary>
+
+<br>
+
+```sql
+SELECT CN.HOTENCN
+FROM dbo.congnhan as CN, dbo.congtrinh as CongT, dbo.thamgia as TG
+WHERE TG.STTCT = CongT.STTCT
+AND TG.MSCN = CN.MSCN
+AND CongT.TINHTHANH = 'can tho'
+
+EXCEPT
+
+SELECT CN.HOTENCN
+FROM dbo.congnhan as CN, dbo.congtrinh as CongT, dbo.thamgia as TG
+WHERE TG.STTCT = CongT.STTCT
+AND TG.MSCN = CN.MSCN
+AND CongT.TINHTHANH = 'vinh long'
+```
+
+⇨  `11` records
+
+---
+
+</details>
+
+> ![icons8questionspng](https://raw.githubusercontent.com/Zenfection/Image/master/2021/03/17-08-59-15-icons8-questions.png) **Câu 4**: Cho biết **họ tên** của các `chủ thầu` đã thi công các `công trình` có **kinh phí** <u>lớn hơn tất cả</u> các **kinh phí** của `công trình` do `chủ thầu` là *Hoàng Công Bình* thi công
+
+<details>
+<summary><b><img src="https://raw.githubusercontent.com/Zenfection/Image/master/2021/03/08-16-44-05-icons8-consultation.png" width ="40"> Giải</b></summary>
+
+<br>
+
+```sql
+DECLARE @MaxKINHPHI_hoangcongbinh INT
+
+SELECT @MaxKINHPHI_hoangcongbinh = MAX(CONVERT(int, CongT.KINHPHI))
+FROM dbo.congtrinh as CongT, dbo.chuthau as ChuT,dbo.thamgia as TG
+WHERE TG.STTCT = CongT.STTCT
+AND ChuT.MSCT = CongT.MSCT
+AND ChuT.TENTHAU = 'hoang cong binh'
+
+SELECT DISTINCT ChuT.TENTHAU
+FROM dbo.congtrinh as CongT, dbo.chuthau as ChuT,dbo.thamgia as TG
+WHERE TG.STTCT = CongT.STTCT
+AND ChuT.MSCT = CongT.MSCT
+AND CongT.KINHPHI > @MaxKINHPHI_hoangcongbinh
+```
+
+> 💡 Dùng `CONVERT` chuyển sang `int` vì `CongT.KINHPHI` là `nvarchar`
+
+⇨  `2` records
+
+---
+
+</details>
+
+> ![icons8questionspng](https://raw.githubusercontent.com/Zenfection/Image/master/2021/03/17-08-59-15-icons8-questions.png) **Câu 5**: Cho biết **họ tên** các `kiến trúc sư` có **thù lao** `thiết kế` cho một `công trình` nao đó <u>dưới <strong>thù lao</strong> trung bình</u> của <u>tất cả</u> các `công trình`
+
+<details>
+<summary><b><img src="https://raw.githubusercontent.com/Zenfection/Image/master/2021/03/08-16-44-05-icons8-consultation.png" width ="40"> Giải</b></summary>
+
+<br>
+
+```sql
+DECLARE @AVG_THULAO INT
+
+SELECT @AVG_THULAO = AVG(CONVERT(int, THULAO))
+FROM dbo.thietke as TK,dbo.kientrucsu as KTS,dbo.congtrinh as CongT
+WHERE TK.MSKTS = KTS.MSKTS
+AND TK.STTCT = CongT.STTCT
+
+SELECT DISTINCT KTS.HOTENKTS
+FROM dbo.thietke as TK,dbo.kientrucsu as KTS,dbo.congtrinh as CongT
+WHERE TK.MSKTS = KTS.MSKTS
+AND TK.STTCT = CongT.STTCT
+AND TK.THULAO < @AVG_THULAO
+```
+
+> 💡 Dùng `CONVERT` chuyển sang `int` vì `TK.THULAO` là `nvarchar`
+
+⇨  `9` records
+
+---
+
+</details>
+
+> ![icons8questionspng](https://raw.githubusercontent.com/Zenfection/Image/master/2021/03/17-08-59-15-icons8-questions.png) **Câu 6**: Cho biết **họ tên** và **địa chỉ** những `chủ thầu` là `chủ thầu` của các `công trình` có **kinh phí** <u>thấp nhất</u>.
+
+<details>
+<summary><b><img src="https://raw.githubusercontent.com/Zenfection/Image/master/2021/03/08-16-44-05-icons8-consultation.png" width ="40"> Giải</b></summary>
+
+<br>
+
+```sql
+DECLARE @Min_KINHPHI INT
+
+SELECT @Min_KINHPHI = MIN(CONVERT(int, CongT.KINHPHI))
+FROM dbo.congtrinh as CongT, dbo.chuthau as ChuT
+WHERE ChuT.MSCT = CongT.MSCT
+
+SELECT ChuT.TENTHAU,ChuT.DIACHITHAU
+FROM dbo.congtrinh as CongT, dbo.chuthau as ChuT
+WHERE ChuT.MSCT = CongT.MSCT
+AND CongT.KINHPHI = @Min_KINHPHI
+```
+
+⇨  `1` records
+
+---
+
+</details>
+
+> ![icons8questionspng](https://raw.githubusercontent.com/Zenfection/Image/master/2021/03/17-08-59-15-icons8-questions.png) **Câu 7**: Cho biết **họ tên** và **chuyên môn** của các `công nhân` `tham gia` các `công trình` do `kiến trúc sư` *Lê Thanh Tùng* `thiết kế`
+
+<details>
+<summary><b><img src="https://raw.githubusercontent.com/Zenfection/Image/master/2021/03/08-16-44-05-icons8-consultation.png" width ="40"> Giải</b></summary>
+
+<br>
+
+```sql
+SELECT DISTINCT CN.HOTENCN, CN.CHUYENMON
+FROM dbo.kientrucsu as KTS,dbo.congtrinh as CongT, dbo.congnhan as CN, dbo.thietke as TK, dbo.thamgia as TG
+WHERE TK.MSKTS = KTS.MSKTS
+AND TK.STTCT = CongT.STTCT
+AND TG.MSCN = CN.MSCN
+AND TG.STTCT = CongT.STTCT
+AND KTS.HOTENKTS = 'le thanh tung';
+```
+
+⇨  `59` records
+
+---
+
+</details>
+
+> ![icons8questionspng](https://raw.githubusercontent.com/Zenfection/Image/master/2021/03/17-08-59-15-icons8-questions.png) **Câu 8**: Cho biết các <u>cặp</u> **họ tên** của các `chủ thầu` là `chủ thầu` của các `công trình` tại cùng một **tỉnh thành** nào đó. 
 
 <details>
 <summary><b><img src="https://raw.githubusercontent.com/Zenfection/Image/master/2021/03/08-16-44-05-icons8-consultation.png" width ="40"> Giải</b></summary>
@@ -46,7 +238,7 @@
 
 </details>
 
-> ![icons8questionspng](https://raw.githubusercontent.com/Zenfection/Image/master/2021/03/17-08-59-15-icons8-questions.png) **Câu 2**: 
+> ![icons8questionspng](https://raw.githubusercontent.com/Zenfection/Image/master/2021/03/17-08-59-15-icons8-questions.png) **Câu 9**: Cho biết các <u>cặp</u> **họ tên** của các `công nhân` có `tham gia` chung với nhau <u>ít nhất</u> **2** `công trình`
 
 <details>
 <summary><b><img src="https://raw.githubusercontent.com/Zenfection/Image/master/2021/03/08-16-44-05-icons8-consultation.png" width ="40"> Giải</b></summary>
@@ -63,7 +255,7 @@
 
 </details>
 
-> ![icons8questionspng](https://raw.githubusercontent.com/Zenfection/Image/master/2021/03/17-08-59-15-icons8-questions.png) **Câu 3**: 
+> ![icons8questionspng](https://raw.githubusercontent.com/Zenfection/Image/master/2021/03/17-08-59-15-icons8-questions.png) **Câu 10**: Cho biết **họ tên** `công nhân` `tham gia` các `công trình` có **kinh phí** <u>lớn hơn</u> **kinh phí** <u>trung bình</u> của các `công trình`
 
 <details>
 <summary><b><img src="https://raw.githubusercontent.com/Zenfection/Image/master/2021/03/08-16-44-05-icons8-consultation.png" width ="40"> Giải</b></summary>
@@ -71,143 +263,24 @@
 <br>
 
 ```sql
+DECLARE @AVG_KINHPHI INT
 
+SELECT @AVG_KINHPHI = AVG(CONVERT(int, CongT.KINHPHI))
+FROM dbo.congtrinh as CongT, dbo.congnhan as CN, dbo.thamgia as TG
+WHERE TG.MSCN = CN.MSCN
+AND TG.STTCT = CongT.STTCT
+
+SELECT DISTINCT CN.HOTENCN
+FROM dbo.congtrinh as CongT, dbo.congnhan as CN, dbo.thamgia as TG
+WHERE TG.MSCN = CN.MSCN
+AND TG.STTCT = CongT.STTCT
+AND CongT.KINHPHI > @AVG_KINHPHI
 ```
 
-⇨  
+> 💡 Dùng `CONVERT` chuyển sang `int` vì `CongT.KINHPHI` là `nvarchar`
+
+⇨ `51` records
 
 ---
 
 </details>
-
-> ![icons8questionspng](https://raw.githubusercontent.com/Zenfection/Image/master/2021/03/17-08-59-15-icons8-questions.png) **Câu 4**: 
-
-<details>
-<summary><b><img src="https://raw.githubusercontent.com/Zenfection/Image/master/2021/03/08-16-44-05-icons8-consultation.png" width ="40"> Giải</b></summary>
-
-<br>
-
-```sql
-
-```
-
-⇨  
-
----
-
-</details>
-
-> ![icons8questionspng](https://raw.githubusercontent.com/Zenfection/Image/master/2021/03/17-08-59-15-icons8-questions.png) **Câu 5**: 
-
-<details>
-<summary><b><img src="https://raw.githubusercontent.com/Zenfection/Image/master/2021/03/08-16-44-05-icons8-consultation.png" width ="40"> Giải</b></summary>
-
-<br>
-
-```sql
-
-```
-
-⇨  
-
----
-
-</details>
-
-> ![icons8questionspng](https://raw.githubusercontent.com/Zenfection/Image/master/2021/03/17-08-59-15-icons8-questions.png) **Câu 6**: 
-
-<details>
-<summary><b><img src="https://raw.githubusercontent.com/Zenfection/Image/master/2021/03/08-16-44-05-icons8-consultation.png" width ="40"> Giải</b></summary>
-
-<br>
-
-```sql
-
-```
-
-⇨  
-
----
-
-</details>
-
-> ![icons8questionspng](https://raw.githubusercontent.com/Zenfection/Image/master/2021/03/17-08-59-15-icons8-questions.png) **Câu 7**: 
-
-<details>
-<summary><b><img src="https://raw.githubusercontent.com/Zenfection/Image/master/2021/03/08-16-44-05-icons8-consultation.png" width ="40"> Giải</b></summary>
-
-<br>
-
-```sql
-
-```
-
-⇨  
-
----
-
-</details>
-
-> ![icons8questionspng](https://raw.githubusercontent.com/Zenfection/Image/master/2021/03/17-08-59-15-icons8-questions.png) **Câu 8**: 
-
-<details>
-<summary><b><img src="https://raw.githubusercontent.com/Zenfection/Image/master/2021/03/08-16-44-05-icons8-consultation.png" width ="40"> Giải</b></summary>
-
-<br>
-
-```sql
-
-```
-
-⇨  
-
----
-
-</details>
-
-> ![icons8questionspng](https://raw.githubusercontent.com/Zenfection/Image/master/2021/03/17-08-59-15-icons8-questions.png) **Câu 9**: 
-
-<details>
-<summary><b><img src="https://raw.githubusercontent.com/Zenfection/Image/master/2021/03/08-16-44-05-icons8-consultation.png" width ="40"> Giải</b></summary>
-
-<br>
-
-```sql
-
-```
-
-⇨  
-
----
-
-</details>
-
-> ![icons8questionspng](https://raw.githubusercontent.com/Zenfection/Image/master/2021/03/17-08-59-15-icons8-questions.png) **Câu 10**: 
-
-<details>
-<summary><b><img src="https://raw.githubusercontent.com/Zenfection/Image/master/2021/03/08-16-44-05-icons8-consultation.png" width ="40"> Giải</b></summary>
-
-<br>
-
-```sql
-
-```
-
-⇨  
-
----
-
-</details>
-
-| ![icons8questionspng](https://raw.githubusercontent.com/Zenfection/Image/master/2021/03/17-08-59-15-icons8-questions.png) **Câu** |                                                                                                                                                                |
-| --------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 1                                                                                                                                 | Cho biết họ tên các kiến trúc sư vừa thiết kế các công trình do chủ thầu Hoàng Xuân Bình thi công, vừa thiết kế các công trình do chủ thầu Lê Văn Sơn thi công |
-| 2                                                                                                                                 | Hãy cho biết tên công trình có kinh phí cao nhất                                                                                                               |
-| 3                                                                                                                                 | Hãy cho biết tên của các chủ thầu đã thi công các công trình có kinh phí lớn hơn tất cả các kinh phí của công trình do chủ thầu là Hoàng Công Bình thi công    |
-| 4                                                                                                                                 | Hãy cho biết tên của các chủ thầu đã thi công các công trình có kinh phí lớn hơn tất cả các kinh phí của công trình do chủ thầu là Hoàng Công Bình thi công    |
-| 5                                                                                                                                 | Hãy cho biết họ tên các kiến trúc sư có thù lao thiết kế cho một công trình nao đó dưới thù lao trung bình của tất cả các công trình                           |
-| 6                                                                                                                                 | Hãy cho biết tên và địa chỉ những chủ thầu là chủ thầu của các công trình có kinh phí thấp nhất.                                                               |
-| 7                                                                                                                                 | Hãy cho biết họ tên và chuyên môn của các công nhân tham gia các công trình do kiến trúc sư Lê Thanh Tùng thiết kế                                             |
-| 8                                                                                                                                 | Hãy cho biết các cặp họ tên                                                                                                                                    |
-| 9                                                                                                                                 | Hãy cho biết các cặp họ tên của các công nhân có tham gia chung với nhau ít nhất là hai công trình                                                             |
-| 10                                                                                                                                |                                                                                                                                                                |
