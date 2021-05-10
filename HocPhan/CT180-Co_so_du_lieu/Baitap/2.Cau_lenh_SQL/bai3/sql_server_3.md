@@ -1,4 +1,4 @@
-# ![icons8gurupng](https://raw.githubusercontent.com/Zenfection/Image/master/2021/03/21-18-12-52-icons8-guru.png)Bài tập Các câu lệnh SQL ![icons8-2_cute.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/10-13-46-27-icons8-2_cute.png)
+# ![icons8gurupng](https://raw.githubusercontent.com/Zenfection/Image/master/2021/03/21-18-12-52-icons8-guru.png) Bài tập Các câu lệnh SQL ![icons8-3_cute.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/10-15-18-29-icons8-3_cute.png)
 
 ## ![icons8-database_view.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/10-13-17-41-icons8-database_view.png) 1.Ta có bảng danh sách công trình như sau :
 
@@ -23,21 +23,8 @@
 
 ---
 
-## 2.Danh sách các câu hỏi
+## <img title="" src="https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/10-15-19-04-icons8-questionnaire.png" alt="icons8-questionnaire.png" width="40"> 2.Danh sách các câu hỏi
 
 | ![icons8googlecode30pxpng](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/08-10-24-29-icons8_google_code_30px.png) Source Code |
 | ------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [query_2.sql](https://github.com/Zenfection/CTU/blob/main/HocPhan/CT180-Co_so_du_lieu/Baitap/2.Cau_lenh_SQL/bai1/query_2.sql)                     |
-
-| ![icons8questionspng](https://raw.githubusercontent.com/Zenfection/Image/master/2021/03/17-08-59-15-icons8-questions.png) **Câu** |                                                                                                                                                                    |
-| --------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| 1                                                                                                                                 | Hãy cho biết họ tên các kiến trúc sư vừa thiết kế các công trình do chủ thầu Hoàng Xuân Bình thi công, vừa thiết kế các công trình do chủ thầu Lê Văn Sơn thi công |
-| 2                                                                                                                                 | Hãy cho biết tên công trình có kinh phí cao nhất                                                                                                                   |
-| 3                                                                                                                                 | Hãy cho biết tên của các chủ thầu đã thi công các công trình có kinh phí lớn hơn tất cả các kinh phí của công trình do chủ thầu là Hoàng Công Bình thi công        |
-| 4                                                                                                                                 | Hãy cho biết tên của các chủ thầu đã thi công các công trình có kinh phí lớn hơn tất cả các kinh phí của công trình do chủ thầu là Hoàng Công Bình thi công        |
-| 5                                                                                                                                 | Hãy cho biết họ tên các kiến trúc sư có thù lao thiết kế cho một công trình nao đó dưới thù lao trung bình của tất cả các công trình                               |
-| 6                                                                                                                                 | Hãy cho biết tên và địa chỉ những chủ thầu là chủ thầu của các công trình có kinh phí thấp nhất.                                                                   |
-| 7                                                                                                                                 | Hãy cho biết họ tên và chuyên môn của các công nhân tham gia các công trình do kiến trúc sư Lê Thanh Tùng thiết kế                                                 |
-| 8                                                                                                                                 | Hãy cho biết các cặp họ tên                                                                                                                                        |
-| 9                                                                                                                                 | Hãy cho biết các cặp họ tên của các công nhân có tham gia chung với nhau ít nhất là hai công trình                                                                 |
-| 10                                                                                                                                |                                                                                                                                                                    |
