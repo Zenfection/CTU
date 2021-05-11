@@ -31,5 +31,3 @@
 | [Kỹ thuật sắp xếp](https://github.com/Zenfection/CTU/blob/main/HocPhan/CT174-Phan_tich_va_thiet_ke_thuat_toan/Tailieu/2.sapxep.md)                         |                                                                                                                                          |
 | Kỹ thuật thiết kế thuật toán                                                                                                                               |                                                                                                                                          |
 | Cấu trúc dữ liệu và thuật toán lưu trữ ngoài                                                                                                               |                                                                                                                                          |
-
-- 
