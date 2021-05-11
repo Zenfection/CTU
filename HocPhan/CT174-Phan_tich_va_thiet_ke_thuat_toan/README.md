@@ -17,13 +17,15 @@
 
 ## <img src="https://raw.githubusercontent.com/Zenfection/Image/master/2020/12/15-14-31-38-Cloud%20Library.png" title="" alt="S" width="40"> 2. Tài liệu học tập
 
+| Tài liệu                                                                                                                                              | Web tham khảo                                                                                                                                                                                                                                                                                |
+| ----------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| <img src="https://raw.githubusercontent.com/Zenfection/Image/master/2021/03/20-14-38-42-logo-ctu.png" title="" alt="logo-ctu.png" width="40"> [CTU]() | <img src="https://raw.githubusercontent.com/Zenfection/Image/master/2020/12/16-23-01-32-University_of_San_Francisco_logo.png" title="" alt="University_of_San_Francisco_logo.png" width="40"> [Data Structure Visualization](https://www.cs.usfca.edu/~galles/visualization/Algorithms.html) |
 
+---
+
+## <img src="https://raw.githubusercontent.com/Zenfection/Image/master/2021/03/20-22-42-23-icons8-sand_timer.png" title="" alt="icons8-sand_timer.png" width="40"> 3. Quá trình học tập
 
 - [Chương 1.Kỹ thuật phân tích thuật toán](https://github.com/Zenfection/CTU/blob/main/HocPhan/CT174-Phan_tich_va_thiet_ke_thuat_toan/Tailieu/1.KyThuat_PTTKTT.md)
 - Chương 2.Kỹ thuật sắp xếp
 - Chương 3.Kỹ thuật thiết kế thuật toán
 - Chương 4.Cấu trúc dữ liệu và thuật toán lưu trữ ngoài
-
----
-
-## <img src="https://raw.githubusercontent.com/Zenfection/Image/master/2021/03/20-22-42-23-icons8-sand_timer.png" title="" alt="icons8-sand_timer.png" width="40"> 3. Quá trình học tập
