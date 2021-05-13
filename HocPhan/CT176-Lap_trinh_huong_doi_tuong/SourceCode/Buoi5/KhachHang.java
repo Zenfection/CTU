@@ -37,7 +37,7 @@ public class KhachHang{
         boolean done = true;
         while(done){
             try {
-                System.out.println("---Nhập thông tin Khách Hàng---");
+                System.out.println("---NHẬP THÔNG TIN KHÁC HÀNG---");
                 System.out.print("Nhập Mã Số : ");
                     this.id = sc.nextLine();
                 System.out.print("Nhập Họ Tên : ");
@@ -62,11 +62,12 @@ public class KhachHang{
             }
         }
     }
+
+    //hàm in thông tin khách hàng
     public void inKhachHang(){
         System.out.println(this.id + "-" + this.name + "-" + this.address);
         System.out.print("Ngày sinh : ");
         this.birthDay.hienThiNgay();
         System.out.println("SĐT : " + this.phoneNumber);
     }
-
 }

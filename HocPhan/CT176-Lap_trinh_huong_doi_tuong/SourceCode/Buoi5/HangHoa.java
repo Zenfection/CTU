@@ -32,7 +32,6 @@ public class HangHoa {
         boolean done = true;
         while(done){
             try {
-                System.out.println("---NHẬP THÔNG TIN HÀNG HOÁ---");
                 System.out.print("Nhập mã số : ");
                     this.id = sc.nextLine();
                 System.out.print("Nhập tên hàng : ");
