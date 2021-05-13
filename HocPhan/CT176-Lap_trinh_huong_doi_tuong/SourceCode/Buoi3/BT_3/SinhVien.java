@@ -1,9 +1,8 @@
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Date;
 import java.util.List;
 import java.util.Scanner;
+//! import thư viện Date của buổi 2 
 
 public class SinhVien {
     private String maSV;
@@ -51,22 +50,22 @@ public class SinhVien {
         while (done) {
             try {
                 System.out.print("Nhập mã Sinh Viên : ");
-                this.maSV = sc.nextLine();
+                    this.maSV = sc.nextLine();
                 System.out.print("Nhập họ tên : ");
-                this.hoTen = sc.nextLine();
+                    this.hoTen = sc.nextLine();
                 System.out.print("Nhập ngày sinh (cách nhau bởi /) : ");
-                String d = sc.nextLine();
-                SimpleDateFormat dfm = new SimpleDateFormat("dd/MM/yyyy");
-                this.ngaySinh = dfm.parse(d);
+                    Date birthDay = new Date();
+                    birthDay.nhapDate();
+                    this.ngaySinh = birthDay;
                 System.out.print("Số lượng học phần đăng ký : ");
-                this.hpDangKy = Integer.parseInt(sc.nextLine());
-
-                if (this.hpDangKy <= 0) {
-                    this.tenHPDangKy = new String[0];
-                    this.diemHP = new String[0];
-                    done = false;
-                    continue;
-                }
+                    this.hpDangKy = Integer.parseInt(sc.nextLine());
+                    if (this.hpDangKy <= 0) {
+                        this.tenHPDangKy = new String[0];
+                        this.diemHP = new String[0];
+                        done = false;
+                        continue;
+                    }
+                    
                 this.tenHPDangKy = new String[this.hpDangKy];
                 for (int i = 0; i < this.hpDangKy; i++) {
                     System.out.print("Nhập tên học phần " + (i + 1) + " : ");
@@ -97,8 +96,8 @@ public class SinhVien {
     }
 
     public void inThongTinSV() {
-        SimpleDateFormat dfm = new SimpleDateFormat("dd/MM/yyyy");
-        System.out.println(this.maSV + "-" + this.hoTen + "-" + dfm.format(this.ngaySinh));
+        System.out.println(this.maSV + "-" + this.hoTen + "-");
+        this.ngaySinh.hienThiNgay();
         if (this.hpDangKy <= 0) {
             System.out.println("Chưa đăng ký học phần nào");
         } 

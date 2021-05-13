@@ -1,4 +1,5 @@
 import java.util.Scanner;
+//! import thư viện Date của buổi 2 
 
 public class KhachHang{
     private String id;
