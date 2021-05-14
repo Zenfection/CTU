@@ -101,4 +101,9 @@ public class Date {
         this.thang = tempDate.thang;
         this.nam = tempDate.nam;
     }
+    
+    // so sánh ngày 
+    public boolean lonHon(Date a){
+		return ((this.nam > a.nam) || (this.thang > a.thang) || (this.ngay > a.ngay));
+    }
 }
