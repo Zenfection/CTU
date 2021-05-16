@@ -36,8 +36,6 @@ Có rất nhiều giải thuật tìm kiếm nhưng tôi chỉ hướng tới 3 
 | Độ phức tạp | `O(a*b)` <br><br>`a` là độ sâu<br>`b` là số phân nhánh                                                                                                                    | `O(a*b)` <br><br>`a` là độ sâu<br>`b` là số phân nhánh                                                                                                                    |
 | Mô hình     | ![bfs_gif.gif](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/16-15-47-42-bfs_gif.gif)                                                                 | ![dfs_gif.gif](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/16-15-49-17-dfs_gif.gif)                                                                 |
 
-### <img src="https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/16-15-19-51-icons8_flow_512px.png" title="" alt="icons8_flow_512px.png" width="35"> Giải thuật A*
-
 Trước khi biết  về giải thuật `A*` bạn phải nắm hiểu thế nào là tìm kiếm `Heuristic`
 
 Về cơ bản, có 2 loại kỹ thuật tìm kiếm : 
@@ -53,6 +51,22 @@ Như bạn đã biết thì các loại tìm kiếm như `Linear Search`, `Binar
 ==> Tìm kiếm không có thông tin rất mất thời gian vì chúng không biết phải đi đâu và đâu là cơ hội tốt nhất để tìm thấy phần tử.
 
 Ngược lại, kỹ thuật `tìm kiếm có thông tin` nhận thức được cơ hội tốt nhất để tìm thấy phần tử và thuật toán sẽ đi theo hướng đó và kỹ thuật đó tên là `Heuristic`
+
+==> Vậy nên tìm kiếm `Heuristic` là một kỹ thuật tìm kiếm **tối ưu**
+
+### <img src="https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/16-15-19-51-icons8_flow_512px.png" title="" alt="icons8_flow_512px.png" width="35"> Giải thuật A*
+
+Hai phương pháp `BFS` và `DFS`, mặc dù có thể cho ra kết quả bài toán, tuy nhiên nó là dạng `Uninformed Search` nên sẽ rất mất nhiều **thời gian** và **chi phí**, để tối ưu nó ta sử dụng `giải thuật A*` xét đoạn đường đã đi qua, và bằng công thức sau sẽ chọn lối đi tối ưu nhất 
+
+```textile
+f(n) = g(n) + h(n)
+```
+
+> - `g(n)` là chiều cao từ `trạng thái đang xét` tới `trạng thái đầu`
+> 
+> - `h(n)` là hàm `heuristic` ước lượng chi phí `trạng thái đang xét` tới `trạng thái đích`
+> 
+> - `f(n)` càng thấp thì ưu tiên hướng đi đó
 
 
 
