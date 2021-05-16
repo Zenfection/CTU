@@ -90,6 +90,8 @@ Cho bảng `3x3` như sau, và từ `trạng thái đầu` hãy trình bày gi�
 
 ![Screenshot 2021-05-16 170747.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/16-17-12-20-Screenshot%202021-05-16%20170747.png)
 
+> ==> Tham khảo tại [8-Puzzle Solver](https://deniz.co/8-puzzle-solver/)
+
 ---
 
-## 4.
+## 4. Kết luận
