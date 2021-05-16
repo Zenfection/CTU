@@ -34,11 +34,9 @@ Có rất nhiều giải thuật tìm kiếm nhưng tôi chỉ hướng tới 3 
 | Thực hiện   | Mở rộng các nút lần lượt từ nút `gốc`                                                                                                                                     | Phát triển sâu các trường hợp của một nhánh                                                                                                                               |
 | Hạn chế     | Làm cạn bộ nhớ<br>Tốn nhiều chi phí                                                                                                                                       | Có thể rơi vào vòng lặp vĩnh cữu<br>                                                                                                                                      |
 | Độ phức tạp | `O(a*b)` <br><br>`a` là độ sâu<br>`b` là số phân nhánh                                                                                                                    | `O(a*b)` <br><br>`a` là độ sâu<br>`b` là số phân nhánh                                                                                                                    |
-| Mô hình     |                                                                                                                                                                           |                                                                                                                                                                           |
+| Mô hình     | ![bfs_gif.gif](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/16-15-47-42-bfs_gif.gif)                                                                 | ![dfs_gif.gif](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/16-15-49-17-dfs_gif.gif)                                                                 |
 
 ### <img src="https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/16-15-19-51-icons8_flow_512px.png" title="" alt="icons8_flow_512px.png" width="35"> Giải thuật A*
-
-
 
 ---
 
