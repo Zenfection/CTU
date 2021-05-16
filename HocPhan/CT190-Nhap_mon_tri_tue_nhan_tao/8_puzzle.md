@@ -76,7 +76,17 @@ f(n) = g(n) + h(n)
 
 ## 3. Cài đặt giải thuật
 
+Cho bảng `3x3` như sau, và từ `trạng thái đầu` hãy trình bày giải thuật di chuyển các bước sau cho thành trạng thái đích 
 
+| Trạng thái đầu                                                                                                                                                                             | Trạng thái đích                                                                                                                                                                            |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| <img title="" src="https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/16-15-06-36-Screenshot%202021-05-16%20150625.png" alt="Screenshot 2021-05-16 150625.png" width="161"> | <img title="" src="https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/16-15-07-20-Screenshot%202021-05-16%20150711.png" alt="Screenshot 2021-05-16 150711.png" width="159"> |
+
+### Giải thuật `BFS`
+
+
+
+### Giải thuật `A*`
 
 
 
