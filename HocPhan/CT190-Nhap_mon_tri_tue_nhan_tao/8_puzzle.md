@@ -6,7 +6,7 @@ Cho một bảng `3x3` gồm `8` ô cho sẵn số và `1` ô trống, sử dụ
 
 | Trạng thái đầu                                                                                                                                                                             | Trạng thái đích                                                                                                                                                                            |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| <img src="https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/16-15-06-36-Screenshot%202021-05-16%20150625.png" title="" alt="Screenshot 2021-05-16 150625.png" width="183"> | <img src="https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/16-15-07-20-Screenshot%202021-05-16%20150711.png" title="" alt="Screenshot 2021-05-16 150711.png" width="185"> |
+| <img title="" src="https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/16-15-06-36-Screenshot%202021-05-16%20150625.png" alt="Screenshot 2021-05-16 150625.png" width="161"> | <img title="" src="https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/16-15-07-20-Screenshot%202021-05-16%20150711.png" alt="Screenshot 2021-05-16 150711.png" width="159"> |
 
 - Sử dụng kiến thức xác xuất ta biết được trong bảng `3x3` có `9!` trường hợp có thể xảy ra ==> `362880` cách sắp xếp một bài toán
 
