@@ -38,6 +38,24 @@ Có rất nhiều giải thuật tìm kiếm nhưng tôi chỉ hướng tới 3 
 
 ### <img src="https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/16-15-19-51-icons8_flow_512px.png" title="" alt="icons8_flow_512px.png" width="35"> Giải thuật A*
 
+Trước khi biết  về giải thuật `A*` bạn phải nắm hiểu thế nào là tìm kiếm `Heuristic`
+
+Về cơ bản, có 2 loại kỹ thuật tìm kiếm : 
+
+- `Uninformed Search` (*Tìm kiếm không có thông tin*)
+
+- `Informed Search` (*Tìm kiếm có thông tin*)
+
+Như bạn đã biết thì các loại tìm kiếm như `Linear Search`, `Binary Search`, `BFS`, `DFS`... đó là những kỹ thuật `tìm kiếm không có thông tin` 
+
+==> Với kỹ thuật này chúng ta không hề biết `những gì chúng tìm kiếm` và `nơi chúng tìm kiếm`, vậy nên nó được gọi là `không có thông tin`
+
+==> Tìm kiếm không có thông tin rất mất thời gian vì chúng không biết phải đi đâu và đâu là cơ hội tốt nhất để tìm thấy phần tử.
+
+Ngược lại, kỹ thuật `tìm kiếm có thông tin` nhận thức được cơ hội tốt nhất để tìm thấy phần tử và thuật toán sẽ đi theo hướng đó và kỹ thuật đó tên là `Heuristic`
+
+
+
 ---
 
 ## 3. Kết luận
