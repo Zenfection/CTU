@@ -82,13 +82,13 @@ Cho bảng `3x3` như sau, và từ `trạng thái đầu` hãy trình bày gi�
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | <img title="" src="https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/16-15-06-36-Screenshot%202021-05-16%20150625.png" alt="Screenshot 2021-05-16 150625.png" width="161"> | <img title="" src="https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/16-15-07-20-Screenshot%202021-05-16%20150711.png" alt="Screenshot 2021-05-16 150711.png" width="159"> |
 
-### Giải thuật `BFS`
+### <img src="https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/16-15-17-20-icons8_surface_512px.png" title="" alt="icons8_surface_512px.png" width="35"> Giải thuật `BFS`
 
+![Screenshot 2021-05-16 170812.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/16-17-12-15-Screenshot%202021-05-16%20170812.png)
 
+### <img src="https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/16-15-19-51-icons8_flow_512px.png" title="" alt="icons8_flow_512px.png" width="35"> Giải thuật `A*`
 
-### Giải thuật `A*`
-
-
+![Screenshot 2021-05-16 170747.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/16-17-12-20-Screenshot%202021-05-16%20170747.png)
 
 ---
 
