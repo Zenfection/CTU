@@ -33,7 +33,7 @@ Có rất nhiều giải thuật tìm kiếm nhưng tôi chỉ hướng tới 3 
 | Cơ chế      | FIFO (*hàng đợi*)                                                                                                                                                         | LIFO (*ngắn xếp*)                                                                                                                                                         |
 | Thực hiện   | Mở rộng các nút lần lượt từ nút `gốc`                                                                                                                                     | Phát triển sâu các trường hợp của một nhánh                                                                                                                               |
 | Hạn chế     | Làm cạn bộ nhớ<br>Tốn nhiều chi phí                                                                                                                                       | Có thể rơi vào vòng lặp vĩnh cữu<br>                                                                                                                                      |
-| Độ phức tạp | `O(a*b)` <br><br>`a` là độ sâu<br>`b` là số phân nhánh                                                                                                                    | `O(a*b)` <br><br>`a` là độ sâu<br>`b` là số phân nhánh                                                                                                                    |
+| Độ phức tạp | `O(aᵇ)` <br><br>`a` là độ sâu<br>`b` là số phân nhánh                                                                                                                     | `O(aᵇ)` <br><br>`a` là độ sâu<br>`b` là số phân nhánh                                                                                                                     |
 | Mô hình     | ![bfs_gif.gif](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/16-15-47-42-bfs_gif.gif)                                                                 | ![dfs_gif.gif](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/16-15-49-17-dfs_gif.gif)                                                                 |
 
 Trước khi biết  về giải thuật `A*` bạn phải nắm hiểu thế nào là tìm kiếm `Heuristic`
@@ -64,12 +64,22 @@ f(n) = g(n) + h(n)
 
 > - `g(n)` là chiều cao từ `trạng thái đang xét` tới `trạng thái đầu`
 > 
-> - `h(n)` là hàm `heuristic` ước lượng chi phí `trạng thái đang xét` tới `trạng thái đích`
+> - `h(n)` là hàm `heuristic` ước lượng chi phí `trạng thái đang xét` tới `trạng thái đích` (*hiểu đơn giản là số ô không đúng với `trạng thái đích`*)
 > 
 > - `f(n)` càng thấp thì ưu tiên hướng đi đó
+
+#### Mô hình A*
+
+<img src="https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/16-17-05-03-a_star.gif" title="" alt="a_star.gif" width="275">
+
+---
+
+## 3. Cài đặt giải thuật
+
+
 
 
 
 ---
 
-## 3. Kết luận
+## 4.
