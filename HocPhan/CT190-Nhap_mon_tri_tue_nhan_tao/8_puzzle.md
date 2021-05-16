@@ -111,10 +111,4 @@ Cho bảng `3x3` như sau, và từ `trạng thái đầu` hãy trình bày gi�
 | So sánh  | <img src="https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/16-18-02-36-2021-05-16-18-01-07-image.png" title="" alt="2021-05-16-18-01-07-image.png" width="397"> | <img src="https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/16-18-02-45-2021-05-16-18-01-18-image.png" title="" alt="2021-05-16-18-01-18-image.png" width="421"> | <img src="https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/16-18-02-49-2021-05-16-18-01-25-image.png" title="" alt="2021-05-16-18-01-25-image.png" width="366"> | <img src="https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/16-18-02-54-2021-05-16-18-01-31-image.png" title="" alt="2021-05-16-18-01-31-image.png" width="421"> |
 | Kết luận | A* tối ưu                                                                                                                                                                        | BFS và A* tối ưu                                                                                                                                                                 | A* tối ưu                                                                                                                                                                        | A* tối ưu                                                                                                                                                                        |
 
-- Thời gian : 
-
-- 
-
-- 
-
-- 
+==> Giải thuật `A*` tối ưu nhất trong việc giải `8-puzzle`
