@@ -24,6 +24,36 @@ Công ty `Tam Quốc` chuyên kinh doanh Lẩu cay `Tứ Xuyên` có nhu cầu c
 
 Giải
 
+![Screenshot 2021-05-22 221721.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/22-22-31-00-Screenshot%202021-05-22%20221721.png)
+
+![Screenshot 2021-05-22 221741.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/22-22-31-06-Screenshot%202021-05-22%20221741.png)
+
+![Screenshot 2021-05-22 221803.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/22-22-31-09-Screenshot%202021-05-22%20221803.png)
+
+![Screenshot 2021-05-22 222416.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/22-22-31-13-Screenshot%202021-05-22%20222416.png)
+
+![Screenshot 2021-05-22 222501.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/22-22-31-18-Screenshot%202021-05-22%20222501.png)
+
+![Screenshot 2021-05-22 222556.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/22-22-31-25-Screenshot%202021-05-22%20222556.png)
+
+![Screenshot 2021-05-22 222747.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/22-22-31-30-Screenshot%202021-05-22%20222747.png)
+
+Xác định device network ở đây là `enp0s3` , gõ lệnh sau để config network (*ở người dùng `root`*)
+
+```bash
+$ gedit /etc/sysconfig/network-scripts/ifcfg-enp0s3
+```
+
+
+
+>  Nếu bạn chưa cài dịch vụ `network` thì hãy gõ lệnh sau : 
+> 
+> ```bash
+> $ yum install network-scripts
+> ```
+
+
+
 > ![icons8questionspng](https://raw.githubusercontent.com/Zenfection/Image/master/2021/04/08-22-03-47-icons8-questions.png) **Câu 1.2** (*10%*) Để quản lý các bộ phận và người dùng trong công ty, hãy tạo các nhóm  người dùng (`group`) và người dùng (`user`) trên `server` như sau 
 > 
 > ⚠️ **Lưu ý**: chỉ có các thành viên trong ban giám đốc mới có quyền `sudo` trên `server`
@@ -107,5 +137,3 @@ Viết báo cáo trình bày các bước thực hiện công việc `1.1` đế
 - Trình bày rõ ràng cụ thể đầy đủ **từng** bước thực hiện và có cả hình ảnh minh hoạ. Báo cáo ít lỗi chính tả, trình bày đẹp, có hình ảnh minh hoạ rõ, chi tiết, có mục lục...
 
 - Có sự phối hợp, thảo luận, hợp tác giữa các thành viên trong nhóm để thực hiện bài tập nhóm. Có sự phân chia công việc cụ thể giữa các thành viên trong nhóm.
-
-
