@@ -4,7 +4,7 @@ Công ty `Tam Quốc` chuyên kinh doanh Lẩu cay `Tứ Xuyên` có nhu cầu c
 
 <img title="" src="https://lh3.googleusercontent.com/cXx6M7P8cVnjPgZolbGXkmmSGZhKSdiXc8SgdL1hF4FZYjqziVv1WFyB53CNb_ZfE9S9MrSioDZYoZLNuXKe3F4kI88uhZuuV-JNYfXfBA_ixk4_ahd6BrMbg2y329X_ctkojijV" alt="" width="548">
 
-## 1. Cài đặt và cấu hình `server/desktop` (*80%*)
+## I. Cài đặt và cấu hình `server/desktop` (*80%*)
 
 > ![icons8questionspng](https://raw.githubusercontent.com/Zenfection/Image/master/2021/04/08-22-03-47-icons8-questions.png)**Câu 1.1**: (*10%*) Sử dụng phần mềm `VituralBox` hoặc `VMWare`
 > 
@@ -192,7 +192,7 @@ Giải
 
 ---
 
-## 2. Hình thức bài báo cáo bài tập nhóm (*20%*)
+## II. Hình thức bài báo cáo bài tập nhóm (*20%*)
 
 Viết báo cáo trình bày các bước thực hiện công việc `1.1` đến `1.10` 
 
