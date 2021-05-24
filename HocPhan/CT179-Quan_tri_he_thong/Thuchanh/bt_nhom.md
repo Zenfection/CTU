@@ -30,6 +30,16 @@ Giải
 | <img src="https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/23-23-01-54-icons8-centos.png" title="" alt="icons8-centos.png" width="50"> [CentOS](https://www.centos.org/download/)                  | RedHat        |
 | <img src="https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/23-23-02-51-Lubuntu_logo_only.svg" title="" alt="Lubuntu_logo_only.svg" width="50"> [Lubuntu](https://lubuntu.net/downloads/)           | Mario Behling |
 
+### Tắt dịch vụ `DHCP Server`
+
+- **B1:** `File` -> `Host Network Manager`
+  
+  ![Screen Shot 2021-05-24 at 10.46.15.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/24-10-46-46-Screen%20Shot%202021-05-24%20at%2010.46.15.png)
+
+- **B2:** Tắt `DHCP Server` như sau (*1 trong 2 cách*)
+  
+  ![Screen Shot 2021-05-24 at 10.40.57.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/24-10-47-34-Screen%20Shot%202021-05-24%20at%2010.40.57.png)
+
 ### Cài và cấu hình cho CentOS 8 <img src="https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/23-23-01-54-icons8-centos.png" title="" alt="icons8-centos.png" width="50">
 
 #### 1. Thực hiện cài `CentOS 8` lên `VituralBox` (Cài bản không `GUI`) :
@@ -38,19 +48,7 @@ Giải
 > 
 > ![Screenshot 2021-05-22 222416.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/23-23-05-13-Screenshot%202021-05-22%20222416.png)
 
-#### 2. Tắt dịch vụ `DHCP Server` như sau :
-
-> - **B1:** `File` -> `Host Network Manager`
->   
->   ![Screen Shot 2021-05-24 at 10.46.15.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/24-10-46-46-Screen%20Shot%202021-05-24%20at%2010.46.15.png)
-> 
-> - **B2:** Tắt `DHCP Server` như sau (*1 trong 2 cách*)
->   
->   ![Screen Shot 2021-05-24 at 10.40.57.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/24-10-47-34-Screen%20Shot%202021-05-24%20at%2010.40.57.png)
-> 
-> - **B3**: Nhấn `Apply` và ta đã tắt `DHCP Server` 
-
-#### 3. Cài đặt `NAT Network`
+#### 2. Cài đặt `NAT Network`
 
 > - **B1**: Chọn `VituralBox` -> `Preferences`
 >   
@@ -64,7 +62,7 @@ Giải
 >   
 >   ![Screen Shot 2021-05-24 at 10.41.50.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/24-10-51-29-Screen%20Shot%202021-05-24%20at%2010.41.50.png)
 
-#### 4. Chuyển đổi `network` của máy ảo `CentOS 8` qua `NAT Network`
+#### 3. Chuyển đổi `network` của máy ảo `CentOS 8` qua `NAT Network`
 
 > - **B1**: Chọn `setting` máy ảo `CentOS 8` trong `VituralBox` 
 > 
@@ -72,7 +70,7 @@ Giải
 >   
 >   ![Screen Shot 2021-05-24 at 10.42.02.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/24-10-52-13-Screen%20Shot%202021-05-24%20at%2010.42.02.png)
 
-#### 5. Kiểm tra cấu hình mạng trong `CentOS 8`
+#### 4. Kiểm tra cấu hình mạng trong `CentOS 8`
 
 > - **B1:** Kiểm tra đã cài đặt `network-scripts` chưa, nếu chưa gõ lệnh : 
 >   
@@ -112,7 +110,11 @@ Giải
 
 #### 1. Thực hiện cài `Lubuntu 20.04` lên `VituralBox`
 
+> 💡 Sau khi cài đặt `Lubuntu 20.04` tiến hành vào `Qterminal` 
 > 
+> ![Screen Shot 2021-05-24 at 11.01.43.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/24-11-02-12-Screen%20Shot%202021-05-24%20at%2011.01.43.png)
+
+#### 2.
 
 
 
