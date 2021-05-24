@@ -322,6 +322,20 @@ Giải
 
 Giải
 
+### Cài đặt và cấu hình `DHCP Server`
+
+#### 1.  Cài đặt `DHCP Server` cho `CentOS 8`
+
+> - **B1**: Dùng lệnh `yum install dhcp-server` để cài đặt :
+>   
+>   ![Screen Shot 2021-05-24 at 13.32.57.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/24-13-33-12-Screen%20Shot%202021-05-24%20at%2013.32.57.png)
+> 
+> - 
+
+
+
+
+
 > ![icons8questionspng](https://raw.githubusercontent.com/Zenfection/Image/master/2021/04/08-22-03-47-icons8-questions.png) **Câu 1.5** (*10%*) Cài đặt và cấu hình tường lửa trên `server` để cho phép `desktop` : 
 > 
 > - Có thể trờiuy cập các dịch vụ `DNS`, `DHCP`, `SSH`, `Web`,`FTP` trên `server`. Các dịch vụ khác **KHÔNG** truy cập được
