@@ -156,6 +156,70 @@ Giải
 
 Giải
 
+### Thực hiện tạo `user` và `group` theo yêu cầu :
+
+#### 1. Tạo Group
+
+> - **B1**: Thực hiện các lệnh sau :
+>   
+>   ```bash
+>   # Lệnh tạo 3 nhóm ban giám đốc, hành chánh, ban hang
+>   $ groupadd bangiamdoc
+>   $ groupadd hanhchanh
+>   $ groupadd banhang
+>   ```
+> 
+> - **B2**: Thực hiện lệnh `cat /etc/group` để kiểm tra :
+>   
+>   ![Screenshot 2021-05-22 233744.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/24-11-25-44-Screenshot%202021-05-22%20233744.png)
+
+#### 2. Tạo các user
+
+> - **B1**: Thực hiện các lệnh sau : 
+>   
+>   ```bash
+>   # Tạo các người dùng và mật khẩu theo yêu cầu
+>   $ useradd -m bi.luu -p luubi
+>   $ useradd -m luong.giacat -p giacatluong
+>   $ useradd -m vu.quan -p quanvu
+>   $ useradd -m phi.truong -p truongphi
+>   $ useradd -m van.trieu -p trieuvan
+>   $ useradd -m sieu.ma -p masieu
+>   $ useradd -m trung.hoang -p hoangtrung
+>   ```
+> 
+> - **B2**: Gõ lệnh `cat /etc/passwd` để kiểm tra 
+>   
+>   ![Screenshot 2021-05-22 234121.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/24-11-29-56-Screenshot%202021-05-22%20234121.png)
+
+#### 3. Nhập user vào group phù hợp
+
+> - **B1**: Thực hiện các lệnh sau : 
+> 
+> - ```bash
+>   # Nhập lưu bị và gia cát lượng vào ban giám độc
+>   $ usermod -a -G bangiamdoc bi.luu
+>   $ usermod -a -G bangiamdoc luong.giacat
+>   # Nhập quan vũ và phi trường vào hành chánh
+>   $ usermod -a -G hanhchanh vu.quan
+>   $ usermod -a -G hanhchanh phi.truong
+>   # Nhập trương phi, triệu vân, mã siêu vào bán hàng
+>   $ usermod -a -G banhang phi.truong
+>   $ usermod -a -G banhang sieu.ma 
+>   ```
+> 
+> - Gõ lệnh `cat /etc/groups` để kiểm tra 
+>   
+>   ![Screen Shot 2021-05-24 at 11.33.59.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/24-11-34-22-Screen%20Shot%202021-05-24%20at%2011.33.59.png)
+
+#### 4. Cấp quyền `root` cho nhóm `ban giám đốc`
+
+> - **B1**: Thực hiện lệnh `nano /etc/sudoers` (*ở tài khoản `root`*), và cấu hình như sau : 
+>   
+>   ![Screenshot 2021-05-22 235237.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/24-11-38-00-Screenshot%202021-05-22%20235237.png)
+> 
+> - **B2**: 
+
 
 
 > ![icons8questionspng](https://raw.githubusercontent.com/Zenfection/Image/master/2021/04/08-22-03-47-icons8-questions.png) **Câu 1.3**: (*10%*) Tạo thư mục `/data` trên `server` và phân quyền sao cho thành viên của `ban giám độc` có toàn quyền (*read,write,exceute*), các trưởng phòng có quyền `read` và `excute`, các nhân viên khác không có quyền gì. Ngoài ra chỉ chủ sở hữu tập tin có quyền xoá hoặc đổi tên tập tin trong thư mục.
