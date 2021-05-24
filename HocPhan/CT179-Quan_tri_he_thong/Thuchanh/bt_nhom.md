@@ -24,33 +24,95 @@ Công ty `Tam Quốc` chuyên kinh doanh Lẩu cay `Tứ Xuyên` có nhu cầu c
 
 Giải
 
-![Screenshot 2021-05-22 221721.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/22-22-31-00-Screenshot%202021-05-22%20221721.png)
+| Phần mềm                                                                                                                                                                                                            | Nhà sản xuất  |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------- |
+| <img src="https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/23-23-00-55-Virtualbox_logo.png" title="" alt="Virtualbox_logo.png" width="50"> [VituralBox](https://www.virtualbox.org/wiki/Downloads) | Oracle        |
+| <img src="https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/23-23-01-54-icons8-centos.png" title="" alt="icons8-centos.png" width="50"> [CentOS](https://www.centos.org/download/)                  | RedHat        |
+| <img src="https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/23-23-02-51-Lubuntu_logo_only.svg" title="" alt="Lubuntu_logo_only.svg" width="50"> [Lubuntu](https://lubuntu.net/downloads/)           | Mario Behling |
 
-![Screenshot 2021-05-22 221741.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/22-22-31-06-Screenshot%202021-05-22%20221741.png)
+### Cài và cấu hình cho CentOS 8 <img src="https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/23-23-01-54-icons8-centos.png" title="" alt="icons8-centos.png" width="50">
 
-![Screenshot 2021-05-22 221803.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/22-22-31-09-Screenshot%202021-05-22%20221803.png)
+#### 1. Thực hiện cài `CentOS 8` lên `VituralBox` (Cài bản không `GUI`) :
 
-![Screenshot 2021-05-22 222416.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/22-22-31-13-Screenshot%202021-05-22%20222416.png)
-
-![Screenshot 2021-05-22 222501.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/22-22-31-18-Screenshot%202021-05-22%20222501.png)
-
-![Screenshot 2021-05-22 222556.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/22-22-31-25-Screenshot%202021-05-22%20222556.png)
-
-![Screenshot 2021-05-22 222747.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/22-22-31-30-Screenshot%202021-05-22%20222747.png)
-
-Xác định device network ở đây là `enp0s3` , gõ lệnh sau để config network (*ở người dùng `root`*)
-
-```bash
-$ gedit /etc/sysconfig/network-scripts/ifcfg-enp0s3
-```
-
-
-
->  Nếu bạn chưa cài dịch vụ `network` thì hãy gõ lệnh sau : 
+> 💡 Cài đặt `VituralBox` và tiến hành cài `CentOS 8` (*chọn bản không `GUI`*)
 > 
-> ```bash
-> $ yum install network-scripts
-> ```
+> ![Screenshot 2021-05-22 222416.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/23-23-05-13-Screenshot%202021-05-22%20222416.png)
+
+#### 2. Tắt dịch vụ `DHCP Server` như sau :
+
+> - **B1:** `File` -> `Host Network Manager`
+>   
+>   ![Screen Shot 2021-05-24 at 10.46.15.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/24-10-46-46-Screen%20Shot%202021-05-24%20at%2010.46.15.png)
+> 
+> - **B2:** Tắt `DHCP Server` như sau (*1 trong 2 cách*)
+>   
+>   ![Screen Shot 2021-05-24 at 10.40.57.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/24-10-47-34-Screen%20Shot%202021-05-24%20at%2010.40.57.png)
+> 
+> - **B3**: Nhấn `Apply` và ta đã tắt `DHCP Server` 
+
+#### 3. Cài đặt `NAT Network`
+
+> - **B1**: Chọn `VituralBox` -> `Preferences`
+>   
+>   ![Screen Shot 2021-05-24 at 10.41.17.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/24-10-48-37-Screen%20Shot%202021-05-24%20at%2010.41.17.png)
+> 
+> - **B2**: Qua cửa sổ `Network` và nhấn nút tạo `NAT Network`
+>   
+>   ![Screen Shot 2021-05-24 at 10.41.32.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/24-10-49-36-Screen%20Shot%202021-05-24%20at%2010.41.32.png)
+> 
+> - **B3**: Cấu hình `NAT Network` như sau và nhấn `OK`
+>   
+>   ![Screen Shot 2021-05-24 at 10.41.50.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/24-10-51-29-Screen%20Shot%202021-05-24%20at%2010.41.50.png)
+
+#### 4. Chuyển đổi `network` của máy ảo `CentOS 8` qua `NAT Network`
+
+> - **B1**: Chọn `setting` máy ảo `CentOS 8` trong `VituralBox` 
+> 
+> - **B2:** Chọn `Network`, đổi sang `NAT Network` và chọn `QTHT` như đã cấu hình trước đó 
+>   
+>   ![Screen Shot 2021-05-24 at 10.42.02.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/24-10-52-13-Screen%20Shot%202021-05-24%20at%2010.42.02.png)
+
+#### 5. Kiểm tra cấu hình mạng trong `CentOS 8`
+
+> - **B1:** Kiểm tra đã cài đặt `network-scripts` chưa, nếu chưa gõ lệnh : 
+>   
+>   ```bash
+>   $ yum install network-scripts
+>   ```
+>   
+>   ![Screenshot 2021-05-22 223917.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/23-23-18-35-Screenshot%202021-05-22%20223917.png)
+> 
+> - **B2**: Gõ `ipconfig -a` kiểm tra : 
+>   
+>   ![Screenshot 2021-05-22 222747.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/23-23-19-25-Screenshot%202021-05-22%20222747.png)
+>   
+>   Xác định `device network` đang sử dụng là `enp0s3`, gõ lệnh dưới đây để cấu hình `network` (*dùng tài khoản `root`*) : 
+>   
+>   ```bash
+>   $ nano /etc/sysconfig/network-scripts/ifcfg-enp0s3
+>   ```
+>   
+>   ![Screenshot 2021-05-22 223538.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/23-23-20-23-Screenshot%202021-05-22%20223538.png)
+>   
+>   Hoặc cũng có thể sử dụng lệnh `mntui` để cấu hình giao diện như sau : 
+>   
+>   ![Screenshot 2021-05-23 100531.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/23-23-21-20-Screenshot%202021-05-23%20100531.png)
+> 
+> - **B3**: Gõ lệnh `service network restart` để khởi động lại `network` : 
+>   
+>   ![Screenshot 2021-05-22 224123.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/23-23-22-47-Screenshot%202021-05-22%20224123.png)
+> 
+> - **B4**: Dùng lệnh `ifconfig -a` để kiểm tra sau khi cấu hình : 
+>   
+>   ![Screenshot 2021-05-23 100934.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/23-23-33-19-Screenshot%202021-05-23%20100934.png)
+> 
+> ==> Vậy là ta đã thoả yêu cầu cấu hình mạng cho máy ảo `CentOS 8`
+
+### Cài và cấu hình Lubuntu <img src="https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/23-23-02-51-Lubuntu_logo_only.svg" title="" alt="Lubuntu_logo_only.svg" width="50">
+
+#### 1. Thực hiện cài `Lubuntu 20.04` lên `VituralBox`
+
+> 
 
 
 
