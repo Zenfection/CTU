@@ -218,9 +218,18 @@ Giải
 >   
 >   ![Screenshot 2021-05-22 235237.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/24-11-38-00-Screenshot%202021-05-22%20235237.png)
 > 
-> - **B2**: 
+> - **B2**: Hãy thực hiện các lệnh sau để kiểm tra 
+>   
+>   ```bash
+>   # Đổi qua tài khoản bi.luu vì nó nằm trong group bangiamdoc
+>   $ su bi.luu
+>   # gõ câu lệnh kiểm tra thử quyền tài khoản root
+>   $ sudo nano /etc/shadow
+>   ```
+>   
+>   ![Screen Shot 2021-05-24 at 11.46.56.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/24-11-47-16-Screen%20Shot%202021-05-24%20at%2011.46.56.png)
 
-
+---
 
 > ![icons8questionspng](https://raw.githubusercontent.com/Zenfection/Image/master/2021/04/08-22-03-47-icons8-questions.png) **Câu 1.3**: (*10%*) Tạo thư mục `/data` trên `server` và phân quyền sao cho thành viên của `ban giám độc` có toàn quyền (*read,write,exceute*), các trưởng phòng có quyền `read` và `excute`, các nhân viên khác không có quyền gì. Ngoài ra chỉ chủ sở hữu tập tin có quyền xoá hoặc đổi tên tập tin trong thư mục.
 
