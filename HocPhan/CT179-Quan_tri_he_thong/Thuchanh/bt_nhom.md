@@ -26,9 +26,9 @@ Giải
 
 | Phần mềm                                                                                                                                                                                                            | Nhà sản xuất  |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------- |
-| <img src="https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/23-23-00-55-Virtualbox_logo.png" title="" alt="Virtualbox_logo.png" width="50"> [VituralBox](https://www.virtualbox.org/wiki/Downloads) | Oracle        |
-| <img src="https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/23-23-01-54-icons8-centos.png" title="" alt="icons8-centos.png" width="50"> [CentOS](https://www.centos.org/download/)                  | RedHat        |
-| <img src="https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/23-23-02-51-Lubuntu_logo_only.svg" title="" alt="Lubuntu_logo_only.svg" width="50"> [Lubuntu](https://lubuntu.net/downloads/)           | Mario Behling |
+| <img src="https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/23-23-00-55-Virtualbox_logo.png" title="" alt="Virtualbox_logo.png" width="40"> [VituralBox](https://www.virtualbox.org/wiki/Downloads) | Oracle        |
+| <img src="https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/23-23-01-54-icons8-centos.png" title="" alt="icons8-centos.png" width="40"> [CentOS](https://www.centos.org/download/)                  | RedHat        |
+| <img src="https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/23-23-02-51-Lubuntu_logo_only.svg" title="" alt="Lubuntu_logo_only.svg" width="40"> [Lubuntu](https://lubuntu.net/downloads/)           | Mario Behling |
 
 ### Tắt dịch vụ `DHCP Server`
 
@@ -40,7 +40,7 @@ Giải
   
   ![Screen Shot 2021-05-24 at 10.40.57.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/24-10-47-34-Screen%20Shot%202021-05-24%20at%2010.40.57.png)
 
-### Cài và cấu hình cho CentOS 8 <img src="https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/23-23-01-54-icons8-centos.png" title="" alt="icons8-centos.png" width="50">
+### Cài và cấu hình cho CentOS 8 <img src="https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/23-23-01-54-icons8-centos.png" title="" alt="icons8-centos.png" width="35">
 
 #### 1. Thực hiện cài `CentOS 8` lên `VituralBox` (Cài bản không `GUI`) :
 
@@ -110,7 +110,7 @@ Giải
 > 
 > ==> Vậy là ta đã thoả yêu cầu cấu hình mạng cho máy ảo `CentOS 8`
 
-### Cài và cấu hình Lubuntu <img src="https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/23-23-02-51-Lubuntu_logo_only.svg" title="" alt="Lubuntu_logo_only.svg" width="50">
+### Cài và cấu hình Lubuntu <img src="https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/23-23-02-51-Lubuntu_logo_only.svg" title="" alt="Lubuntu_logo_only.svg" width="35">
 
 #### 1. Thực hiện cài `Lubuntu 20.04` lên `VituralBox`
 
@@ -231,9 +231,86 @@ Giải
 
 ---
 
-> ![icons8questionspng](https://raw.githubusercontent.com/Zenfection/Image/master/2021/04/08-22-03-47-icons8-questions.png) **Câu 1.3**: (*10%*) Tạo thư mục `/data` trên `server` và phân quyền sao cho thành viên của `ban giám độc` có toàn quyền (*read,write,exceute*), các trưởng phòng có quyền `read` và `excute`, các nhân viên khác không có quyền gì. Ngoài ra chỉ chủ sở hữu tập tin có quyền xoá hoặc đổi tên tập tin trong thư mục.
+> ![icons8questionspng](https://raw.githubusercontent.com/Zenfection/Image/master/2021/04/08-22-03-47-icons8-questions.png) **Câu 1.3**: (*10%*) Tạo thư mục `/data` trên `server` và phân quyền sao cho thành viên của `ban giám đốc` có toàn quyền (*read,write,exceute*), các trưởng phòng có quyền `read` và `excute`, các nhân viên khác không có quyền gì. Ngoài ra chỉ chủ sở hữu tập tin có quyền xoá hoặc đổi tên tập tin trong thư mục.
 
 Giải
+
+### Thực hiện tạo `/data` và phân quyền
+
+#### 1. Tạo thư mục `/data` và đổi `group` sở hữu
+
+> - **B1:** Tạo group `truongphong` và thêm `luubi` và `trieuvan` vào : 
+>   
+>   ```bash
+>   $ groupadd truongphong
+>   $ usermod -a -G truongphong bi.luu
+>   $ usermod -a -G truongphong trieu.van
+>   ```
+> 
+> - **B2**: Sử dụng lệnh lần lượt các lệnh dưới đây :
+>   
+>   ```bash
+>   $ su                         # đổi qua tài khoản root
+>   $ mkdir /data                # tạo thư mục /data
+>   $ chgrp truongphong /data    # đổi chủ nhóm sở hữu
+>   $ chmod 750 /data            # cấp quyền cho thư mục /data
+>   ```
+> 
+> - **B3**: Sử dụng lệnh `ls -l /data` để kiểm tra : 
+>   
+>   ![Screen Shot 2021-05-24 at 12.39.57.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/24-12-45-44-Screen%20Shot%202021-05-24%20at%2012.39.57.png)
+
+### 2. Kiểm tra phân quyền
+
+- **B1:** Tạo file `123.txt` bằng lệnh `nano /data/123.txt` như sau : 
+
+![Screen Shot 2021-05-24 at 12.47.18.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/24-12-53-16-Screen%20Shot%202021-05-24%20at%2012.47.18.png)
+
+- **B2**:  Phân quyền như sau : 
+  
+  ```bash
+  $ chgrp truongphong /data/123.txt
+  $ chmod 750 /data/123.txt
+  ```
+
+- **B3**: Thực hiện lệnh `ls -l /data/` để kiểm tra 
+  
+  ![Screen Shot 2021-05-24 at 13.14.12.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/24-13-19-16-Screen%20Shot%202021-05-24%20at%2013.14.12.png)
+
+#### Thực hiện kiểm tra
+
+> - **B1:** Kiểm tra người trong nhóm `bangiamdoc` có quyền `read/write/execute`
+>   
+>   ```bash
+>   $ su bi.luu                #vì lưu bị trong nhóm bangiamdoc
+>   $ sudo nano /data/123.txt  #kiểm tra
+>   ```
+>   
+>   ==> Thử ghi và `save` lại, nếu thành công là được : 
+>   
+>   ![Screen Shot 2021-05-24 at 12.50.48.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/24-12-55-32-Screen%20Shot%202021-05-24%20at%2012.50.48.png)
+> 
+> - **B2**: Kiểm tra người trong nhóm `truongphong` có quyền `read/execute`
+>   
+>   ```bash
+>   $ su vu.quan              #vì quan vũ trong nhóm trưởng phòng
+>   $ sudo nano /data/123.txt #kiểm tra
+>   ```
+>   
+>   ![Screen Shot 2021-05-24 at 13.16.47.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/24-13-24-39-Screen%20Shot%202021-05-24%20at%2013.16.47.png)
+>   
+>   ==> Như vậy thành viên trong `truongphong` không thể **write**
+> 
+> - **B3**: Kiểm tra **nhân viên** không có quyền gì 
+>   
+>   ```bash
+>   $ su sieu.ma # vì mã siêu là nhân viên
+>   $ cat /data/123.txt
+>   ```
+>   
+>   ![Screen Shot 2021-05-24 at 13.23.27.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/24-13-25-34-Screen%20Shot%202021-05-24%20at%2013.23.27.png)
+
+---
 
 > ![icons8questionspng](https://raw.githubusercontent.com/Zenfection/Image/master/2021/04/08-22-03-47-icons8-questions.png) **Câu 1.4** (*10%*) Cài đặt và cấu hình dịch vụ `DHCP` trên `server` để cấu hình mạng tự động cho các máy `desktop`
 > 
