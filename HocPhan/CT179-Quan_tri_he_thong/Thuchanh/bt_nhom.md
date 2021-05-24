@@ -104,6 +104,10 @@ Giải
 >   
 >   ![Screenshot 2021-05-23 100934.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/23-23-33-19-Screenshot%202021-05-23%20100934.png)
 > 
+> - **B5**: Thực hiện lệnh `ping google.com` để kiểm tra mạng có truy cập được không 
+>   
+>   ![Screen Shot 2021-05-24 at 11.17.38.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/24-11-17-44-Screen%20Shot%202021-05-24%20at%2011.17.38.png)
+> 
 > ==> Vậy là ta đã thoả yêu cầu cấu hình mạng cho máy ảo `CentOS 8`
 
 ### Cài và cấu hình Lubuntu <img src="https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/23-23-02-51-Lubuntu_logo_only.svg" title="" alt="Lubuntu_logo_only.svg" width="50">
@@ -124,11 +128,15 @@ Giải
 
 #### 3. Kiểm tra network trong `Lubuntu`
 
-> Thực hiện lệnh `ifconfig -a` để kiểm tra cấu hình mạng : 
+> - **B1**: Thực hiện lệnh `ifconfig -a` để kiểm tra cấu hình mạng : 
+>   
+>   ![Screen Shot 2021-05-24 at 11.07.57.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/24-11-09-00-Screen%20Shot%202021-05-24%20at%2011.07.57.png)
 > 
-> ![Screen Shot 2021-05-24 at 11.07.57.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/24-11-09-00-Screen%20Shot%202021-05-24%20at%2011.07.57.png)
+> - **B2**: Thực hiện lệnh `ping google.com` để kiểm tra mạng có truy cập được không 
+>   
+>   ![Screen Shot 2021-05-24 at 11.11.41.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/24-11-12-55-Screen%20Shot%202021-05-24%20at%2011.11.41.png)
 > 
-> ==> Như thế đã thoả 
+> ==> Như vậy là thoả
 
 ---
 
@@ -147,6 +155,8 @@ Giải
 > | 7   | Hoàng Trung   | banhang    | trung.hoang  | hoangtrung  | Nhân viên    |
 
 Giải
+
+
 
 > ![icons8questionspng](https://raw.githubusercontent.com/Zenfection/Image/master/2021/04/08-22-03-47-icons8-questions.png) **Câu 1.3**: (*10%*) Tạo thư mục `/data` trên `server` và phân quyền sao cho thành viên của `ban giám độc` có toàn quyền (*read,write,exceute*), các trưởng phòng có quyền `read` và `excute`, các nhân viên khác không có quyền gì. Ngoài ra chỉ chủ sở hữu tập tin có quyền xoá hoặc đổi tên tập tin trong thư mục.
 
