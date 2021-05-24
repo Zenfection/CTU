@@ -122,9 +122,9 @@ Giải
 
 > - **B1**: Chọn `setting` máy ảo `Lubuntu` trong `VituralBox`
 > 
-> - **B2:** Chọn `Network`, đổi sang `NAT` như sau : 
+> - **B2:** Chọn `Network`, đổi sang `NAT Network` như sau : 
 >   
->   ![Screen Shot 2021-05-24 at 11.05.47.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/24-11-07-06-Screen%20Shot%202021-05-24%20at%2011.05.47.png)
+>   ![Screen Shot 2021-05-24 at 20.28.45.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/24-20-31-34-Screen%20Shot%202021-05-24%20at%2020.28.45.png)
 
 #### 3. Kiểm tra network trong `Lubuntu`
 
@@ -374,13 +374,87 @@ Giải
 
 Giải
 
+### Cấu hình tường lửa trên `CentOS 8`
 
+#### 1. Cài đặt và chạy tường lửa
+
+> - **B1**: Gõ lệnh `yum install iptables` và `yum install iptables-services`
+>   
+>   ![Screen Shot 2021-05-24 at 16.12.58.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/24-17-03-46-Screen%20Shot%202021-05-24%20at%2016.12.58.png)
+>   
+>   <img src="https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/24-17-56-35-Screen%20Shot%202021-05-24%20at%2017.56.27.png" title="" alt="Screen Shot 2021-05-24 at 17.56.27.png" width="331">
+> 
+> - **B2**:  Thực hiện lệnh sau :
+>   
+>   ```bash
+>   $ systemctl start iptables # chạy tường lửa
+>   $ systemctl status iptables # kiểm tra tường lửa
+>   ```
+>   
+>   ![Screen Shot 2021-05-24 at 17.50.56.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/24-17-55-17-Screen%20Shot%202021-05-24%20at%2017.50.56.png)
+
+#### 2. Cấu hình `rule` cho tường lửa
+
+> 💡 Có rất nhiều số port tượng trưng cho mỗi cổng kết nối, tuy nhiên chỉ đề cập những port thông dụng sau : 
+> 
+> | Cổng số | Sử dụng                                             |
+> | ------- | --------------------------------------------------- |
+> | 20      | FTP (*File Transfer Protocol*) - Data transfer      |
+> | 21      | FTP (*File Transfer Protocol*) - Command control    |
+> | 22      | SSH (*Secure Shell*)                                |
+> | 25      | SMTP (*Simple Mail Transfer Protocol*)              |
+> | 53      | DNS (Domain Name Server)                            |
+> | 67      | DHCP (*Dynamic Host Configuration Protocol*)-Server |
+> | 68      | DHCP (*Dynamic Host Configuration Protocol*)-Client |
+> | 80      | HTTP (*Hypertext Transfer Protocol*)                |
+> | 110     | POP3 (*Post Office Protocol*)                       |
+> | 119     | NNTP (*Network News Transfer Protocol*)             |
+> | 123     | NTP (*Network Time Ptotocol*)                       |
+> | 143     | IMAP (*Internet Message Access Protocol*)           |
+> | 161     | SNMP (*Simple Network Management Protocol*)         |
+> | 194     | IRC (Internet Relay Chat)                           |
+> | 443     | HTTPS (*HTTP Secure*)                               |
+> 
+> - **B1**: Thực hiện lần lượt các lệnh sau : 
+>   
+>   ```bash
+>   # cho phép truy cập web
+>   $ iptables -A INPUT -p tcp --dport 80:443 -j ACCEPT
+>   # cho phép truy cập SSH
+>   iptables -A INPUT -p tcp --dport 22 -j ACCEPT
+>   # cho phép truy cập FTP
+>   iptables -A INPUT -p tcp --dport 20:21 -j ACCEPT
+>   # cho phép truy cập DNS
+>   iptables -A INPUT -p tcp --dport 53 -j ACCEPT
+>   # cho phép truy cập DHCP
+>   iptables -A INPUT -p udp --dport 67:68 -j ACCEPT
+>   # chặn tất cả các cổng khác
+>   iptables -A INPUT -j DROP
+>   # cho phép desktop ping tới server
+>   iptables -A INPUT -p icmp -s 10.0.2.50 -j ACCEPT
+>   ```
+>   
+>   ![Screen Shot 2021-05-24 at 19.44.49.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/24-19-45-35-Screen%20Shot%202021-05-24%20at%2019.44.49.png)
+> 
+> - **B2**: Từ `Lubuntu` ping tới `CentOS 8`
+>   
+>   ![Screen Shot 2021-05-24 at 19.47.02.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/24-19-47-09-Screen%20Shot%202021-05-24%20at%2019.47.02.png)
+
+---
 
 > ![icons8questionspng](https://raw.githubusercontent.com/Zenfection/Image/master/2021/04/08-22-03-47-icons8-questions.png) **Câu 1.6**: (*10%*) Cài đặt và cấu hình dịch vụ `SSH` để cho phép điều khiển từ xa `server`
 > 
 > ⚠️ **Lưu ý**: chỉ có thành viên `ban giám đốc` và các trưởng phòng mới có quyền điều khiển từ xa `server`
 
 Giải
+
+### Cài đặt dịch vụ `SSH`
+
+#### 1. Cài đặt và chạy `SSH`
+
+> - **B1**
+
+
 
 > ![icons8questionspng](https://raw.githubusercontent.com/Zenfection/Image/master/2021/04/08-22-03-47-icons8-questions.png) **Câu 1.7** (*5%*) Cài đặt và cấu hình dịch vụ `DNS` trên `server` để phân giải tên miền `lautamquoc.com`
 > 
