@@ -121,10 +121,16 @@ Giải
 > - **B2:** Chọn `Network`, đổi sang `NAT` như sau : 
 >   
 >   ![Screen Shot 2021-05-24 at 11.05.47.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/24-11-07-06-Screen%20Shot%202021-05-24%20at%2011.05.47.png)
->   
->   
 
+#### 3. Kiểm tra network trong `Lubuntu`
 
+> Thực hiện lệnh `ifconfig -a` để kiểm tra cấu hình mạng : 
+> 
+> ![Screen Shot 2021-05-24 at 11.07.57.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/24-11-09-00-Screen%20Shot%202021-05-24%20at%2011.07.57.png)
+> 
+> ==> Như thế đã thoả 
+
+---
 
 > ![icons8questionspng](https://raw.githubusercontent.com/Zenfection/Image/master/2021/04/08-22-03-47-icons8-questions.png) **Câu 1.2** (*10%*) Để quản lý các bộ phận và người dùng trong công ty, hãy tạo các nhóm  người dùng (`group`) và người dùng (`user`) trên `server` như sau 
 > 
