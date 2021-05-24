@@ -361,6 +361,8 @@ Giải
 > - **B2**: Gõ `ifconfig -a` để kiểm tra cấu hình mạng : 
 >   
 >   ![Screen Shot 2021-05-24 at 16.10.10.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/24-16-10-35-Screen%20Shot%202021-05-24%20at%2016.10.10.png)
+> 
+> ==> Đã thành công, dạy `IP` từ `10.0.2.15` chuyển thành `10.0.2.50` vì đây là `IP` của `DHCP Server` do `CentOS 8` cấp 
 
 ---
 
