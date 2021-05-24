@@ -114,7 +114,15 @@ Giải
 > 
 > ![Screen Shot 2021-05-24 at 11.01.43.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/24-11-02-12-Screen%20Shot%202021-05-24%20at%2011.01.43.png)
 
-#### 2.
+#### 2. Cấu hình network cho `Lubuntu`
+
+> - **B1**: Chọn `setting` máy ảo `Lubuntu` trong `VituralBox`
+> 
+> - **B2:** Chọn `Network`, đổi sang `NAT` như sau : 
+>   
+>   ![Screen Shot 2021-05-24 at 11.05.47.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/24-11-07-06-Screen%20Shot%202021-05-24%20at%2011.05.47.png)
+>   
+>   
 
 
 
