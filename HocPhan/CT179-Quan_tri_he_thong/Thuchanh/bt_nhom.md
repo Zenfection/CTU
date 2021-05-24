@@ -330,23 +330,53 @@ Giải
 >   
 >   ![Screen Shot 2021-05-24 at 13.32.57.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/24-13-33-12-Screen%20Shot%202021-05-24%20at%2013.32.57.png)
 > 
-> - 
+> - **B2**: Copy file mẫu và cấu hình bằng lệnh, và cấu hình như sau : 
+>   
+>   ```bash
+>   $ cp /usr/share/doc/dhcp-server/dhcpd.conf.example /etc/dhcp/dhcp.conf
+>   ```
+>   
+>   ![Screen Shot 2021-05-24 at 14.13.05.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/24-16-04-02-Screen%20Shot%202021-05-24%20at%2014.13.05.png)
+> 
+> - **B3**: Thực hiện lênh sau để chạy `DHCP Server` : 
+>   
+>   ```bash
+>   $ systemctl dhcpd start  #chạy dhcp server
+>   $ systemctl dhcpd enable #bật dhcp server
+>   $ systemctl dhcpd status #kiểm tra dhcp server
+>   $ firewall-cmd --permanent --add-service=dhcp
+>   $ firewall-cmd --reload
+>   ```
+>   
+>   ![Screen Shot 2021-05-24 at 14.21.18.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/24-16-07-22-Screen%20Shot%202021-05-24%20at%2014.21.18.png)
 
+#### 2. Kiểm tra `Lubuntu` sau khi cấu hình `DHCP Server`
 
+> - **B1**: Khởi động lại dịch vụ mạng trên `Lubuntu` bằng lệnh : 
+>   
+>   ```bash
+>   $ systemctl restart NetworkManager
+>   ```
+> 
+> - **B2**: Gõ `ifconfig -a` để kiểm tra cấu hình mạng : 
+>   
+>   ![Screen Shot 2021-05-24 at 16.10.10.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/24-16-10-35-Screen%20Shot%202021-05-24%20at%2016.10.10.png)
 
-
+---
 
 > ![icons8questionspng](https://raw.githubusercontent.com/Zenfection/Image/master/2021/04/08-22-03-47-icons8-questions.png) **Câu 1.5** (*10%*) Cài đặt và cấu hình tường lửa trên `server` để cho phép `desktop` : 
 > 
-> - Có thể trờiuy cập các dịch vụ `DNS`, `DHCP`, `SSH`, `Web`,`FTP` trên `server`. Các dịch vụ khác **KHÔNG** truy cập được
+> - Có thể truy cập các dịch vụ `DNS`, `DHCP`, `SSH`, `Web`,`FTP` trên `server`. Các dịch vụ khác **KHÔNG** truy cập được
 > 
 > - Chỉ `desktop` có thể `ping` tới `server`, các máy khác **KHÔNG** `ping` được.
 
 Giải
 
+
+
 > ![icons8questionspng](https://raw.githubusercontent.com/Zenfection/Image/master/2021/04/08-22-03-47-icons8-questions.png) **Câu 1.6**: (*10%*) Cài đặt và cấu hình dịch vụ `SSH` để cho phép điều khiển từ xa `server`
 > 
-> ⚠️ **Lưu ý**: chỉ có thành viên `ban giám độc` và các trưởng phòng mới có quyền điều khiển từ xa `server`
+> ⚠️ **Lưu ý**: chỉ có thành viên `ban giám đốc` và các trưởng phòng mới có quyền điều khiển từ xa `server`
 
 Giải
 
