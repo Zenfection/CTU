@@ -616,7 +616,30 @@ Giải
 
 #### 3. Kiểm tra web domain
 
-> - **B1** : 
+> - **B1** : Hãy chắc rằng `named` đạng chạy và `iptables` đang tắt
+>   
+>   ```bash
+>   $ systemctl status named
+>   $ systemctl status iptables
+>   ```
+>   
+>   ![Screen Shot 2021-05-25 at 15.06.06.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/25-15-06-33-Screen%20Shot%202021-05-25%20at%2015.06.06.png)
+>   
+>   ![Screen Shot 2021-05-25 at 15.06.59.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/25-15-07-26-Screen%20Shot%202021-05-25%20at%2015.06.59.png)
+> - **B2**: Gõ `ping -c 5 www.lautamquoc.com` để kiểm tra
+>   
+>   ![Screen Shot 2021-05-25 at 15.08.47.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/25-15-09-11-Screen%20Shot%202021-05-25%20at%2015.08.47.png)
+>   
+>    
+> - **B3**: Gõ `lynx www.lautamquoc.com/tamquoc` để truy cập tới `web` : 
+>   
+>   ![Screen Shot 2021-05-25 at 15.11.40.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/25-15-13-46-Screen%20Shot%202021-05-25%20at%2015.11.40.png)
+>   
+>   ![Screen Shot 2021-05-25 at 15.09.53.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/25-15-13-53-Screen%20Shot%202021-05-25%20at%2015.09.53.png)
+>   
+>   ==> Đã thành công
+>   
+>   
 
 ---
 
