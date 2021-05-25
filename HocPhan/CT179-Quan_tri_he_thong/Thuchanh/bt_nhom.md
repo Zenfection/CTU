@@ -520,7 +520,7 @@ Giải
 >   $ nano /var/named/forward.qtht
 >   ```
 >   
->   ![Screen Shot 2021-05-25 at 10.32.07.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/25-10-32-45-Screen%20Shot%202021-05-25%20at%2010.32.07.png)
+>   ![Screen Shot 2021-05-25 at 13.50.28.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/25-13-50-37-Screen%20Shot%202021-05-25%20at%2013.50.28.png)
 > 
 > - **B3** : Cấu hình **phân giải ngược** : 
 >   
@@ -530,7 +530,7 @@ Giải
 >   $ nano /var/named/reverse.qtht
 >   ```
 >   
->   ![Screen Shot 2021-05-25 at 09.53.59.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/25-10-27-20-Screen%20Shot%202021-05-25%20at%2009.53.59.png)
+>   ![Screen Shot 2021-05-25 at 13.50.58.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/25-13-51-06-Screen%20Shot%202021-05-25%20at%2013.50.58.png)
 > 
 > - **B4**: Chạy lại `named` và kiểm tra : 
 >   
@@ -540,22 +540,85 @@ Giải
 >   $ nslookup www.lautamquoc.com 10.0.2.2
 >   $ nslookup ftp.lautamquoc.com 10.0.2.2
 >   #kiểm tra phân giải ngược
->   $ nslookup 
+>   $ nslookup 10.0.2.2 10.0.2.2
+>   $ nslookup 10.0.2.10 10.0.2.2
 >   ```
 >   
 >   ![Screen Shot 2021-05-25 at 09.48.16.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/25-10-31-03-Screen%20Shot%202021-05-25%20at%2009.48.16.png)
 >   
 >   ![Screen Shot 2021-05-25 at 10.32.33.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/25-10-33-05-Screen%20Shot%202021-05-25%20at%2010.32.33.png)
 >   
->   ![Screen Shot 2021-05-25 at 09.55.38.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/25-10-30-29-Screen%20Shot%202021-05-25%20at%2009.55.38.png)
-> 
-> 
+>   ![Screen Shot 2021-05-25 at 13.52.23.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/25-13-52-54-Screen%20Shot%202021-05-25%20at%2013.52.23.png)
 
 ---
 
 > ![icons8questionspng](https://raw.githubusercontent.com/Zenfection/Image/master/2021/04/08-22-03-47-icons8-questions.png) **Câu 1.8** (*5%*) Cài đặt và cấu hình dịch vụ máy chủ `Web` trên `server`. Tạo một trang `web` có tên miền là `www.lautamquoc.com` với nội dung trang chủ giới thiệu về các thành viên trong công ty.
 
 Giải
+
+### Cấu hình máy chủ `Web` :
+
+#### 1. Cài đặt `Apache` và `web browser`
+
+> Vì sử dụng `CentOS` bản không `GUI` nên ta phải cài thêm `browser console` 
+> 
+> - **B1**: Bật gói `powertools` (*vì `lynx` nằm trong gói `powertools`*)
+>   
+>   ```bash
+>   $ yum config-manager --set-enabled powertools
+>   $ yum install lynx
+>   $ lynx google.com  #test thử  lynx
+>   ```
+>   
+>   ![Screen Shot 2021-05-25 at 10.44.24.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/25-11-45-17-Screen%20Shot%202021-05-25%20at%2010.44.24.png)
+>   
+>   ![Screen Shot 2021-05-25 at 11.45.52.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/25-11-46-00-Screen%20Shot%202021-05-25%20at%2011.45.52.png)
+> 
+> - **B2** : Cài đặt và chạy `Apache` 
+>   
+>   ```bash
+>   $ yum install httpd
+>   $ systemctl start httpd  #chạy httpd
+>   $ systemctl status httpd #check httpd
+>   ```
+>   
+>   ![Screen Shot 2021-05-25 at 11.47.23.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/25-11-47-47-Screen%20Shot%202021-05-25%20at%2011.47.23.png)
+> 
+> - **B3** : Gõ lệnh `lynx 10.0.2.2` để truy cập vào `Apache` 
+>   
+>   ![Screen Shot 2021-05-25 at 11.48.41.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/25-11-48-46-Screen%20Shot%202021-05-25%20at%2011.48.41.png)
+> 
+> ==> Vậy là thành công
+
+#### 2. Chạy một trang `web` cá nhân
+
+> - **B1**: Tạo thư mục `/var/www/html/tamquoc` (*`tamquoc` kà tên web*)
+> 
+> - **B2**: Viết code `index.html` và `style.css`
+>   
+>   ```bash
+>   $ nano /var/www/html/tamquoc/index.html
+>   ```
+>   
+>   ![Screen Shot 2021-05-25 at 13.12.25.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/25-13-20-30-Screen%20Shot%202021-05-25%20at%2013.12.25.png)
+>   
+>   ```bash
+>   $ nano /var/www/html/tamquoc/style.css
+>   ```
+>   
+>   ![Screen Shot 2021-05-25 at 13.12.39.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/25-13-21-17-Screen%20Shot%202021-05-25%20at%2013.12.39.png)
+> 
+> - **B3**: Gõ `lynx 10.0.2.2/tamquoc` : 
+>   
+>   ![Screen Shot 2021-05-25 at 13.12.10.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/25-13-22-16-Screen%20Shot%202021-05-25%20at%2013.12.10.png)
+> 
+> ==> Đã thành công 
+
+#### 3. Kiểm tra web domain
+
+> - **B1** : 
+
+---
 
 > ![icons8questionspng](https://raw.githubusercontent.com/Zenfection/Image/master/2021/04/08-22-03-47-icons8-questions.png) **Câu 1.9** (*5%*) Cài đặt và cấu hình dịch vụ máy chủ `FTP` trên `server`. Cấu hình chỉ cho phép người dùng **download** dữ liệu từ thư mục `/data` trên `server`
 
