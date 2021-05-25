@@ -467,11 +467,19 @@ Giải
 
 #### 2. Cấu hình `SSH`
 
-> - **B1:** Gõ lệnh `nano /etc/ssh/sshd_config`
+> - **B1**: Tạo group `nhanvien` và thêm thành viên tương ứng 
 > 
-> - asd
+> - **B2:** Gõ lệnh `nano /etc/ssh/sshd_config`
+>   
+>   ![Screen Shot 2021-05-25 at 22.02.21.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/25-22-02-41-Screen%20Shot%202021-05-25%20at%2022.02.21.png)
 > 
-> - asd
+> - **B3**: Gõ lệnh `systemctl restart sshd` và kiểm tra kết nối 
+>   
+>   ![Screen Shot 2021-05-25 at 22.05.51.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/25-22-06-23-Screen%20Shot%202021-05-25%20at%2022.05.51.png)
+>   
+>   ![Screen Shot 2021-05-25 at 22.06.51.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/25-22-07-15-Screen%20Shot%202021-05-25%20at%2022.06.51.png)
+> 
+>   
 
 ---
 
