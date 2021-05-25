@@ -626,11 +626,11 @@ Giải
 >   ![Screen Shot 2021-05-25 at 15.06.06.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/25-15-06-33-Screen%20Shot%202021-05-25%20at%2015.06.06.png)
 >   
 >   ![Screen Shot 2021-05-25 at 15.06.59.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/25-15-07-26-Screen%20Shot%202021-05-25%20at%2015.06.59.png)
+> 
 > - **B2**: Gõ `ping -c 5 www.lautamquoc.com` để kiểm tra
 >   
 >   ![Screen Shot 2021-05-25 at 15.08.47.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/25-15-09-11-Screen%20Shot%202021-05-25%20at%2015.08.47.png)
->   
->    
+> 
 > - **B3**: Gõ `lynx www.lautamquoc.com/tamquoc` để truy cập tới `web` : 
 >   
 >   ![Screen Shot 2021-05-25 at 15.11.40.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/25-15-13-46-Screen%20Shot%202021-05-25%20at%2015.11.40.png)
@@ -638,8 +638,6 @@ Giải
 >   ![Screen Shot 2021-05-25 at 15.09.53.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/25-15-13-53-Screen%20Shot%202021-05-25%20at%2015.09.53.png)
 >   
 >   ==> Đã thành công
->   
->   
 
 ---
 
@@ -712,10 +710,6 @@ Giải
 > - **B2**: Gõ lệnh `ftp 10.0.2.2` để kết nối và kiểm tra :
 >   
 >   ![Screen Shot 2021-05-25 at 17.10.39.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/25-17-11-01-Screen%20Shot%202021-05-25%20at%2017.10.39.png)
->   
->   
->   
->   
 
 ---
 
@@ -732,3 +726,43 @@ Giải
 > - Sao lưu *mỗi tháng*: thực hiện vào lúc `23:59` ngày `1` **hằng tháng**, dữ liệu sẽ được nén lưu với tên `backup_month1` nếu là tháng `lẻ`, `backup_month2` nếu là tháng `chẵn`
 
 Giải
+
+### Cấu hình file backup
+
+- **B1**: Thời hiện các lệnh sau : 
+  
+  ```bash
+  $ mkdir /mnt/backup #tạo mục backup
+  $ nano /tmp/backupeveryday.sh   #tạo mục backup hàng ngày
+  $ nano /tmp/backupeveryweek.sh  #tạo mục backup bằng tuần
+  $ nano /tmp/backupeverymonth.sh #tạo mục backup hằng tháng
+  ```
+  
+  ![Screen Shot 2021-05-25 at 21.10.14.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/25-21-49-53-Screen%20Shot%202021-05-25%20at%2021.10.14.png)
+  
+  ![Screen Shot 2021-05-25 at 21.17.00.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/25-21-49-57-Screen%20Shot%202021-05-25%20at%2021.17.00.png)
+  
+  ![Screen Shot 2021-05-25 at 21.37.08.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/25-21-55-46-Screen%20Shot%202021-05-25%20at%2021.37.08.png)
+
+- **B2**: Test nhẹ 3 file `backup`
+  
+  ```bash
+  $ bash /tmp/backupeveryday.sh
+  $ bash /tmp/backupeveryweek.sh
+  $ bash /tmp/backupeverymonth.sh
+  ```
+  
+  >  Đây là kết quả sau khi thực thi 
+  
+  ![Screen Shot 2021-05-25 at 21.53.37.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/25-21-53-59-Screen%20Shot%202021-05-25%20at%2021.53.37.png)
+
+- **B3**: Cấu hình `Crontab`, gõ lệnh như sau : 
+  
+  ```bash
+  $ export EDITOR=nano #đổi thành nano thay vì xài vim 
+  $ crontab -e
+  ```
+  
+  ![Screen Shot 2021-05-25 at 21.55.08.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/25-21-57-26-Screen%20Shot%202021-05-25%20at%2021.55.08.png)
+
+==> Như thế là xong đợi ngày lành tháng tốt rồi nó chạy  !!!
