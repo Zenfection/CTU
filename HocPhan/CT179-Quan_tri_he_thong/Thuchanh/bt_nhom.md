@@ -46,7 +46,7 @@ Giải
 
 > 💡 Cài đặt `VituralBox` và tiến hành cài `CentOS 8` (*chọn bản không `GUI`*)
 > 
-> ![Screenshot 2021-05-22 222416.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/23-23-05-13-Screenshot%202021-05-22%20222416.png)
+> ![Screen Shot 2021-05-24 at 20.52.30.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/24-21-18-10-Screen%20Shot%202021-05-24%20at%2020.52.30.png)
 
 #### 2. Cài đặt `NAT Network`
 
@@ -444,7 +444,7 @@ Giải
 
 > ![icons8questionspng](https://raw.githubusercontent.com/Zenfection/Image/master/2021/04/08-22-03-47-icons8-questions.png) **Câu 1.6**: (*10%*) Cài đặt và cấu hình dịch vụ `SSH` để cho phép điều khiển từ xa `server`
 > 
-> ⚠️ **Lưu ý**: chỉ có thành viên `ban giám đốc` và các trưởng phòng mới có quyền điều khiển từ xa `server`
+> ⚠️ **Lưu ý**: chỉ có thành viên `ban giám đốc` và các `trưởng phòng` mới có quyền điều khiển từ xa `server`
 
 Giải
 
@@ -452,9 +452,28 @@ Giải
 
 #### 1. Cài đặt và chạy `SSH`
 
-> - **B1**
+> - **B1**: Gõ lệnh `yum install openssh` để cài đặt `SSH` : 
+>   
+>   ![Screen Shot 2021-05-24 at 16.26.35.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/24-21-19-10-Screen%20Shot%202021-05-24%20at%2016.26.35.png)
+> 
+> - **B2**: Thực hiện lệnh sau : 
+>   
+>   ```bash
+>   $ systemctl start sshd
+>   $ systemctl status sshd
+>   ```
+>   
+>   ![Screen Shot 2021-05-24 at 21.22.36.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/24-21-22-57-Screen%20Shot%202021-05-24%20at%2021.22.36.png)
 
+#### 2. Cấu hình `SSH`
 
+> - **B1:** Gõ lệnh `nano /etc/ssh/sshd_config`
+> 
+> - asd
+> 
+> - asd
+
+---
 
 > ![icons8questionspng](https://raw.githubusercontent.com/Zenfection/Image/master/2021/04/08-22-03-47-icons8-questions.png) **Câu 1.7** (*5%*) Cài đặt và cấu hình dịch vụ `DNS` trên `server` để phân giải tên miền `lautamquoc.com`
 > 
@@ -463,6 +482,76 @@ Giải
 > - Tên miền : `ftp.lautamquoc.com` <---> IP : `10.0.2.2` (*Server IP*)
 
 Giải
+
+### Cấu hình `DNS` cho `CentOS 8`
+
+#### 1. Cài đặt `DNS` tools
+
+> - **B1**: Gõ lệnh `yum install bind bind-utils`
+>   
+>   ![Screen Shot 2021-05-25 at 08.57.29.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/25-10-12-21-Screen%20Shot%202021-05-25%20at%2008.57.29.png)
+> 
+> - **B2**: Thực hiện các lệnh sau : 
+>   
+>   ```bash
+>   $ systemctl start named      # chạy named   
+>   $ systemctl status named     # kiểm tra named
+>   ```
+>   
+>   ![Screen Shot 2021-05-25 at 09.21.19.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/25-10-14-29-Screen%20Shot%202021-05-25%20at%2009.21.19.png)
+
+#### 2. Cấu hình `DNS`
+
+> - **B1** : Gõ lệnh `nano /etc/named.conf` và cấu hình như sau : 
+>   
+>   ![Screen Shot 2021-05-25 at 09.46.43.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/25-10-21-55-Screen%20Shot%202021-05-25%20at%2009.46.43.png)
+>   
+>   🤔 Đặt `listen-on port 53` là `any` có thể lắng nghe từ mọi `IP`
+>   
+>   🤔 Đặt `allow-query` là `any` để cho phép truy vấn từ mọi `IP`
+>   
+>   ![Screen Shot 2021-05-25 at 09.54.59.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/25-10-24-24-Screen%20Shot%202021-05-25%20at%2009.54.59.png)
+> 
+> - **B2** : Cấu hình **phân giải xuôi**
+>   
+>   ```bash
+>   $ cp /var/named/named.localhost /var/named/forward.qtht
+>   $ chgrp named /var/named/forward.qtht
+>   $ nano /var/named/forward.qtht
+>   ```
+>   
+>   ![Screen Shot 2021-05-25 at 10.32.07.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/25-10-32-45-Screen%20Shot%202021-05-25%20at%2010.32.07.png)
+> 
+> - **B3** : Cấu hình **phân giải ngược** : 
+>   
+>   ```bash
+>   $ cp /var/named/forward.qtht /var/named/reverse.qtht
+>   $ chgrp named /var/named/reverse.qtht
+>   $ nano /var/named/reverse.qtht
+>   ```
+>   
+>   ![Screen Shot 2021-05-25 at 09.53.59.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/25-10-27-20-Screen%20Shot%202021-05-25%20at%2009.53.59.png)
+> 
+> - **B4**: Chạy lại `named` và kiểm tra : 
+>   
+>   ```bash
+>   $ systemctl restart named #chạy lại named
+>   # kiểm tra phân giải xuôi
+>   $ nslookup www.lautamquoc.com 10.0.2.2
+>   $ nslookup ftp.lautamquoc.com 10.0.2.2
+>   #kiểm tra phân giải ngược
+>   $ nslookup 
+>   ```
+>   
+>   ![Screen Shot 2021-05-25 at 09.48.16.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/25-10-31-03-Screen%20Shot%202021-05-25%20at%2009.48.16.png)
+>   
+>   ![Screen Shot 2021-05-25 at 10.32.33.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/25-10-33-05-Screen%20Shot%202021-05-25%20at%2010.32.33.png)
+>   
+>   ![Screen Shot 2021-05-25 at 09.55.38.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/25-10-30-29-Screen%20Shot%202021-05-25%20at%2009.55.38.png)
+> 
+> 
+
+---
 
 > ![icons8questionspng](https://raw.githubusercontent.com/Zenfection/Image/master/2021/04/08-22-03-47-icons8-questions.png) **Câu 1.8** (*5%*) Cài đặt và cấu hình dịch vụ máy chủ `Web` trên `server`. Tạo một trang `web` có tên miền là `www.lautamquoc.com` với nội dung trang chủ giới thiệu về các thành viên trong công ty.
 
