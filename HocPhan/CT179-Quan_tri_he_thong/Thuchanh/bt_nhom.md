@@ -647,6 +647,78 @@ Giải
 
 Giải
 
+### Cấu hình máy chỉ `FTP`
+
+#### 1. Cài đặt `FTP` trên `CentOS 8`
+
+> - **B1** : Gõ lệnh `yum install vsftpd` 
+>   
+>   ![Screen Shot 2021-05-25 at 15.16.41.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/25-15-18-07-Screen%20Shot%202021-05-25%20at%2015.16.41.png)
+> 
+> - **B2** : Gõ lần lượt các lệnh sau : 
+>   
+>   ```bash
+>   $ systemctl start vsftpd  # chạy ftp
+>   $ systemctl status vsftpd # kiểm tra ftp
+>   ```
+>   
+>   ![Screen Shot 2021-05-25 at 15.19.12.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/25-15-19-32-Screen%20Shot%202021-05-25%20at%2015.19.12.png)
+> 
+> - **B3**: Thực hiện các lệnh để cho phép cổng `21` trên `firewall`
+>   
+>   ```bash
+>   $ firewall-cmd --reload
+>   $ firewall-cmd --permanent --add-port=21/tcp
+>   $ firewall-cmd --permanent --add-service=ftp
+>   $ systemctl enable vsftpd
+>   $ 
+>   ```
+>   
+>   ![Screen Shot 2021-05-25 at 15.23.26.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/25-15-23-53-Screen%20Shot%202021-05-25%20at%2015.23.26.png)
+
+#### 2. Cấu hình `FTP`
+
+> - **B1** : Thực hiện lần lượt các lệnh sau : 
+>   
+>   ```bash
+>   # trước khi làm phải backup file lại 
+>   $ cp /etc/vsftpd/vsftpd.conf /etc/vsftpd/vsftpd.conf.backup
+>   # cấu hình file 
+>   $ nano /etc/vsftpd/vsftpd.conf
+>   ```
+>   
+>   Và cấu hình như sau : 
+>   
+>   ```bash
+>   anonymous_enable=NO
+>   local_enable=YES
+>   write_enable=NO
+>   local_umask=022
+>   dirmessage_enable=YES
+>   xferlog_enable=YES
+>   connect_from_port_20=YES
+>   xferlog_std_format=YES
+>   chroot_local_user=YES
+>   anon_upload_enable=NO
+>   anon_writeable_chroot=YES
+>   anon_mkdir_write_enable=YES
+>   anon_world_readable_only=YES
+>   listen=YES
+>   pam_server_name=vsftpd
+>   userlist_enable=YES
+>   local_root=/data
+>   ```
+> 
+> - **B2**: Gõ lệnh `ftp 10.0.2.2` để kết nối và kiểm tra :
+>   
+>   ![Screen Shot 2021-05-25 at 17.10.39.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/05/25-17-11-01-Screen%20Shot%202021-05-25%20at%2017.10.39.png)
+>   
+>   
+>   
+>   
+
+---
+
 > ![icons8questionspng](https://raw.githubusercontent.com/Zenfection/Image/master/2021/04/08-22-03-47-icons8-questions.png) **Câu 1.10** (*5%*) Sử dụng dịch vụ `cron` và `shell script` thực hiện công việc sao lưu dữ liệu *mỗi ngày,mỗi tuần,mỗi tháng* như sau : 
 > 
 > +> Dữ liệu cần sao lưu : `/home`, `/data`, `/etc`
@@ -660,13 +732,3 @@ Giải
 > - Sao lưu *mỗi tháng*: thực hiện vào lúc `23:59` ngày `1` **hằng tháng**, dữ liệu sẽ được nén lưu với tên `backup_month1` nếu là tháng `lẻ`, `backup_month2` nếu là tháng `chẵn`
 
 Giải
-
----
-
-## II. Hình thức bài báo cáo bài tập nhóm (*20%*)
-
-Viết báo cáo trình bày các bước thực hiện công việc `1.1` đến `1.10` 
-
-- Trình bày rõ ràng cụ thể đầy đủ **từng** bước thực hiện và có cả hình ảnh minh hoạ. Báo cáo ít lỗi chính tả, trình bày đẹp, có hình ảnh minh hoạ rõ, chi tiết, có mục lục...
-
-- Có sự phối hợp, thảo luận, hợp tác giữa các thành viên trong nhóm để thực hiện bài tập nhóm. Có sự phân chia công việc cụ thể giữa các thành viên trong nhóm.
