@@ -1,0 +1,5 @@
+1. Một hệ thống sử dụng 4 tín hiệu để truyền dữ liệu. Mỗi giây có thể gởi đi 9600 tín hiêu. Hỏi 1) mỗi tín hiệu có thể chở được tối đa bao nhiêu bit ? 2) Tốc độ biến điệu của hệ thống (Baud rate) là bao nhiêu ? 2) Tốc độ dữ liệu (Data bit) là bao nhiêu ?
+
+2. Một hệ thống truyền dữ liệu có tỷ lệ giữa công suất của tín hiệu và công suất của nhiễu là S/B=30dB. Hệ thống sử dụng kênh truyền có băng thông là W=9600Hz. Hỏi, 1) Về mặt lý thuyết, tốc độ biến điệu tối đa Rmax của hệ thống là bao nhiêu ? 2). Hệ thống này cho phép một tín hiệu chuyên chở tối đa bao nhiêu bit ? Khả năng của kênh truyền này là bao nhiêu ?
+
+3. Cho chuỗi văn bản cần gởi đi như sau: "Hello, How are you today ? Are you afraid of Covid-19 ?" 1) Hãy mã hóa chuỗi văn bản thành mã nhị phân theo bảng mã ASCII 7 bits, 2) Hãy vẽ hình tín hiệu truyền chuỗi văn bản trên theo phương pháp mã hóa đường truyền NRZ và Manchester bằng tín hiệu nhị phân và 3) Phướng pháp biến điệu cường độ sử dụng tín hiệu tuần tự.

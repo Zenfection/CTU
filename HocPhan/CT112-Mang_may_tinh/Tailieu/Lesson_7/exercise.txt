@@ -1,0 +1,19 @@
+1. Tại sao cần tầng mạng ?
+
+2. Hãy giải thích vai trò của Router trong tầng 3
+
+3. Hãy vẽ một một mạng ở tẩng 3 để minh hoạt phương thức hoạt động của router trong chế độ giao tiếp có kết nối
+
+4. Hãy vẽ một một mạng ở tẩng 3 để minh hoạt phương thức hoạt động của router trong chế độ giao tiếp không kết nối
+
+5. Giải thuật chọn đường là gì ?
+
+6. Các mục tiêu cần đạt được của giải thuật chọn đường là gì ?
+
+7. Giải thích về các loại giải thuật chọn đường: tập trung, phân tán, động và tĩnh
+
+8. Trinh bày bảng các bước để tìm ra lời giải cho bài tập ở slide số 23
+
+9. Trinh bày bảng các bước để tìm ra lời giải cho bài tập ở slide số 27 đối với nút số 1
+
+10. Vạch đường phân cấp giải quyết vấn đề gì ?
