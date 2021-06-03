@@ -50,6 +50,6 @@
 
 ---
 
-## ![Blended Learning.png](https://raw.githubusercontent.com/Zenfection/Image/master/2020/12/17-00-24-28-Blended%20Learning.png) Học thêm (*tuỳ bạn*)
+## <img title="" src="https://raw.githubusercontent.com/Zenfection/Image/master/2021/06/03-18-36-05-8ea670d927e5bc1bc97fa64c4095939f.gif" alt="8ea670d927e5bc1bc97fa64c4095939f.gif" width="65"> Học thêm (*tuỳ bạn*)
 
 - ![icons8-sorting.png](https://raw.githubusercontent.com/Zenfection/Image/master/2020/12/17-00-27-47-icons8-sorting.png)**8 giải thuật sắp xếp** ==> [Video : 8 tới 18 (*bỏ 13*)](https://drive.google.com/drive/folders/1YcUgdWSo9GjHm8j1644oPv5nUhj1tNKB?usp=sharing)
