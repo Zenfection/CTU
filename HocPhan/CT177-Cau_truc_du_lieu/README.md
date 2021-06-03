@@ -6,17 +6,17 @@
 
 ---
 
-## <img src="https://raw.githubusercontent.com/Zenfection/Image/master/2020/12/23-22-00-06-icons8-user_manual.png" title="" alt="sd" width="50"> 1. Kiến thức cần có
+## <img title="" src="https://raw.githubusercontent.com/Zenfection/Image/master/2021/06/03-18-20-54-de9eb637d1dac9a77a7f3822ed57ce07.gif" alt="de9eb637d1dac9a77a7f3822ed57ce07.gif" width="56"> 1. Kiến thức cần có
 
 | Môn học                                                                                                                                                                                                                                            | Mã HP                                                            | Hỗ trợ [else](https://else.ctu.edu.vn/course/index.php)                                                                     | Kế hoạch dạy                                            |
 | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------- |
 | <img title="" src="https://raw.githubusercontent.com/Zenfection/Image/master/2020/12/15-13-40-39-icons8-c_programming.png" alt="" width="40"> [Lập trình căn bản A](https://github.com/Zenfection/CTU/tree/main/HocPhan/CT101-Lap_Trinh_Can_Ban_A) | [CT101](https://elcit.ctu.edu.vn/course/search.php?search=CT101) | ![icons8-checkmark.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/03/21-10-51-08-icons8-checkmark.png) | [Link PDF](http://www.cit.ctu.edu.vn/decuong/CT101.pdf) |
 
-<img src="https://raw.githubusercontent.com/Zenfection/Image/master/2020/12/17-00-22-00-icons8-bug.png" title="" alt="icons8-bug.png" width="35"> Biết các kỹ năng [debug](https://viblo.asia/p/gioi-thieu-ve-debug-DzVkpoKZenW) (*Khuyên dùng `Vscode`*) - [Guide](https://zenfection.github.io/Source/Vscode)
+<img title="" src="https://raw.githubusercontent.com/Zenfection/Image/master/2021/06/03-18-22-24-wiktoria-fruba-webp-net-gifmaker-18.gif" alt="wiktoria-fruba-webp-net-gifmaker-18.gif" width="35"> Biết các kỹ năng [debug](https://viblo.asia/p/gioi-thieu-ve-debug-DzVkpoKZenW) (*Khuyên dùng `Vscode`*) - [Guide](https://zenfection.github.io/Source/Vscode)
 
 ---
 
-## ![S](https://raw.githubusercontent.com/Zenfection/Image/master/2020/12/15-14-31-38-Cloud%20Library.png) 2. Tài liệu học tập
+## <img title="" src="https://raw.githubusercontent.com/Zenfection/Image/master/2021/06/03-18-26-30-tenor.gif" alt="tenor.gif" width="50"> 2. Tài liệu học tập
 
 | Tài liệu                                                                                                                                                                                      | <img src="https://raw.githubusercontent.com/Zenfection/Image/master/2021/03/20-16-12-37-icons8-google_drive.png" title="" alt="icons8-google_drive.png" width="40"> Khoá học                                                                                                   | Web tham khảo                                                                                                                                                                                                                                                                                |
 | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -24,7 +24,7 @@
 
 ---
 
-## ![icons8sandtimerpng](https://raw.githubusercontent.com/Zenfection/Image/master/2021/03/20-22-42-23-icons8-sand_timer.png) 3. Quá trình học tập
+## <img title="" src="https://raw.githubusercontent.com/Zenfection/Image/master/2021/06/03-18-31-04-tenor.gif" alt="tenor.gif" width="69"> 3. Quá trình học tập
 
 ### **CHƯƠNG 1: CÁC KIỂU DỮ LIỆU CƠ BẢN**
 
