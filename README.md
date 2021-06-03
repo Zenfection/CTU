@@ -42,6 +42,7 @@
 | <img title="" src="https://raw.githubusercontent.com/Zenfection/Image/master/2020/12/15-22-16-00-Logo-Design-Services%20-%2001%20-%2001.png" alt="" width="40"> [Phân tích và thiết kế thuật toán](https://github.com/Zenfection/CTU/tree/main/HocPhan/CT174-Phan_tich_va_thiet_ke_thuat_toan) | [CT176](https://elcit.ctu.edu.vn/course/search.php?search=CT176) | ![icons8-checkmark.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/03/21-10-51-08-icons8-checkmark.png) | [Link PDF](http://www.cit.ctu.edu.vn/decuong/CT179.pdf) |
 | <img title="" src="https://raw.githubusercontent.com/Zenfection/Image/master/2020/12/27-16-14-24-Database%20AS%20A%20Service.png" alt="" width="40"> [Cơ sở dữ liệu](https://github.com/Zenfection/CTU/tree/main/HocPhan/CT180-Co_so_du_lieu)                                                  | [CT180](https://elcit.ctu.edu.vn/course/search.php?search=CT180) | ![icons8-checkmark.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/03/21-10-51-08-icons8-checkmark.png) | [Link PDF](http://www.cit.ctu.edu.vn/decuong/CT180.pdf) |
 | <img src="https://raw.githubusercontent.com/Zenfection/Image/master/2021/03/21-10-54-00-21-10-08-36-27-16-15-40-Scramble%20System.png" width="40"> [Quản trị hệ thống](https://github.com/Zenfection/CTU/tree/main/HocPhan/CT179-Quan_tri_he_thong)                                            | [CT179](https://elcit.ctu.edu.vn/course/search.php?search=CT179) | ![icons8-delete.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/03/21-10-51-10-icons8-delete.png)       | [Link PDF](http://www.cit.ctu.edu.vn/decuong/CT179.pdf) |
+| ![Vector Graphics Renderingpng](https://raw.githubusercontent.com/Zenfection/Image/master/2020/12/15-22-12-24-Vector%20Graphics%20Rendering.png) Lý thuyết đồ thị                                                                                                                              | [CT175](https://elcit.ctu.edu.vn/course/search.php?search=CT175) | ![icons8-checkmark.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/03/21-10-51-08-icons8-checkmark.png) | [Link PDF](http://www.cit.ctu.edu.vn/decuong/CT175.pdf) |
 
 ---
 
@@ -49,7 +50,10 @@
 
 | Môn học                                                                                                                                                                                                             | Mã HP                                                            | Hỗ trợ Else                                                                                                           | Kế hoạch dạy                                            |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------- |
-| <img src="https://raw.githubusercontent.com/Zenfection/Image/master/2020/12/15-13-13-07-toanroirac%20-%2001.png" width="40"> [Toán rời rạc](https://github.com/Zenfection/CTU/tree/main/HocPhan/CT172-Toan_roi_rac) | [CT172](https://elcit.ctu.edu.vn/course/search.php?search=CT179) | ![icons8-delete.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/03/21-10-51-10-icons8-delete.png) | [Link PDF](http://www.cit.ctu.edu.vn/decuong/CT172.pdf) |
+| <img src="https://raw.githubusercontent.com/Zenfection/Image/master/2020/12/15-13-13-07-toanroirac%20-%2001.png" width="40"> [Toán rời rạc](https://github.com/Zenfection/CTU/tree/main/HocPhan/CT172-Toan_roi_rac) | [CT172](https://elcit.ctu.edu.vn/course/search.php?search=CT172) | ![icons8-delete.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/03/21-10-51-10-icons8-delete.png) | [Link PDF](http://www.cit.ctu.edu.vn/decuong/CT172.pdf) |
+| <img src="https://raw.githubusercontent.com/Zenfection/Image/master/2020/12/15-22-09-47-Programmable%20Circuit%20Board.png" title="" alt="Programmable Circuit Boardpng" width="50"> Kiến trúc máy tính             | [CT173](https://elcit.ctu.edu.vn/course/search.php?search=CT173) | ![icons8-delete.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/03/21-10-51-10-icons8-delete.png) | [Link PDF](http://www.cit.ctu.edu.vn/decuong/CT173.pdf) |
+| <img src="https://raw.githubusercontent.com/Zenfection/Image/master/2020/12/27-16-16-52-AI%20Knowledge.png" title="" alt="AI Knowledgepng" width="50"> Nhập môn trí tuệ nhân tạo                                    | [CT190](https://elcit.ctu.edu.vn/course/search.php?search=CT190) | ![icons8-delete.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/03/21-10-51-10-icons8-delete.png) | [Link PDF](http://www.cit.ctu.edu.vn/decuong/CT190.pdf) |
+| ![Basic Knowledgepng](https://raw.githubusercontent.com/Zenfection/Image/master/2020/12/27-16-16-14-Basic%20Knowledge.png)Nền tảng công nghệ thông tin                                                              | [CT200](https://elcit.ctu.edu.vn/course/search.php?search=CT200) | ![icons8-delete.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/03/21-10-51-10-icons8-delete.png) | [Link PDF](http://www.cit.ctu.edu.vn/decuong/CT200.pdf) |
 
 <details style="font-size:20px">
 <summary> <img src="https://raw.githubusercontent.com/Zenfection/Image/master/2020/12/15-22-05-50-Browse%20Courses.png"> <b>Lý thuyết IT <b></summary>
@@ -60,14 +64,6 @@
 
 - ![Education Apps.png](https://raw.githubusercontent.com/Zenfection/Image/master/2020/12/15-22-09-07-Education%20Apps.png) CT113 - Nhập môn công nghệ phần mềm
 
-- ![Programmable Circuit Board.png](https://raw.githubusercontent.com/Zenfection/Image/master/2020/12/15-22-09-47-Programmable%20Circuit%20Board.png) CT173 - Kiến trúc máy tính
-
-- ![Vector Graphics Rendering.png](https://raw.githubusercontent.com/Zenfection/Image/master/2020/12/15-22-12-24-Vector%20Graphics%20Rendering.png) CT175 - Lý thuyết đồ thị
-
-- ![AI Knowledge.png](https://raw.githubusercontent.com/Zenfection/Image/master/2020/12/27-16-16-52-AI%20Knowledge.png) CT190 - Nhập môn trí tuệ nhân tạo
-
-- ![Basic Knowledge.png](https://raw.githubusercontent.com/Zenfection/Image/master/2020/12/27-16-16-14-Basic%20Knowledge.png)CT200 - Nền tảng công nghệ thông tin
-
 - ![Software Developer.png](https://raw.githubusercontent.com/Zenfection/Image/master/2020/12/27-16-29-05-Software%20Developer.png) CT223 - Quản lý dự án phần mềm
 
 - ![Design Tablet.png](https://raw.githubusercontent.com/Zenfection/Image/master/2020/12/27-16-34-38-Design%20Tablet.png) CT242 - Kiến trúc và Thiết kế phần mềm
@@ -76,7 +72,7 @@
 
 - <img src="https://raw.githubusercontent.com/Zenfection/Image/master/2020/12/27-16-32-33-baotriphanmem.png" title="" alt="baotriphanmem.png" width="50"> CT244 - Bảo trì phần mềm
 
-- ![icons8_java_48px.png](https://raw.githubusercontent.com/Zenfection/Image/master/2020/08/23-23-56-37-icons8_java_48px.png) CT276 - Lập trình Java
+- 
 
 - ![Object Based Image Analysis.png](https://raw.githubusercontent.com/Zenfection/Image/master/2020/12/27-16-30-57-Object%20Based%20Image%20Analysis.png) CT316 - Xử lý ảnh
 
