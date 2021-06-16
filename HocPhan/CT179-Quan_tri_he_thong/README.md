@@ -8,10 +8,19 @@
 
 ## <img src="https://raw.githubusercontent.com/Zenfection/Image/master/2021/06/16-15-23-13-tenor.gif" title="" alt="tenor.gif" width="50"> 1. Tài liệu học tập
 
-| Tài liệu                                                                                                                                                                                                                                             | Khoá học | Web tham khảo                                                                                                                                                                                                                |
-| ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| <img src="https://raw.githubusercontent.com/Zenfection/Image/master/2021/03/20-14-38-42-logo-ctu.png" title="" alt="logo-ctu.png" width="35"> [Tài liệu CTU](https://github.com/Zenfection/CTU/tree/main/HocPhan/CT175-Ly_thuyet_do_thi/Tailieu/CTU) | None.    | <img src="https://raw.githubusercontent.com/Zenfection/Image/master/2021/06/16-15-13-57-output-onlinepngtools.png" title="" alt="output-onlinepngtools.png" width="35"> [CsAcademy](https://csacademy.com/app/graph_editor/) |
+| Tài liệu                                                                                                                                                                                                                                              | Khoá học | Web tham khảo                                                                                                                                                                                                                                    |
+| ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| <img src="https://raw.githubusercontent.com/Zenfection/Image/master/2021/03/20-14-38-42-logo-ctu.png" title="" alt="logo-ctu.png" width="35"> [Tài liệu CTU](https://github.com/Zenfection/CTU/tree/main/HocPhan/CT179-Quan_tri_he_thong/TaiLieu/CTU) | None.    | ![icons8-youtube_play_button.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/06/16-15-10-40-icons8-youtube_play_button.png) [Tuan Thai](https://www.youtube.com/watch?v=MgrW8zeh02E&list=PLzRk5NAIttegP-XiUhmkcRpXdthSjq6Gc) |
 
 ---
 
-## ![icons8-sand_timer.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/03/20-22-42-23-icons8-sand_timer.png)3. Quá trình học tập
+## <img src="https://raw.githubusercontent.com/Zenfection/Image/master/2021/06/16-15-24-10-tenor.gif" title="" alt="tenor.gif" width="50">3. Quá trình học tập
+
+| Thực hành                                                                    | Đáp án |
+| ---------------------------------------------------------------------------- | ------ |
+| 1. Cài đặt hệ điều hành và phần mềm - sử dụng lệnh cơ bản                    |        |
+| 2. Quản Lý Tài khoản người dùng, ổ cứng và hệ thống tập tin                  |        |
+| 3. Sử dụng **Shell Scripting**, quản lý tiến trình, tập tin nhật ký hệ thống |        |
+| 4. Cấu hình mạng và cài đặt **SSH**, **FTP**, **Web Server**                 |        |
+| 5. **Samba**, **DNS** và **Firewall**                                        |        |
+| Nhóm                                                                         |        |
