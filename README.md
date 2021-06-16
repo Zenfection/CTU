@@ -75,9 +75,7 @@ Else Support : CT101, CT177, CT176, CT174, CT180, CT175
 
 ---
 
-| Môn học                                                                                                                                                                                  | Mã HP                                                            | Kế hoạch dạy                                            |
-| ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------- | ------------------------------------------------------- |
-| <img src="https://raw.githubusercontent.com/Zenfection/Image/master/2020/12/27-16-16-14-Basic%20Knowledge.png" title="" alt="Basic Knowledgepng" width="40">Nền tảng công nghệ thông tin | [CT200](https://elcit.ctu.edu.vn/course/search.php?search=CT200) | [Link PDF](http://www.cit.ctu.edu.vn/decuong/CT200.pdf) |
+
 
 <details>
 <summary><b> <img src="https://raw.githubusercontent.com/Zenfection/Image/master/2020/12/21-15-43-11-Support.png" width="50"> Nguồn app hỗ trợ</b></summary>
