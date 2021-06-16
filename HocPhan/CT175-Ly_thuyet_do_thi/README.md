@@ -29,6 +29,3 @@
 | [1. Giới thiệu](https://github.com/Zenfection/CTU/blob/main/HocPhan/CT175-Ly_thuyet_do_thi/Tailieu/1.Gioithieu.md)            |           |
 | [2. Khái niệm](https://github.com/Zenfection/CTU/blob/main/HocPhan/CT175-Ly_thuyet_do_thi/Tailieu/2.Khainiem.md)              |           |
 | [3. Cạnh kề, đỉnh và bậc](https://github.com/Zenfection/CTU/blob/main/HocPhan/CT175-Ly_thuyet_do_thi/Tailieu/2.Khainiem.md)   |           |
-|                                                                                                                               |           |
-|                                                                                                                               |           |
-|                                                                                                                               |           |
