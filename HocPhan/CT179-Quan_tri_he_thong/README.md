@@ -6,7 +6,7 @@
 
 ---
 
-## <img src="https://raw.githubusercontent.com/Zenfection/Image/master/2021/06/16-15-23-13-tenor.gif" title="" alt="tenor.gif" width="50"> 1. Tài liệu học tập
+## <img src="https://raw.githubusercontent.com/Zenfection/Image/master/2021/06/16-15-23-13-tenor.gif" title="" alt="tenor.gif" width="40"> 1. Tài liệu học tập
 
 | Tài liệu                                                                                                                                                                                                                                              | Khoá học | Web tham khảo                                                                                                                                                                                                                                    |
 | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -14,13 +14,13 @@
 
 ---
 
-## <img src="https://raw.githubusercontent.com/Zenfection/Image/master/2021/06/16-15-24-10-tenor.gif" title="" alt="tenor.gif" width="50">3. Quá trình học tập
+## <img src="https://raw.githubusercontent.com/Zenfection/Image/master/2021/06/16-15-24-10-tenor.gif" title="" alt="tenor.gif" width="40">3. Quá trình học tập
 
-| Thực hành                                                                    | Đáp án |
-| ---------------------------------------------------------------------------- | ------ |
-| 1. Cài đặt hệ điều hành và phần mềm - sử dụng lệnh cơ bản                    |        |
-| 2. Quản Lý Tài khoản người dùng, ổ cứng và hệ thống tập tin                  |        |
-| 3. Sử dụng **Shell Scripting**, quản lý tiến trình, tập tin nhật ký hệ thống |        |
-| 4. Cấu hình mạng và cài đặt **SSH**, **FTP**, **Web Server**                 |        |
-| 5. **Samba**, **DNS** và **Firewall**                                        |        |
-| Nhóm                                                                         |        |
+| Thực hành                                                                                                                                                                         | Đáp án<br> ⚠️ (*Chỉ tham khảo khi không biết làm*)                                                          |
+| --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- |
+| [1. Cài đặt hệ điều hành và phần mềm - sử dụng lệnh cơ bản](https://github.com/Zenfection/CTU/blob/main/HocPhan/CT179-Quan_tri_he_thong/Thuchanh/CTU/Lab1.pdf)                    | [Buổi 1](https://github.com/Zenfection/CTU/blob/main/HocPhan/CT179-Quan_tri_he_thong/Thuchanh/buoi1.md)     |
+| [2. Quản Lý Tài khoản người dùng, ổ cứng và hệ thống tập tin](https://github.com/Zenfection/CTU/blob/main/HocPhan/CT179-Quan_tri_he_thong/Thuchanh/CTU/Lab2.pdf)                  | [Buổi 2](https://github.com/Zenfection/CTU/blob/main/HocPhan/CT179-Quan_tri_he_thong/Thuchanh/buoi2.md)     |
+| [3. Sử dụng **Shell Scripting**, quản lý tiến trình, tập tin nhật ký hệ thống](https://github.com/Zenfection/CTU/blob/main/HocPhan/CT179-Quan_tri_he_thong/Thuchanh/CTU/Lab3.pdf) | [Buổi 3](https://github.com/Zenfection/CTU/blob/main/HocPhan/CT179-Quan_tri_he_thong/Thuchanh/buoi3.md)     |
+| [4. Cấu hình mạng và cài đặt **SSH**, **FTP**, **Web Server**](https://github.com/Zenfection/CTU/blob/main/HocPhan/CT179-Quan_tri_he_thong/Thuchanh/CTU/Lab4.pdf)                 | [Buổi 4](https://github.com/Zenfection/CTU/blob/main/HocPhan/CT179-Quan_tri_he_thong/Thuchanh/buoi4.md)     |
+| [5. **Samba**, **DNS** và **Firewall**](https://github.com/Zenfection/CTU/blob/main/HocPhan/CT179-Quan_tri_he_thong/Thuchanh/CTU/Lab5.pdf)                                        | [Buổi 5](https://github.com/Zenfection/CTU/blob/main/HocPhan/CT179-Quan_tri_he_thong/Thuchanh/buoi5.md)     |
+| [Nhóm ](https://github.com/Zenfection/CTU/blob/main/HocPhan/CT179-Quan_tri_he_thong/Thuchanh/CTU/Group_Project.pdf)                                                               | [Làm nhóm](https://github.com/Zenfection/CTU/blob/main/HocPhan/CT179-Quan_tri_he_thong/Thuchanh/bt_nhom.md) |
