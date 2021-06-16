@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset=utf-8 />
+<title>CS155 Computer and Network Security HW 2</title>
+
+<link rel='stylesheet' type='text/css' href='//crypto.stanford.edu/seclab.css' />
+
+<style type="text/css">
+  .course-title, .quarter { margin: 0; }
+  .parts { list-style-type: lower-alpha; }
+  .part  { margin-bottom: .5em; }
+  .center {margin-left:auto; margin-right:auto; }
+  pre {margin-left:2em}
+}
+</style>
+</head>
+
+<body>
+<div id="inner-wrapper">
+<div id="outer-wrapper">
+
+<h1 id="header"><A href="http://crypto.stanford.edu/cs155/">
+CS155: Computer and Network Security</A></H1>
+
+<div id="content" class="full course">
+<div class="logo"><IMG src="//crypto.stanford.edu/images/seclab-128.png" alt="Logo" /></div>
+
+<h1 class="course-title">CS155:  Homework #2</h1>
+<h3 class="quarter">Spring 2017</h3>
+
+<h3>Due: Thursday, May 25</h3>
+
+
+
+
+<!-- ======================================================== -->
+<HR><H3>Problem 1: Same origin policy </H3>
+
+<p>
+We discussed in lecture how the DOM same-origin policy defines
+an origin as the triple <i>(protocol, domain, port)</i>.
+Explain what would go wrong if the DOM same-origin policy
+were only defined by the pair <i>(domain, port)</i>.
+Give a concrete example of an attack that a network attacker can do
+in this case, but cannot do when using the standard definition
+of the same-origin policy. 
+</p>
+
+
+<!-- ======================================================== -->
+<HR><H3>Problem 2: Cross Site Script Inclusion (XSSI) Attacks </H3>
+
+<p>
+Consider a banking web site <tt>bank.com</tt> where
+after login the user is taken to a user information page 
+<pre>
+https://bank.com/accountInfo.html
+</pre>
+The page shows the user's account balances.
+Here <tt>accountInfo.html</tt> is a static
+page: it contains the page layout, but no user data.
+Towards the bottom of the page a script is included as:
+<pre>
+&lt;script src="//bank.com/userdata.js"&gt; &lt/script&gt      (*)
+</pre>
+The contents of <tt>userdata.js</tt> is as follows: 
+<pre>
+displayData({"name": "John Doe",
+             "AccountNumber":  12345,
+             "Balance": 45})
+</pre>
+The function <tt>displayData</tt> is defined in
+<tt>accountInfo.html</tt> and uses the provided data to populate 
+the page with user data.
+</p>
+
+<p>
+The script <tt>userdata.js</tt> is generated dynamically and is the only
+part of the page that contains user data.   Everything else is static
+content.    
+</p>
+
+<p>
+Suppose that after the user logs in to his or her account at <tt>bank.com</tt>
+the site stores the user's session token in a browser cookie.
+</p>
+
+<ol class="parts">
+<li class="part">
+  Consider user <tt>John Doe</tt> who logs into his account at <tt>bank.com</tt>
+  and then visits the URL <tt>https://evil.com/</tt>.
+  Explain how the page at <tt>evil.com</tt> can cause all of John Doe's data
+  to be sent to <tt>evil.com</tt>.   Please provide the
+  code contained in the page at <tt>evil.com</tt>.
+
+<li class="part">
+  How would you keep <tt>accountInfo.html</tt> as a static page, but
+  prevent the attack from part (a)?
+  You need only change line (*) and <tt>userdata.js</tt>.
+  Make sure to explain why your defense prevents the attack.  <br/>
+  <b>Hint:</b>
+  Try loading the user's data in a way that gives <tt>bank.com</tt> access
+  to the data, but does not give <tt>evil.com</tt> access.  In particular,
+  <tt>userdata.js</tt> need not be a Javascript file.
+
+</li>
+</ol>
+
+
+<!-- ======================================================== -->
+<HR><H3>Problem 3:  The HTML canvas element  </H3>
+
+<p>
+The canvas HTML element creates a 2D rectangular area and lets
+Javascript draw whatever it wants in that area.  Canvas is used for
+client-side graphics such as drawing a path on a map loaded from
+Google maps.  For the purpose of the associated same-origin policy,
+the origin of a canvas is the origin of the content that created it.
+In the map example, the origin of the Javascript that creates the
+canvas is Google.  Canvas lets Javascript read pixels from any canvas
+in its origin using the <i>GetImageData()</i> method.
+</p>
+
+<ol class="parts">
+<li class="part">
+Canvas lets Javascript embed images from any domain
+  in the canvas.  Suppose a user has authenticated to a site that
+  displays private information. Describe an attack that would be possible if
+  Javascript from one domain could embed an image from another domain
+  in the canvas and then use <i>GetImageData()</i> to read pixels from that
+  image.
+</li>
+
+<li class="part">
+How would you restrict GetImageData() to prevent the attack above?
+</li>
+
+<li class="part">
+A canvas element can be placed anywhere in the browser
+content area and can be made transparent so that the underlying content
+under the canvas shows through.
+What security problem arises if calling <i>GetImageData()</i> always returned 
+the actual pixels shown on the screen at that position?
+</li>
+
+<li class="part">
+How would you design <i>GetImageData()</i> to defend against the
+vulnerability from part (c)?  Propose a design that does not
+require the browser to test if the requested pixel is over content from
+another origin.
+</li>
+</ol>
+
+
+<!-- ======================================================== -->
+<hr><h3>Problem 4:  CSRF Defenses </h3>
+
+<ol type="a">
+<li class="part">
+ In class we discussed Cross Site Request Forgery (CSRF) attacks
+ against web sites that rely solely on cookies for session
+ management.  Briefly explain a CSRF attack on such a site.
+
+<li class="part">
+A common CSRF defense places a token in the DOM of every page
+(e.g. as a hidden form element) in addition to the cookie.  An HTTP
+request is accepted by the server only if it contains both a valid
+HTTP cookie header and a valid token in the POST parameters.  
+Why does this prevent the attack from part (a)?
+
+<li class="part">
+One approach to choosing a CSRF token is to choose one at random.
+Suppose a web site chooses the token as a fresh random string for every HTTP response.
+The server checks that this random string is present in the next HTTP request for that session.
+Does this prevent CSRF attacks?   If so, explain why.  If not, describe an attack.
+
+<li class="part">
+Another approach is to choose the token as a <i>fixed</i> random string chosen by the server.
+That is, the same random string is used as the CSRF token in all HTTP responses
+from the server over a given time period.  
+Does this prevent CSRF attacks?   If so, explain why.  If not, describe an attack.
+
+<li class="part">
+Why is the Same-Origin Policy important for the cookie-plus-token defense?
+
+</ol>
+
+
+<!-- ======================================================== -->
+<hr><h3>Problem 5:  Inline scripts </h3>
+
+Recall that content security policy (CSP) is an HTTP header sent by a
+web site to the browser that tells the browser what it should and
+should not do as it is processing the content.
+
+<ol type="a">
+<li class="part">
+Explain what the following CSP header does:
+<pre>
+Content-Security-Policy: script-src 'self'
+</pre>
+</li>
+
+<li class="part">
+What is the purpose of the CSP directive from part (a)? 
+What attack is it intended to prevent?
+</li>
+
+<li class="part">
+What does the following CSP header do:
+<pre>
+Content-Security-Policy: frame-ancestors 'none'
+</pre>
+What attack does it prevent?
+</li>
+
+</ol>
+
+
+<!-- ======================================================== -->
+<hr><h3>Problem 6:   DNSSEC </h3>
+
+DNSSEC (DNS Security Extensions) is designed to prevent network attacks
+such as DNS record spoofing and cache poisoning.
+Generally, the DNSSEC server for example.com will posses the
+IP address of www.example.com.
+When queried about this record that it possesses, the DNSSEC server 
+will return its answer with an associated signature.
+If the DNSEC server is queried about a host that does not
+exist, such as doesnotexist.example.com,
+the server uses NSEC or NSEC3 to show
+that the DNS server does <i>not</i> have an answer to the query.
+
+<p>
+Suppose a user R (a <i>resolver,</i> in DNS terminology) queries a DNSSEC <i>server</i> S,
+but all of the network traffic between R and S is visible to a <i>network attacker</i> N.
+The attacker N may read requests from R to S and may send packets to R that appear to originate from S.
+
+</p>
+<ol class="parts">
+<li class="part">Why is authenticated denial of existence necessary?
+To answer this question, assume that S sends the same unsigned DOES-NOT-EXIST
+response to any query for which it has no matching record.
+Describe a possible attack.
+</li>
+
+<li class="part">Assume now that S cryptographically signs its DOES-NOT-EXIST response, but
+the response does not say what query it is a response to.
+How is an attack still possible?
+</li>
+
+<li class="part">
+A DNSSEC server may send a signed NSEC response to a query
+that does not have a matching record (such as doesnotexist.example.com).
+An NSEC response contains two names, corresponding to
+the existent record on the server that immediately precedes the query (in lexicographic order),
+and the existent record that immediately follows the query.
+For example, if a DNSSEC server has records for a.example.com, b.example.com, and c.example.com,
+the NSEC response to a query for (non-existent) abc.example.com contains a.example.com and b.example.com
+because these come just before and just after the requested name.
+To be complete, NSEC records also wrap-around,
+so a query for a non-existent name after the last existent name
+will receive an NSEC containing the last and first existent names.
+<p>
+How should the resolver use the information contained in NSEC records to prevent the attacks
+you described in previous parts of this problem?
+</p></li>
+
+<li class="part">
+NSEC leaks information that may be useful to attackers on the Internet.
+Describe how an attacker can use NSEC to enumerate all of the hosts sharing
+a common domain-name suffix.
+How is this information useful for attackers?
+</li>
+
+<li class="part">NSEC3 is designed to prevent DNS responses from revealing unnecessary information.
+NSEC3 uses the lexicographic order of hashed records, instead of their unhashed order.
+In response to a query without a matching record,
+NSEC3 will return the hashed names that are just before and just after the hash of the query.
+For example, on a server containing a.example.com, b.example.com, and c.example.com,
+if a hashes to 30, b to 10, c to 20, and abc to 15, the
+NSEC3 response to a query for abc.example.com would contain 10.example.com and 20.example.com.
+Hashed names are also assumed to wrap around, in the same way as unhashed names in NSEC.
+<p>Explain how a resolver should verify the validity of a response under NSEC3?
+</ol>
+
+
+</div>
+</div>
+</div>
+
+
+
+</body>
+</html>
+

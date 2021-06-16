@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset=utf-8 />
+<title>CS155 Computer and Network Security HW 1</title>
+
+<link rel='stylesheet' type='text/css' href='//crypto.stanford.edu/seclab.css' />
+
+<style type="text/css">
+  .course-title, .quarter { margin: 0; }
+  .parts { list-style-type: lower-alpha; }
+  .part  { margin-bottom: .5em; }
+  .answer { background-color: lightgray; }
+</style>
+</head>
+
+<body>
+<div id="inner-wrapper">
+<div id="outer-wrapper">
+
+<h1 id="header"><A href="http://crypto.stanford.edu/cs155/">
+CS155: Computer and Network Security</A></H1>
+
+<div id="content" class="full course">
+<div class="logo"><IMG src="//crypto.stanford.edu/images/seclab-128.png" alt="Logo" /></div>
+
+<h1 class="course-title">CS155:  Homework #1</h1>
+<h3 class="quarter">Spring 2017</h3>
+
+<h3>Due: Thursday, Apr. 27</h3>
+
+
+<!-- ======================================================== -->
+<HR><H3>Problem 1: Control hijacking</H3>
+A proposal for preventing stack buffer overflow attacks is based on
+making a backup copy of the return address when a function starts.
+The backup copy is written to a shadow stack located at
+some <i>random</i> location <i>L</i> on the heap.
+In the function epilog, just before the
+function is about to return, the backup copy of the return address is
+compared to the return address on the stack and if they differ the program
+exits.  Otherwise, the return instruction is executed normally.
+
+<p>
+(a) Explain why this mechanism can make it harder to mount a stack
+buffer overflow attack.
+
+<p>
+(b) Give sample C code that is vulnerable to a stack buffer overflow
+attack even if this mechanism is used.  For example, consider the case
+of function pointers stored on the stack.
+
+
+
+<!-- ======================================================== -->
+<HR><H3>Problem 2:  Return oriented programming</H3>
+
+<p>
+Suppose an attacker finds the following code fragments in the libc
+library once it is loaded in memory:
+</p>
+<pre>
+0x40002000:
+  pop eax       // pop top of stack into register eax
+  ret
+
+0x40002700:
+  pop ebx       // pop top of stack into register ebx
+  ret
+
+0x40002948:
+  move [ebx], eax  // write the value of eax to location ebx
+  ret
+</pre>
+<p>
+Moreover, the attacker discovers a stack buffer overflow in some
+vulnerable application where a string buffer can overflow. Explain
+how in an environment where the stack is marked non-execute the
+attacker can nevertheless cause the vulnerable application to write
+the value 0x30000000 to memory address 0x48000000 and then jump to
+address 0x40088888. Your answer need only show the contents of the
+stack in the table below right after the buffer overflow takes place.
+</p>
+<img style="max-width:15em" src="hw1pr2.png">
+
+
+<!-- ======================================================== -->
+<HR><H3>Problem 3:  Memory management</H3>
+
+<p>
+The iOS &nbsp;  <strong>_MALLOC(size_t size, int type, int flags)</strong> function
+allocates <strong>size</strong> bytes on the heap.   Internally blocks are
+represented as a length field followed by a data field:
+<pre>
+    struct _mhead {
+      size_t  mlen;
+      char    dat[0];  }
+</pre>
+The <strong>mlen</strong> field is used by the <strong>free()</strong>
+function to determine how much space needs to be freed.
+In iOS 4.x the <strong>_MALLOC</strong> function was implemented as follows:
+<pre>
+1   void * _MALLOC(size_t size, int type, int flags)  {
+2     struct _mhead  *hdr;
+3     size_t memsize = sizeof (*hdr) + size;
+4     hdr = (void *)kalloc(memsize);  // allocate memory
+5     hdr->mlen = memsize;
+6     return  (hdr->dat);
+7   }
+</pre>
+In iOS 5.x the following two lines were added after line 3:
+<pre>
+    int o = memsize < size ? 1 : 0;
+    if (o)  return (NULL);
+</pre>
+
+Why were these lines added in iOS5.x?   Briefly describe an attack
+that may be possible without these lines.
+
+
+<!-- ======================================================== -->
+<HR><h3>Problem 4: Unix access control </h3>
+
+In Unix, every process has a real user id (<i>ruid</i>),
+an effective user id (<i>euid</i>), and a saved user id (<i>suid</i>).
+Processes with an euid of 0 have special root privileges.
+
+<ol class="parts">
+<li class="part">
+If a process with user id <i>n</i> forks to create another process, what user id does the
+new process have? (<i>Hint:</i> it's the same answer for euid, ruid, and suid.)
+
+
+
+<li class="part">
+If a process with euid <i>n</i> makes a setuid system call, what possible
+euids can the process run with after the call, in each of the following situations:
+
+<ol class="parts">
+<li class="part"> Before: <i>euid = n > 0</i>, saved user id <i>suid=m</i> and
+real user id <i>ruid = m</i>.
+After:?
+
+
+<li class="part"> Before: <i>n=0</i>   After:?
+
+</ol>
+
+<li class="part">
+In qmail, most modules run under separate user ids. Similarly,
+each Android application runs in a separate process using a separate user id.
+From a security standpoint, what is the advantage of assigning separate uids
+instead of using the same uid for all? Explain.
+
+<!-- 
+<li class="part"> Why should the separate uids be <i>non</i>-zero? -->
+
+<li class="part">
+The Android zygote process that creates new processes runs as root.
+After forking to create a new process, setuid is normally called.
+Explain what uid the new process has initially and why it is important to call setuid? What security purpose does this serve?
+
+<li class="part">
+When a Unix user wishes to change her password, she uses the passwd program. 
+The Unix password file is usually public readable but (for obvious reasons)
+can only be written by processes with root privileges. 
+
+<ol class="parts">
+<li class="part"> How should the <i>setuid</i> bit be set on this passwd program? 
+Explain how this lets a user change her password.
+<li class="part"> Why does this make it important to write the passwd program source code carefully?
+</ol>
+
+</ol>
+
+
+
+</div>
+</div>
+</div>
+
+
+
+</body>
+</html>
