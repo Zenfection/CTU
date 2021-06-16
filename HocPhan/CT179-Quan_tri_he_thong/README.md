@@ -1,14 +1,16 @@
-# ![27-16-15-40-Scramble System.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/03/21-10-08-36-27-16-15-40-Scramble%20System.png)  Quản trị hệ thống  ![Code Learning.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/03/21-10-08-58-Code%20Learning.png)
+# ![27-16-15-40-Scramble System.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/03/21-10-08-36-27-16-15-40-Scramble%20System.png)  Quản trị hệ thống  <img src="https://raw.githubusercontent.com/Zenfection/Image/master/2021/06/16-14-56-59-08-15-27-06-cat_ready.gif" title="" alt="08-15-27-06-cat_ready.gif" width="50">
 
 | <img src="https://raw.githubusercontent.com/Zenfection/Image/master/2021/03/20-14-36-27-logo%20cat.png" title="" alt="logo cat.png" width="40"> Tác giả | <img src="https://raw.githubusercontent.com/Zenfection/Image/master/2021/03/20-14-38-42-logo-ctu.png" title="" alt="logo-ctu.png" width="40"> Bổ trợ tài liệu | <img src="https://raw.githubusercontent.com/Zenfection/Image/master/2021/03/20-13-59-20-icons8-new_year's_eve.png" title="" alt="icons8-new_year's_eve.png" width="40"> Năm |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [Zenfection](https://facebook.com/Zenfection)                                                                                                           | [Can Tho University](http://www.cit.ctu.edu.vn/)                                                                                                              | 2021                                                                                                                                                                        |
 
-## ![sd](https://raw.githubusercontent.com/Zenfection/Image/master/2020/12/23-22-00-06-icons8-user_manual.png) 1. Kiến thức cần có
-
 ---
 
-## ![S](https://raw.githubusercontent.com/Zenfection/Image/master/2020/12/15-14-31-38-Cloud%20Library.png)2. Tài liệu học tập
+## <img src="https://raw.githubusercontent.com/Zenfection/Image/master/2021/06/16-15-23-13-tenor.gif" title="" alt="tenor.gif" width="50"> 1. Tài liệu học tập
+
+| Tài liệu                                                                                                                                                                                                                                             | Khoá học | Web tham khảo                                                                                                                                                                                                                |
+| ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| <img src="https://raw.githubusercontent.com/Zenfection/Image/master/2021/03/20-14-38-42-logo-ctu.png" title="" alt="logo-ctu.png" width="35"> [Tài liệu CTU](https://github.com/Zenfection/CTU/tree/main/HocPhan/CT175-Ly_thuyet_do_thi/Tailieu/CTU) | None.    | <img src="https://raw.githubusercontent.com/Zenfection/Image/master/2021/06/16-15-13-57-output-onlinepngtools.png" title="" alt="output-onlinepngtools.png" width="35"> [CsAcademy](https://csacademy.com/app/graph_editor/) |
 
 ---
 
