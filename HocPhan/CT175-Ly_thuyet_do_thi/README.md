@@ -24,8 +24,8 @@
 
 ## <img src="https://raw.githubusercontent.com/Zenfection/Image/master/2021/06/16-15-24-10-tenor.gif" title="" alt="tenor.gif" width="40"> 3. Quá trình học tập
 
-| ![icons8-course.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/03/21-13-30-30-icons8-course.png) Bài học | Thực hành |
-| ----------------------------------------------------------------------------------------------------------------------------- | --------- |
-| [1. Giới thiệu](https://github.com/Zenfection/CTU/blob/main/HocPhan/CT175-Ly_thuyet_do_thi/Tailieu/1.Gioithieu.md)            |           |
-| [2. Khái niệm](https://github.com/Zenfection/CTU/blob/main/HocPhan/CT175-Ly_thuyet_do_thi/Tailieu/2.Khainiem.md)              |           |
-| [3. Cạnh kề, đỉnh và bậc](https://github.com/Zenfection/CTU/blob/main/HocPhan/CT175-Ly_thuyet_do_thi/Tailieu/2.Khainiem.md)   |           |
+| ![icons8-course.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/03/21-13-30-30-icons8-course.png) Bài học      | Thực hành |
+| ---------------------------------------------------------------------------------------------------------------------------------- | --------- |
+| [1. Giới thiệu](https://github.com/Zenfection/CTU/blob/main/HocPhan/CT175-Ly_thuyet_do_thi/Tailieu/1.Gioithieu.md)                 |           |
+| [2. Khái niệm](https://github.com/Zenfection/CTU/blob/main/HocPhan/CT175-Ly_thuyet_do_thi/Tailieu/2.Khainiem.md)                   |           |
+| [3. Cạnh kề, đỉnh và bậc](https://github.com/Zenfection/CTU/blob/main/HocPhan/CT175-Ly_thuyet_do_thi/Tailieu/3.CanhKe_Dinh_Bac.md) |           |
