@@ -23,8 +23,17 @@
 
 ## <img src="https://raw.githubusercontent.com/Zenfection/Image/master/2021/06/16-15-24-10-tenor.gif" title="" alt="tenor.gif" width="40"> 3. Quá trình học tập
 
-| ![icons8-course.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/03/21-13-30-30-icons8-course.png) Bài học | Thực hành |
-| ----------------------------------------------------------------------------------------------------------------------------- | --------- |
-|                                                                                                                               |           |
-|                                                                                                                               |           |
-|                                                                                                                               |           |
+### Lý thuyết
+
+| ![icons8-course.png](https://raw.githubusercontent.com/Zenfection/Image/master/2021/03/21-13-30-30-icons8-course.png) Chương 1. Tổng quan MMT | Chương 2. Các thành phần của MMT   | Chương 3.Tầng vật lý          | Chương 4.Tầng liên kết dữ liệu            | Chương 5.Mạng nội bộ & lớp con điều khiển | Chương 6.Tầng mạng                     | Chương 7.Tầng vận chuyển                        | Chương 8.Các ứng dụng mạng                  |
+| --------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------- | ----------------------------- | ----------------------------------------- | ----------------------------------------- | -------------------------------------- | ----------------------------------------------- | ------------------------------------------- |
+| Bài 1.Giới thiệu                                                                                                                              | Bài 1.Phân loại MMT theo kỹ thuật  | Bài 1.Vấn đề số hóa thông tin | Bài 1.Chức năng của tầng liên kết dữ liệu | Bài 1.Tổng quan về LAN                    | Bài 1.Giới thiệu Network Layer         | Bài 1.Dịch vụ của tầng vận chuyển               | Bài 1.DNS                                   |
+| Bài 2.Mạng điện báo                                                                                                                           | Bài 2.Phân loại MTT theo phạm vi   | Bài 2.Các loại kênh truyền    | Bài 2.Vấn đề xử lý lỗi                    | Bài 2.Các hình tháng mạng                 | Bài 2.Các vấn đề về thiết kế tầng mạng | Bài 2.Các yếu tố cấu thành giao thức vận chuyển | Bài 2.Electronic Mail (*SMTP,MINE,POP3...*) |
+| Bài 3.Mạng điện thoại                                                                                                                         | Bài 3.Mạng không dây và liên mạng  | Bài 3.Đặc điểm kênh truyền    | Bài 3.Một số giao thức Error Control      | Bài 3.Lớp con MAC                         | Bài 3.Giải thuật chọn đường            | Bài 3.Tầng vận chuyển trong mạng Internet       | Bài 3.World Wide Web (*HTTP*)               |
+| Bài 4.Mạng máy tính                                                                                                                           | Bài 4.Các phần mềm và dịch vụ mạng | Bài 4.Mã hóa đường truyền     | Bài 4.Giao thức của Sliding Windows       | Bài 4.Chuẩn hóa mạng cục bộ               | Bài 4.Các vấn đề chống tắc nghẽn       |                                                 | Bài 4.Truyền tập tin (*FTP*)                |
+|                                                                                                                                               | Bài 5.Mô hình mạng OSI             |                               |                                           | Bài 5.Một số công nghệ LAN                | Bài 5.Liên mạng                        |                                                 |                                             |
+|                                                                                                                                               |                                    |                               |                                           |                                           | Bài 6.Bộ giao thức liên mạng           |                                                 |                                             |
+
+
+
+### Thực hành
