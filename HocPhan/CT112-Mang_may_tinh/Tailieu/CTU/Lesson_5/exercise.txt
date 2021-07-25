@@ -1,9 +1,0 @@
-1. Hãy cho ví dụ về 3 chế độ chuyển tiếp dữ liệu mà tầng Liên kết dữ liệu cung cấp: 1. Không kết nối không báo nhận (Unacknowledged connectionless), 2) Không nối kết có báo nhận (Acknowledged connectionless) và 3) Có kết nối có báo nhận (Acknowledged connection-oriented).
-
-2. Theo các bạn Khung (Frame) là gì ?
-
-3. Giả sử các ký tự được mã hóa nhị phân như sau: A=01000111, B=11100011, FLAG=01111110=ESC: 11100000. Sử dụng phương pháp Định khung với cờ FLAG và Byte độn ESC. Bạn hãy ghi chuỗi bit khi gửi chuỗi dữ liệu "FLAG ESC B ESC ESC A," trong khung là gì?
-
-4. Hệ thống sử dụng mã ASCII 7 bits để mã hóa các ký tự truyền đi. Hãy cho biết chuỗi bits sau khi đã mã hóa bằng phương pháp kiểm tra chẵn của chuỗi dữ liệu sau là gì "Hello, How are you today ? Are you afraid of Covid-19 ?"
-
-5. Trong một hệ thống sử dụng phương pháp phát hiện lỗi CRC, Bên gửi và Bên nhận đã thống nhất chọn P=110101. Hãy cho biết các khung nhận được nào có lỗi , T1=101.0001.1010.1110 hay T2=101.0101.1010.1110

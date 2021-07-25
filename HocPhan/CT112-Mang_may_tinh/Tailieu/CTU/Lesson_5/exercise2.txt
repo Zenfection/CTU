@@ -1,9 +1,0 @@
-1. Hãy cho biết cách thức nào để đảm bảo rằng tất cả các khung được tầng liên kết dữ liệu phân phát đến tầng mạng của bên nhận với một thứ tự đúng đắn ?
-
-2. Hãy giải thích vai trò của các loại khung DATA, ACK, NACK ?
-
-3. Mô tả các thành phần trong giao thức cửa sổ trượt (sliding windows)
-
-4. Trình bày cách tính kích thước phù hợp cho cửa sổ trượt
-
-5. So sánh sự khác biệt giữa hai giao thức xử lý lỗi là Go-back-n và Selective Repeat ?

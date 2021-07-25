@@ -1,9 +1,0 @@
-1. Khái niệm end point trong tầng vận chuyển là gì ?
-
-2. Tại sao cần phải đề xuất thêm tầng vận chuyển ?
-
-3. Trình bày sự khác biệt giữa hai chế độ dịch vụ có kết nối và không kết nối ?
-
-4. Địa chỉ để xác định một end point ở tầng vận chuyển là gì ? địa chỉ này có tính cục bộ hay tính toàn cục ?
-
-5. Điều khiển luồng (flow control) bằng giao thức cửa sổ trượt (sliding windows) trên tầng vận chuyển có điểm gì mới hơn so với giao thức cửa sổ trượt sử dụng trên tầng 2 ?

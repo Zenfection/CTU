@@ -1,7 +1,0 @@
-1. TCP là gì ?
-
-2. UDP là gì ?
-
-3. Sự khác biệt giữa TCP và UDP ?
-
-4. Hãy cho một ví dụ thực tế cho thấy sự tồn tại của TCP và UDP trong thực tế ?
