@@ -1,2 +1,0 @@
-Creating a RESTful Web Service in PHP: 
-https://www.youtube.com/watch?v=5eWC-lf1FxM
