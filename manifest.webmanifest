@@ -1,0 +1,21 @@
+{
+  "name": "CTU Course Guide",
+  "short_name": "ZenCTU",
+  "description": "Môi trường học tập lý tưởng cho sinh viên IT đại học Cần Thơ",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#fff",
+  "theme_color": "#3951A6",
+  "icons": [
+    {
+      "src": "/images/icons/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/icons/android-chrome-384x384.png",
+      "sizes": "384x384",
+      "type": "image/png"
+    }
+  ]
+}

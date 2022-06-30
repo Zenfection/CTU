@@ -1,0 +1,1 @@
+import{_ as t,o as a,c as n,a as e,b as o}from"./app.f9a431a9.js";const r={},c=e("h1",{id:"xay-dung-website",tabindex:"-1"},[e("a",{class:"header-anchor",href:"#xay-dung-website","aria-hidden":"true"},"#"),o(" X\xE2y d\u1EF1ng WebSite")],-1),s=[c];function i(d,_){return a(),n("div",null,s)}var l=t(r,[["render",i],["__file","contribution.html.vue"]]);export{l as default};

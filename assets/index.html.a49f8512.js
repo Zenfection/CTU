@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-657f2112","path":"/course/mobile/","title":"Mobile","lang":"vi","frontmatter":{"pageClass":"course-page-class"},"excerpt":"","headers":[{"level":2,"title":"Android","slug":"android","children":[]},{"level":2,"title":"IOS","slug":"ios","children":[]}],"git":{},"filePathRelative":"course/mobile/README.md"}');export{e as data};
