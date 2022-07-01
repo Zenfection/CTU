@@ -1,1 +1,0 @@
-const a=JSON.parse('{"key":"v-cf319f92","path":"/chuyennganh/CT293-Mang_va_truyen_thong_du_lieu/Thuchanh/5.html","title":"Lab5","lang":"vi","frontmatter":{},"excerpt":"","headers":[],"git":{},"filePathRelative":"chuyennganh/CT293-Mang_va_truyen_thong_du_lieu/Thuchanh/5.md"}');export{a as data};

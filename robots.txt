@@ -1,0 +1,7 @@
+User-agent:*
+Disallow:
+
+User-agent:*
+Disallow:
+
+Sitemap: https://ctu.zenfection.com/sitemap.xml

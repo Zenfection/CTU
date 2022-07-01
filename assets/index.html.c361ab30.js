@@ -1,1 +1,0 @@
-const e=JSON.parse('{"key":"v-1557149e","path":"/tips/","title":"Tips & Track","lang":"vi","frontmatter":{"pageClass":"course-page-class"},"excerpt":"","headers":[{"level":2,"title":"Browser","slug":"browser","children":[]},{"level":2,"title":"System","slug":"system","children":[]}],"git":{},"filePathRelative":"tips/README.md"}');export{e as data};
