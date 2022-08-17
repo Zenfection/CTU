@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-0a92ea67","path":"/chuyennganh/CT293-Mang_va_truyen_thong_du_lieu/","title":"M\u1EA1ng v\xE0 truy\u1EC1n th\xF4ng d\u1EEF li\u1EC7u","lang":"vi","frontmatter":{},"excerpt":"","headers":[],"git":{},"filePathRelative":"chuyennganh/CT293-Mang_va_truyen_thong_du_lieu/README.md"}');export{e as data};
