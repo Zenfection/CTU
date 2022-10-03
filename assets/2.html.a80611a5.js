@@ -1,1 +1,0 @@
-const e=JSON.parse('{"key":"v-4ec18854","path":"/course/system/c/3/2.html","title":"Ch\u01B0\u01A1ng 2.\xD4n T\u1EADp C++","lang":"vi","frontmatter":{},"excerpt":"","headers":[{"level":2,"title":"B\xE0i 4. \xD4n t\u1EADp Vector","slug":"bai-4-on-tap-vector","children":[]}],"git":{},"filePathRelative":"course/system/c/3/2.md"}');export{e as data};

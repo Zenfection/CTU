@@ -1,1 +1,0 @@
-const e=JSON.parse('{"key":"v-089fb913","path":"/course/office/word/1/1.html","title":"Ch\u01B0\u01A1ng 1.Gi\u1EDBi Thi\u1EC7u","lang":"vi","frontmatter":{},"excerpt":"","headers":[{"level":2,"title":"B\xE0i 1.Gi\u1EDBi thi\u1EC7u","slug":"bai-1-gioi-thieu","children":[]}],"git":{},"filePathRelative":"course/office/word/1/1.md"}');export{e as data};

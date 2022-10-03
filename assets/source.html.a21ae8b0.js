@@ -1,1 +1,0 @@
-import{_ as c,o as a,c as r,b as e,d as t}from"./app.d72ab51f.js";const o={},s=e("h1",{id:"cac-du-an-khac",tabindex:"-1"},[e("a",{class:"header-anchor",href:"#cac-du-an-khac","aria-hidden":"true"},"#"),t(" C\xE1c d\u1EF1 \xE1n kh\xE1c")],-1),n=[s];function d(_,h){return a(),r("div",null,n)}var l=c(o,[["render",d],["__file","source.html.vue"]]);export{l as default};

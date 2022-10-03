@@ -1,1 +1,0 @@
-const a=JSON.parse('{"key":"v-2a319f2f","path":"/cosonganh/CT112-Mang_may_tinh/Thuchanh/6.html","title":"Th\u1EF1c h\xE0nh bu\u1ED5i 6","lang":"vi","frontmatter":{},"excerpt":"","headers":[],"git":{},"filePathRelative":"cosonganh/CT112-Mang_may_tinh/Thuchanh/6.md"}');export{a as data};

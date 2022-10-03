@@ -1,1 +1,0 @@
-const t=JSON.parse('{"key":"v-e80f5858","path":"/cosonganh/CT175-Ly_thuyet_do_thi/Tailieu/4/1.html","title":"B\xE0i 15: \u0110\u1ECBnh l\xFD Kuratowski","lang":"vi","frontmatter":{},"excerpt":"","headers":[],"git":{},"filePathRelative":"cosonganh/CT175-Ly_thuyet_do_thi/Tailieu/4/1.md"}');export{t as data};
