@@ -1,0 +1,1 @@
+const t=JSON.parse('{"key":"v-587b9df6","path":"/toanhoc/TN010-Xac_suat_thong_ke/Video/9.html","title":"Ch\u01B0\u01A1ng 9. \xD4n t\u1EADp","lang":"vi","frontmatter":{},"excerpt":"","headers":[],"git":{"updatedTime":null,"contributors":[]},"filePathRelative":"toanhoc/TN010-Xac_suat_thong_ke/Video/9.md"}');export{t as data};

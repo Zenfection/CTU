@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-1fc8b656","path":"/chuyennganh/CT223-Quan_ly_du_an_phan_mem/LyThuyet/6.html","title":"Ch\u01B0\u01A1ng 6. Qu\u1EA3n l\xED th\u1EDDi gian","lang":"vi","frontmatter":{},"excerpt":"","headers":[],"git":{"updatedTime":null,"contributors":[]},"filePathRelative":"chuyennganh/CT223-Quan_ly_du_an_phan_mem/LyThuyet/6.md"}');export{e as data};

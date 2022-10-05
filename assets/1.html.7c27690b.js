@@ -1,0 +1,1 @@
+const t=JSON.parse('{"key":"v-4166ec8b","path":"/toanhoc/TN012-Dai_so_tuyen_tinh_va_hinh_hoc/Video/1.html","title":"Ch\u01B0\u01A1ng 1. \xD4n t\u1EADp s\u1ED1 ph\u1EE9c","lang":"vi","frontmatter":{},"excerpt":"","headers":[],"git":{"updatedTime":null,"contributors":[]},"filePathRelative":"toanhoc/TN012-Dai_so_tuyen_tinh_va_hinh_hoc/Video/1.md"}');export{t as data};

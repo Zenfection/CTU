@@ -1,0 +1,1 @@
+import{_ as t,o,c,b as e,d as a}from"./app.bdebb89d.js";const i={},n=e("h1",{id:"chuong-1-gioi-thieu",tabindex:"-1"},[e("a",{class:"header-anchor",href:"#chuong-1-gioi-thieu","aria-hidden":"true"},"#"),a(" Ch\u01B0\u01A1ng 1. Gi\u1EDBi thi\u1EC7u")],-1),r=[n];function s(_,h){return o(),c("div",null,r)}const u=t(i,[["render",s],["__file","1.html.vue"]]);export{u as default};
